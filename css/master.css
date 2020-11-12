@@ -1,0 +1,37 @@
+/* Para establecer y usar "Variables".
+
+:root {
+  --[var_name]: [value];
+}
+
+[selector]{
+  [property]: var(--[var_name]);
+}
+*/
+
+:root {
+    /* Tamaño fuentes */
+    --Main_Input : 18px;
+    --Main_Heading_1 : 25px;
+    --Main_Heading_2 : 20px;
+    --Main_Heading_3 : 18px;
+    --Main_Regular : 14px;
+    --Main_Mobile_SongBar_Autor : 14px;
+    /* Colores */
+    --Main_Darker: #0D1818;
+    --Main_Light: #18CDC6;
+    --Main_Slightly_Dark: #23A4A0;
+    --Main_Disabled: #77BBAA;
+    --Main_Dark: #179893;
+    --Error_Background: #444444;
+    --Main_Light_2: #C6FDFD;
+    --Main_Lighter: #E6FFFF;
+    --Dorado_Premium: #EFB810;
+    --Main_Lightest: #F6FFFF;
+    --Urgente: #F54E4E;
+}
+
+body {
+    color: var(--Main_Darker);
+    background-color: var(--Main_Lightest);
+}
