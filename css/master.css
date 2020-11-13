@@ -9,29 +9,125 @@
 }
 */
 
+/* IMPORTANTE - No realizar cambios sobre clases con prefijo (como .ef-[clase], .tra-[clase], etc.).
+  Esas clases son para asignar un comportamiento específico a elementos en general, para mantener así el atomic design */
+
 :root {
-    /* Tamaño fuentes */
-    --Main_Input : 18px;
-    --Main_Heading_1 : 25px;
-    --Main_Heading_2 : 20px;
-    --Main_Heading_3 : 18px;
-    --Main_Regular : 14px;
-    --Main_Mobile_SongBar_Autor : 14px;
-    /* Colores */
-    --Main_Darker: #0D1818;
-    --Main_Light: #18CDC6;
-    --Main_Slightly_Dark: #23A4A0;
-    --Main_Disabled: #77BBAA;
-    --Main_Dark: #179893;
-    --Error_Background: #444444;
-    --Main_Light_2: #C6FDFD;
-    --Main_Lighter: #E6FFFF;
-    --Dorado_Premium: #EFB810;
-    --Main_Lightest: #F6FFFF;
-    --Urgente: #F54E4E;
+  /* Tamaño fuentes */
+  --Main_Input: 18px;
+  --Main_Heading_1: 25px;
+  --Main_Heading_2: 20px;
+  --Main_Heading_3: 18px;
+  --Main_Regular: 14px;
+  --Main_Mobile_SongBar_Autor: 14px;
+  /* Colores */
+  --Main_Darker: #0D1818;
+  --Main_Light: #18CDC6;
+  --Main_Slightly_Dark: #23A4A0;
+  --Main_Disabled: #77BBAA;
+  --Main_Dark: #179893;
+  --Error_Background: #444444;
+  --Main_Light_2: #C6FDFD;
+  --Main_Lighter: #E6FFFF;
+  --Dorado_Premium: #EFB810;
+  --Main_Lightest: #F6FFFF;
+  --Urgente: #F54E4E;
 }
 
+/* Clases para aplicar efectos */
+
+.ef-drop_shadow_downwards {
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ef-drop_shadow_upwards {
+  box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ef-drop_shadow_right {
+  box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Fin clases para aplicar efectos */
+/* Clases para transiciones básicas */
+
+.tra-focus{
+  transition: background-color .6s ease-out;
+}
+.tra-focus:focus{
+  transition: background-color .6s ease-in;
+}
+.tra-hover{
+  transition: background-color .6s ease-out;
+}
+.tra-hover:hover{
+  transition: background-color .6s ease-in;
+}
+
+/* Fin clases para transiciones básicas */
+
 body {
-    color: var(--Main_Darker);
+  color: var(--Main_Darker);
+  background-color: var(--Main_Lightest);
+}
+input{
+  border-radius: 75px;
+  border: 0;
+  background-color: var(--Main_Light_2);
+}
+
+input:focus{
+  background-color: var(--Main_Lightest);
+  border:0;
+  outline-style: none;
+}
+
+nav {
+  background-color: var(--Main_Lighter);
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+img{
+  width: 100%;
+  max-width: 75px;
+}
+
+/* Modo Mobile */
+
+@media only screen and (max-width: 700px) {
+  .only_desktop {
+    display: none;
+  }
+  nav {
+    padding: 5px 3.4%;
+    display: grid;
+    grid-template-columns: 16% 16% 58%;
+    grid-template-rows: 100%;
+  }
+  nav * {
+    padding: 0;
+    margin: 0;
+  }
+  nav div {
+    border-radius: 75px;
+    border-bottom: 2px var(--Main_Darker);
+    width: 100%;
+    background-color: var(--Main_Light_2);
+    display: grid;
+    grid-template-columns: 92.2% 7.8%;
+    align-content: center;
+  }
+  nav div:focus-within{
     background-color: var(--Main_Lightest);
+  }
 }
