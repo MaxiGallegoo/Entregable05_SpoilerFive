@@ -32,6 +32,8 @@
   --Dorado_Premium: #EFB810;
   --Main_Lightest: #F6FFFF;
   --Urgente: #F54E4E;
+  --Transparente: rgba(0, 0, 0, 0);
+  --Burger_Menu_Item_Border: #0d181833;
 }
 
 /* Clases para aplicar efectos */
@@ -49,46 +51,66 @@
 }
 
 /* Fin clases para aplicar efectos */
+
 /* Clases para transiciones básicas */
 
-.tra-focus{
+.tra-focus {
   transition: background-color .6s ease-out;
 }
-.tra-focus:focus{
+
+.tra-focus:focus {
   transition: background-color .6s ease-in;
 }
-.tra-hover{
+
+.tra-hover {
   transition: background-color .6s ease-out;
 }
-.tra-hover:hover{
+
+.tra-hover:hover {
   transition: background-color .6s ease-in;
 }
 
 /* Fin clases para transiciones básicas */
 
+/* Selectores generales (Ignorando si es Mobile o Desktop) */
+
 body {
   color: var(--Main_Darker);
   background-color: var(--Main_Lightest);
-}
-input{
-  border-radius: 75px;
-  border: 0;
-  background-color: var(--Main_Light_2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-input:focus{
-  background-color: var(--Main_Lightest);
-  border:0;
+input {
+  border-radius: 75px;
+  border: 0;
+  background-color: var(--Transparente);
+}
+
+input:focus {
+  /* background-color: var(--Main_Lightest); */
+  background-color: var(--Transparente);
+  border: 0;
   outline-style: none;
 }
 
 nav {
   background-color: var(--Main_Lighter);
   margin: 0;
-  width: 100%;
+  padding: 5px 3.4%;
+  width: 93.2%;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
@@ -97,10 +119,12 @@ button {
   border: 0;
   background-color: rgba(0, 0, 0, 0);
 }
-img{
+
+img {
   width: 100%;
-  max-width: 75px;
 }
+
+/* Fin de selectores generales */
 
 /* Modo Mobile */
 
@@ -108,26 +132,100 @@ img{
   .only_desktop {
     display: none;
   }
+  /* Inicio NavBar */
   nav {
-    padding: 5px 3.4%;
-    display: grid;
-    grid-template-columns: 16% 16% 58%;
-    grid-template-rows: 100%;
+    display: flex;
+    /* grid-template-columns: 92.2% 7.8%; */
+    justify-content: space-around;
   }
   nav * {
     padding: 0;
     margin: 0;
   }
   nav div {
+    position: relative;
     border-radius: 75px;
     border-bottom: 2px var(--Main_Darker);
-    width: 100%;
+    width: 65%;
     background-color: var(--Main_Light_2);
-    display: grid;
-    grid-template-columns: 92.2% 7.8%;
-    align-content: center;
+    display: flex;
+    align-items: center;
   }
-  nav div:focus-within{
+  nav div:focus-within {
     background-color: var(--Main_Lightest);
   }
+  nav div img {
+    position: absolute;
+    right: 3.23%;
+    top: 19.5%;
+    width: 22.95px;
+  }
+  nav div input {
+    width: 100%;
+    padding: 5px;
+    padding-right: 27.95px;
+  }
+  nav button {
+    width: 40.5px;
+  }
+  /* Inicio Burger Menu */
+  #burger_menu {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: -101%;
+    transition: left .6s ease-in;
+    min-width: 75vw;
+    max-width: 75vw;
+    min-width: 150px;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--Main_Heading_2);
+  }
+  /* Inicio Transiciones (abrir/cerrar) */
+  #burger_menu_button:focus+#burger_menu {
+    left: 0;
+    transition: left .6s ease-out;
+  }
+  #burger_menu_cerrar:focus~#burger_menu{
+    left: -101%;
+    transition: left .6s ease-in;
+  }
+  /* Fin Transiciones */
+
+  #burger_menu_cerrar{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 11%;
+    min-width: 15px;
+  }
+
+  #burger_menu a:not(:first-child) {
+    line-height: 8.9vh;
+    min-height: 8.9vh;
+    /* min-height: 25px; */
+    width: 100%;
+    text-align: center;
+    border-top: solid var(--Burger_Menu_Item_Border) 1px;
+  }
+  #burger_menu a:last-child {
+    border-bottom: solid var(--Burger_Menu_Item_Border) 1px;
+  }
+  #burger_menu a:first-child {
+    margin-top: 7.1vh;
+    margin-bottom: 8.8vh;
+    border: none;
+    max-width: 100%;
+    max-width: 150px;
+  }
+
+  /* Fin Burger Menu */
+
+  /* Fin NavBar */
 }

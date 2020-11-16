@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spoiler Five</title>
     <link rel="stylesheet" href="../css/master.css">
 </head>
+
 <body>
     <!-- Usar clases "only_mobile" y "only_desktop" cuando el elemento funciona SOLO para un modo.
         Estas clases se esconden con display:none en el formato opuesto -->
@@ -15,19 +17,48 @@
             <img src="../img/Iconos/Base/botones_armados/Button_Back.svg" alt="">
         </button>
         <!-- Button burger_menu -->
-        <button>
+        <button id="burger_menu_button">
             <img src="../img/Iconos/Base/botones_armados/Button_Burger_Menu.svg" alt="">
         </button>
+        <!-- Burger Menu (Normalmente Hidden) -->
+        <nav id="burger_menu" class="ef-drop_shadow_right">
+            <!-- Logo para ir a Home -->
+            <a href="">
+                <img src="../img/Iconos/Base/botones_armados/Logo.svg" alt="">
+            </a>
+            <!-- Botón cerrar -->
+            <button>
+                <img src="../img/Iconos/Base/close.svg" alt="" id="burger_menu_cerrar">
+            </button>
+            <!-- Otros links -->
+            <a href="">
+                Mi cuenta
+            </a>
+            <a href="">
+                Listas Guardadas
+            </a>
+            <a href="">
+                Notificaciones
+            </a>
+            <a href="">
+                Cambiar Modo
+            </a>
+            <a href="">
+                Ayuda
+            </a>
+        </nav>
+
         <!-- Input search -->
-        <div class="tra-focus">   
+        <div class="tra-focus">
             <input class="tra-focus" type="text">
             <img src="../img/Iconos/Base/Icono_Buscar.svg" alt="">
         </div>
     </nav>
-    
+
     <nav class="only_desktop ef-drop_shadow_downwards">
-        
+
     </nav>
 
 </body>
+
 </html>
