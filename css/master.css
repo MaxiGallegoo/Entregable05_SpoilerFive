@@ -52,6 +52,8 @@
 
 /* Fin clases para aplicar efectos */
 
+/*  */
+
 /* Clases para transiciones básicas */
 
 .tra-focus {
@@ -71,6 +73,8 @@
 }
 
 /* Fin clases para transiciones básicas */
+
+/*  */
 
 /* Selectores generales (Ignorando si es Mobile o Desktop) */
 
@@ -141,12 +145,15 @@ img {
 
 /* Fin de selectores generales */
 
+/*  */
+
 /* Modo Mobile */
 
 @media only screen and (max-width: 700px) {
   .only_desktop {
     display: none;
   }
+  /* Inicio Basic Layout */
   /* Inicio NavBar */
   nav {
     z-index: 3;
@@ -239,19 +246,20 @@ img {
     max-width: 150px;
   }
   /* Fin Burger Menu */
+  /*  */
   /* Fin NavBar */
+  /*  */
   /* Inicio Player */
+  /*  */
+  /* Inicio Controller Player */
   #player {
     z-index: 2;
     width: 100%;
-    /* max-height: 50px;
-    max-height: 6.84vh;
-    min-height: 15px; */
     position: fixed;
     bottom: 0;
     left: 0;
   }
-  #botones_reproducir{
+  #botones_reproducir {
     position: relative;
     height: 50px;
     /* min-height: 12.1655vw; */
@@ -260,19 +268,65 @@ img {
     justify-content: center;
     bottom: 0;
   }
-  #botones_reproducir button.boton_central{
+  #botones_reproducir button.boton_central {
     width: 38px;
     margin: 6px 0;
   }
-  #botones_reproducir button.boton_pasar_cancion{
+  #botones_reproducir button.boton_pasar_cancion {
     width: 31px;
     margin: auto 6.5693vw;
   }
-  #botones_reproducir button.boton_lateral{
+  #botones_reproducir button.boton_lateral {
     width: 34px;
     margin: auto 4.8662vw;
   }
+  /* Fin Controller Player */
+  /*  */
+  /* Inicio Canción Actual*/
+  
+  #cancion_actual{
+    z-index: 1;
+    /* position: absolute; */
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #cancion_actual div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #cancion_actual div p{
+    font-size: var(--Main_Regular);
+    text-align: center;
+    margin: 0;
+    width: 58.3942vw;
+  }
+  #cancion_actual div p:last-child{
+    font-size: var(--Main_Mobile_SongBar_Autor);
+    margin-bottom: 2px;
+  }
+  #cancion_actual button{
+    width: 30px;
+    margin: 6px 2px;
+  }
+  #cancion_actual button:first-child{
+    width: 30px;
+    margin-left: 21px;
+  }
+  #cancion_actual button:last-child{
+    margin-right: 21px;
+  }
+  /* Fin Canción Actual*/
+  /*  */
   /* Fin Player */
+  /*  */
+  /* Fin Basic Layout */
 }
 
 /* Fin Modo Mobile */
