@@ -1,4 +1,4 @@
-//Devuelve un arrya con la primera canción de cada disco
+//Devuelve un array con la primera canción de cada disco
 function getAlbums(){ 
     let salida=new Array();
     let disco="";
