@@ -84,6 +84,7 @@ input {
   border-radius: 75px;
   border: 0;
   background-color: var(--Transparente);
+  font-size: var(--Main_Input);
 }
 
 input:focus {
@@ -103,6 +104,10 @@ nav {
   left: 0;
 }
 
+#player {
+  background-color: var(--Main_Lighter);
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -118,6 +123,16 @@ button {
   margin: 0;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
+  transform: none;
+  outline: none;
+  transition: transform .1s linear;
+}
+
+button:active {
+  border: none;
+  outline: none;
+  transform: scale(.95);
+  transition: transform .1s linear;
 }
 
 img {
@@ -134,6 +149,7 @@ img {
   }
   /* Inicio NavBar */
   nav {
+    z-index: 3;
     display: flex;
     /* grid-template-columns: 92.2% 7.8%; */
     justify-content: space-around;
@@ -192,20 +208,18 @@ img {
     left: 0;
     transition: left .6s ease-out;
   }
-  #burger_menu_cerrar:focus~#burger_menu{
+  #burger_menu_cerrar:focus~#burger_menu {
     left: -101%;
     transition: left .6s ease-in;
   }
   /* Fin Transiciones */
-
-  #burger_menu_cerrar{
+  #burger_menu_cerrar {
     position: absolute;
     top: 20px;
     right: 20px;
     max-width: 11%;
     min-width: 15px;
   }
-
   #burger_menu a:not(:first-child) {
     line-height: 8.9vh;
     min-height: 8.9vh;
@@ -224,8 +238,41 @@ img {
     max-width: 100%;
     max-width: 150px;
   }
-
   /* Fin Burger Menu */
-
   /* Fin NavBar */
+  /* Inicio Player */
+  #player {
+    z-index: 2;
+    width: 100%;
+    /* max-height: 50px;
+    max-height: 6.84vh;
+    min-height: 15px; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  #botones_reproducir{
+    position: relative;
+    height: 50px;
+    /* min-height: 12.1655vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+  }
+  #botones_reproducir button.boton_central{
+    width: 38px;
+    margin: 6px 0;
+  }
+  #botones_reproducir button.boton_pasar_cancion{
+    width: 31px;
+    margin: auto 6.5693vw;
+  }
+  #botones_reproducir button.boton_lateral{
+    width: 34px;
+    margin: auto 4.8662vw;
+  }
+  /* Fin Player */
 }
+
+/* Fin Modo Mobile */
