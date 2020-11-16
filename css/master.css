@@ -33,6 +33,7 @@
   --Main_Lightest: #F6FFFF;
   --Urgente: #F54E4E;
   --Transparente: rgba(0, 0, 0, 0);
+  --Burger_Menu_Item_Border: #0d181833;
 }
 
 /* Clases para aplicar efectos */
@@ -76,6 +77,7 @@
 body {
   color: var(--Main_Darker);
   background-color: var(--Main_Lightest);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 input {
@@ -101,6 +103,16 @@ nav {
   left: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 button {
   padding: 0;
   margin: 0;
@@ -120,8 +132,6 @@ img {
   .only_desktop {
     display: none;
   }
-
-
   /* Inicio NavBar */
   nav {
     display: flex;
@@ -158,21 +168,64 @@ img {
   nav button {
     width: 40.5px;
   }
-  #burger_menu{
+  /* Inicio Burger Menu */
+  #burger_menu {
+    z-index: 1;
     position: fixed;
     top: 0;
-    left: -77%;
+    left: -101%;
     transition: left .6s ease-in;
-
-    width: 75%;
+    min-width: 75vw;
+    max-width: 75vw;
     min-width: 150px;
-    height: 1000px; /* En caso que el browser no soporte unidad vh*/
     height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--Main_Heading_2);
   }
-  #burger_menu_button:focus + nav#burger_menu{
+  /* Inicio Transiciones (abrir/cerrar) */
+  #burger_menu_button:focus+#burger_menu {
     left: 0;
     transition: left .6s ease-out;
   }
-  /* Fin NavBar */
+  #burger_menu_cerrar:focus~#burger_menu{
+    left: -101%;
+    transition: left .6s ease-in;
+  }
+  /* Fin Transiciones */
 
+  #burger_menu_cerrar{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 11%;
+    min-width: 15px;
+  }
+
+  #burger_menu a:not(:first-child) {
+    line-height: 8.9vh;
+    min-height: 8.9vh;
+    /* min-height: 25px; */
+    width: 100%;
+    text-align: center;
+    border-top: solid var(--Burger_Menu_Item_Border) 1px;
+  }
+  #burger_menu a:last-child {
+    border-bottom: solid var(--Burger_Menu_Item_Border) 1px;
+  }
+  #burger_menu a:first-child {
+    margin-top: 7.1vh;
+    margin-bottom: 8.8vh;
+    border: none;
+    max-width: 100%;
+    max-width: 150px;
+  }
+
+  /* Fin Burger Menu */
+
+  /* Fin NavBar */
 }
