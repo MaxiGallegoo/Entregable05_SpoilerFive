@@ -120,6 +120,9 @@ img {
   .only_desktop {
     display: none;
   }
+
+
+  /* Inicio NavBar */
   nav {
     display: flex;
     /* grid-template-columns: 92.2% 7.8%; */
@@ -155,4 +158,21 @@ img {
   nav button {
     width: 40.5px;
   }
+  #burger_menu{
+    position: fixed;
+    top: 0;
+    left: -77%;
+    transition: left .6s ease-in;
+
+    width: 75%;
+    min-width: 150px;
+    height: 1000px; /* En caso que el browser no soporte unidad vh*/
+    height: 100vh;
+  }
+  #burger_menu_button:focus + nav#burger_menu{
+    left: 0;
+    transition: left .6s ease-out;
+  }
+  /* Fin NavBar */
+
 }
