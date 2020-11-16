@@ -1,4 +1,5 @@
-function getAlbums(){
+//Devuelve un arrya con la primera canción de cada disco
+function getAlbums(){ 
     let salida=new Array();
     let disco="";
     for (let i=0;i<audios.length;i++){
@@ -12,6 +13,27 @@ function getAlbums(){
     return salida;
 }
 
+//Devuelve un array con las canciones del album del parámetro
+function getAlbum(album){
+    let salida=new Array();
+    for (let i=0;i<audios.length;i++){
+        if (audios[i].album==album)
+                salida.push(audios[i]);
+        }
+    return salida;
+}
+
+//Devuelve un array con las canciones del artista del parámetro
+function getArtist(artista){
+    let salida=new Array();
+    for (let i=0;i<audios.length;i++){
+        if (audios[i].artista==artista)
+                salida.push(audios[i]);
+        }
+    return salida;
+}
+
+//Devuelve un array con las canciones de tipo "podcast"
 function getPodcasts(){
     let salida=new Array();
     for (let i=0;i<audios.length;i++){
@@ -21,6 +43,7 @@ function getPodcasts(){
     return salida;
 }
 
+//Devuelve un array con las canciones del género del parámetro
 function getGenero(genero){
     let salida=new Array();
     let disco="";
@@ -35,6 +58,16 @@ function getGenero(genero){
     return salida;
 }
 
+//Devuelve un array con las canciones que contengan en el artista, el album o la canción algo del parámetro
+function listaBusqueda(string){
+    let salida=new Array();
+    for (let i=0;i<audios.length;i++){
+        if (audios[i].album.includes(string)||audios[i].artista.includes(string)||audios[i].nombre_cancion.includes(string))
+                salida.push(audios[i]);
+    }
+    return salida;
+}
+
 
 //MODELO DE OBJETO
 // {"artista":"",
@@ -45,7 +78,8 @@ function getGenero(genero){
 //     "duracion":210, //En segundos
 //     "imagen":"", //url a la imagen
 //     "tipo_audio":"musica", //musica/podcast
-//     "calificacion":4 //rango de 1 a 5
+//     "calificacion":4, //rango de 1 a 5
+//     "comentarios":[]//array de comentarios en formato json
 //    }
 
 let audios=[
@@ -57,7 +91,8 @@ let audios=[
      "duracion":210,
      "imagen":"../img/Card/Artistas_Song/ac_dc.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"},{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"},{"user":"user1","comment":"Este es el comentario del usuario","premium":false,"fecha":"01/01/2020"},{"user":"user1","comment":"Este es el comentario del usuario","premium":false,"fecha":"01/01/2020"}]
     },
     {"artista":"Ac/Dc",
      "album":"Highway to hell",
@@ -67,7 +102,8 @@ let audios=[
      "duracion":206,
      "imagen":"../img/Card/Artistas_Song/ac_dc.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Ac/Dc",
      "album":"Highway to hell",
@@ -77,7 +113,8 @@ let audios=[
      "duracion":312,
      "imagen":"../img/Card/Artistas_Song/ac_dc.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Ac/Dc",
      "album":"Highway to hell",
@@ -87,7 +124,8 @@ let audios=[
      "duracion":394,
      "imagen":"../img/Card/Artistas_Song/ac_dc.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Ac/Dc",
      "album":"Highway to hell",
@@ -97,7 +135,8 @@ let audios=[
      "duracion":157,
      "imagen":"../img/Card/Artistas_Song/ac_dc.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Ac/Dc",
      "album":"Highway to hell",
@@ -107,7 +146,8 @@ let audios=[
      "duracion":260,
      "imagen":"../img/Card/Artistas_Song/ac_dc.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Aerosmith",
      "album":"Get a grip",
@@ -117,7 +157,8 @@ let audios=[
      "duracion":24,
      "imagen":"../img/Card/Artistas_Song/aerosmith.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Aerosmith",
      "album":"Get a grip",
@@ -127,7 +168,8 @@ let audios=[
      "duracion":251,
      "imagen":"../img/Card/Artistas_Song/aerosmith.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Aerosmith",
      "album":"Get a grip",
@@ -137,7 +179,8 @@ let audios=[
      "duracion":251,
      "imagen":"../img/Card/Artistas_Song/aerosmith.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Aerosmith",
     "album":"Get a grip",
@@ -147,8 +190,9 @@ let audios=[
     "duracion":255,
     "imagen":"../img/Card/Artistas_Song/aerosmith.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+    "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+},
    {"artista":"Aerosmith",
      "album":"Get a grip",
      "genero":"rock",
@@ -157,7 +201,8 @@ let audios=[
      "duracion":357,
      "imagen":"../img/Card/Artistas_Song/aerosmith.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Aerosmith",
      "album":"Get a grip",
@@ -167,7 +212,8 @@ let audios=[
      "duracion":350,
      "imagen":"../img/Card/Artistas_Song/aerosmith.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Aerosmith",
      "album":"Get a grip",
@@ -177,7 +223,8 @@ let audios=[
      "duracion":314,
      "imagen":"../img/Card/Artistas_Song/aerosmith.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Bob Marley",
      "album":"Love songs",
@@ -187,7 +234,8 @@ let audios=[
      "duracion":250,
      "imagen":"../img/Card/Artistas_Song/bob_marley.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Bob Marley",
      "album":"Love songs",
@@ -197,7 +245,8 @@ let audios=[
      "duracion":192,
      "imagen":"../img/Card/Artistas_Song/bob_marley.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Bob Marley",
      "album":"Love songs",
@@ -207,7 +256,8 @@ let audios=[
      "duracion":212,
      "imagen":"../img/Card/Artistas_Song/bob_marley.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Bob Marley",
      "album":"Love songs",
@@ -217,7 +267,8 @@ let audios=[
      "duracion":212,
      "imagen":"../img/Card/Artistas_Song/bob_marley.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Bob Marley",
      "album":"Love songs",
@@ -227,7 +278,8 @@ let audios=[
      "duracion":314,
      "imagen":"../img/Card/Artistas_Song/bob_marley.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Bob Marley",
      "album":"Love songs",
@@ -237,7 +289,8 @@ let audios=[
      "duracion":249,
      "imagen":"../img/Card/Artistas_Song/bob_marley.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -247,7 +300,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -257,7 +311,8 @@ let audios=[
      "duracion":362,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -267,7 +322,8 @@ let audios=[
      "duracion":215,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -277,7 +333,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -287,7 +344,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -297,7 +355,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -307,7 +366,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":1
+     "calificacion":1,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Canserbero",
      "album":"Muerte",
@@ -317,7 +377,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Canserbero.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Gustavo Cerati",
      "album":"Ahí vamos",
@@ -327,7 +388,8 @@ let audios=[
      "duracion":210,
      "imagen":"../img/Card/Artistas_Song/Cerati.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Gustavo Cerati",
      "album":"Ahí vamos",
@@ -337,7 +399,8 @@ let audios=[
      "duracion":210,
      "imagen":"../img/Card/Artistas_Song/Cerati.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Gustavo Cerati",
      "album":"Ahí vamos",
@@ -347,7 +410,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Cerati.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Gustavo Cerati",
      "album":"Ahí vamos",
@@ -357,7 +421,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Cerati.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Gustavo Cerati",
      "album":"Ahí vamos",
@@ -367,7 +432,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Cerati.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Gustavo Cerati",
      "album":"Ahí vamos",
@@ -377,7 +443,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Cerati.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Gustavo Cerati",
      "album":"Ahí vamos",
@@ -387,7 +454,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Cerati.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -397,7 +465,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -407,7 +476,8 @@ let audios=[
      "duracion":480,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -417,7 +487,8 @@ let audios=[
      "duracion":389,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -427,7 +498,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -437,7 +509,8 @@ let audios=[
      "duracion":439,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -447,7 +520,8 @@ let audios=[
      "duracion":389,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":1
+     "calificacion":1,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -457,7 +531,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -467,7 +542,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -477,7 +553,8 @@ let audios=[
      "duracion":280,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Eminem",
      "album":"Recovery",
@@ -487,7 +564,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/eminem.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -497,7 +575,8 @@ let audios=[
      "duracion":439,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -507,7 +586,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -517,7 +597,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -527,7 +608,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -537,7 +619,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -547,7 +630,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -557,7 +641,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -567,7 +652,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -577,7 +663,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -587,7 +674,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -597,7 +685,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Guns n' roses",
      "album":"Mr. Brownstone",
@@ -607,7 +696,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/guns_and_roses.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"Otro dia en el planeta tierra",
@@ -617,7 +707,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
      "tipo_audio":"musica",
-     "calificacion":1
+     "calificacion":1,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"Otro dia en el planeta tierra",
@@ -627,7 +718,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"Otro dia en el planeta tierra",
@@ -637,7 +729,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
     "album":"Otro dia en el planeta tierra",
@@ -647,7 +740,8 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
+    "calificacion":3,
+    "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
    },
    {"artista":"Intoxicados",
      "album":"Otro dia en el planeta tierra",
@@ -657,7 +751,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"Otro dia en el planeta tierra",
@@ -667,7 +762,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"Otro dia en el planeta tierra",
@@ -677,7 +773,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"Otro dia en el planeta tierra",
@@ -687,7 +784,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"No es solo rock and roll",
@@ -697,7 +795,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados2.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"No es solo rock and roll",
@@ -707,7 +806,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados2.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"No es solo rock and roll",
@@ -717,7 +817,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados2.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"No es solo rock and roll",
@@ -727,7 +828,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados2.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"No es solo rock and roll",
@@ -737,7 +839,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados2.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"No es solo rock and roll",
@@ -747,7 +850,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados2.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Intoxicados",
      "album":"No es solo rock and roll",
@@ -757,7 +861,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/intoxicados2.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La renga",
      "album":"Despedazado por mil partes",
@@ -767,7 +872,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La renga",
      "album":"Despedazado por mil partes",
@@ -777,7 +883,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La renga",
      "album":"Despedazado por mil partes",
@@ -787,7 +894,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La renga",
      "album":"Despedazado por mil partes",
@@ -797,7 +905,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La renga",
      "album":"Despedazado por mil partes",
@@ -807,7 +916,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La renga",
      "album":"Despedazado por mil partes",
@@ -817,7 +927,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La renga",
      "album":"Despedazado por mil partes",
@@ -827,7 +938,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La vela puerca",
      "album":"A contraluz",
@@ -837,7 +949,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_vela_puerca.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La vela puerca",
      "album":"A contraluz",
@@ -847,7 +960,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_vela_puerca.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La vela puerca",
      "album":"A contraluz",
@@ -857,7 +971,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_vela_puerca.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La vela puerca",
      "album":"A contraluz",
@@ -867,7 +982,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_vela_puerca.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La vela puerca",
      "album":"A contraluz",
@@ -877,7 +993,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_vela_puerca.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La vela puerca",
      "album":"A contraluz",
@@ -887,7 +1004,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_vela_puerca.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"La vela puerca",
      "album":"A contraluz",
@@ -897,7 +1015,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_vela_puerca.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Linkin Park",
      "album":"Meteora",
@@ -907,7 +1026,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Linkin_park.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Linkin Park",
      "album":"Meteora",
@@ -917,7 +1037,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Linkin_park.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Linkin Park",
      "album":"Meteora",
@@ -927,7 +1048,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Linkin_park.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Linkin Park",
      "album":"Meteora",
@@ -937,7 +1059,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Linkin_park.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Linkin Park",
      "album":"Meteora",
@@ -947,7 +1070,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Linkin_park.jpg",
      "tipo_audio":"musica",
-     "calificacion":1
+     "calificacion":1,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Linkin Park",
      "album":"Meteora",
@@ -957,7 +1081,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Linkin_park.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Cafres",
      "album":"Suena la alarma",
@@ -967,7 +1092,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_cafres.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Cafres",
      "album":"Suena la alarma",
@@ -977,7 +1103,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_cafres.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Cafres",
      "album":"Suena la alarma",
@@ -987,7 +1114,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_cafres.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Cafres",
      "album":"Suena la alarma",
@@ -997,7 +1125,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_cafres.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Cafres",
      "album":"Suena la alarma",
@@ -1007,7 +1136,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_cafres.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Cafres",
      "album":"Suena la alarma",
@@ -1017,7 +1147,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_cafres.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los del fuego",
      "album":"Por siempre",
@@ -1027,7 +1158,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_del_fuego.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los del fuego",
      "album":"Por siempre",
@@ -1037,7 +1169,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_del_fuego.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los del fuego",
      "album":"Por siempre",
@@ -1047,7 +1180,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_del_fuego.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los del fuego",
      "album":"Por siempre",
@@ -1057,7 +1191,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_del_fuego.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los del fuego",
      "album":"Por siempre",
@@ -1067,7 +1202,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_del_fuego.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los del fuego",
      "album":"Por siempre",
@@ -1077,7 +1213,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_del_fuego.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Palmeras",
      "album":"Chiquita pero buena",
@@ -1087,7 +1224,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_palmeras.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Palmeras",
      "album":"Chiquita pero buena",
@@ -1097,7 +1235,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_palmeras.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Palmeras",
      "album":"Chiquita pero buena",
@@ -1107,7 +1246,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_palmeras.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Palmeras",
      "album":"Chiquita pero buena",
@@ -1117,7 +1257,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_palmeras.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Palmeras",
      "album":"Chiquita pero buena",
@@ -1127,7 +1268,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_palmeras.jpg",
      "tipo_audio":"musica",
-     "calificacion":2
+     "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Palmeras",
      "album":"Chiquita pero buena",
@@ -1137,7 +1279,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/los_palmeras.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Redondos",
      "album":"Oktubre",
@@ -1147,7 +1290,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Redondos.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Redondos",
      "album":"Oktubre",
@@ -1157,7 +1301,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Redondos.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Redondos",
      "album":"Oktubre",
@@ -1167,7 +1312,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Redondos.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Redondos",
      "album":"Oktubre",
@@ -1177,7 +1323,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Redondos.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Redondos",
      "album":"Oktubre",
@@ -1187,7 +1334,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Redondos.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los Redondos",
      "album":"Oktubre",
@@ -1197,7 +1345,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Redondos.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los tipitos",
      "album":"Tipitorex",
@@ -1207,7 +1356,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Tipitos.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los tipitos",
      "album":"Tipitorex",
@@ -1217,7 +1367,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Tipitos.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los tipitos",
      "album":"Tipitorex",
@@ -1227,7 +1378,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Tipitos.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los tipitos",
      "album":"Tipitorex",
@@ -1237,7 +1389,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Tipitos.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los tipitos",
      "album":"Tipitorex",
@@ -1247,7 +1400,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Tipitos.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Los tipitos",
      "album":"Tipitorex",
@@ -1257,7 +1411,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/Los_Tipitos.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Metallica",
      "album":"Black album",
@@ -1267,7 +1422,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/metallica.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Metallica",
      "album":"Black album",
@@ -1277,7 +1433,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/metallica.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Metallica",
      "album":"Black album",
@@ -1287,7 +1444,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/metallica.jpg",
      "tipo_audio":"musica",
-     "calificacion":3
+     "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Metallica",
      "album":"Black album",
@@ -1297,7 +1455,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/metallica.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Metallica",
      "album":"Black album",
@@ -1307,7 +1466,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/metallica.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Metallica",
      "album":"Black album",
@@ -1317,7 +1477,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/metallica.jpg",
      "tipo_audio":"musica",
-     "calificacion":4
+     "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Metallica",
      "album":"Black album",
@@ -1327,7 +1488,8 @@ let audios=[
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/metallica.jpg",
      "tipo_audio":"musica",
-     "calificacion":5
+     "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
     },
     {"artista":"Michael Jackson",
     "album":"Thriller",
@@ -1337,8 +1499,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Michael_Jackson.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Michael Jackson",
     "album":"Thriller",
     "genero":"pop",
@@ -1347,8 +1510,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Michael_Jackson.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Michael Jackson",
     "album":"Thriller",
     "genero":"pop",
@@ -1357,8 +1521,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Michael_Jackson.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Michael Jackson",
     "album":"Thriller",
     "genero":"pop",
@@ -1367,8 +1532,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Michael_Jackson.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Michael Jackson",
     "album":"Thriller",
     "genero":"pop",
@@ -1377,8 +1543,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Michael_Jackson.jpg",
     "tipo_audio":"musica",
-    "calificacion":2
-   },
+    "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Michael Jackson",
     "album":"Thriller",
     "genero":"pop",
@@ -1387,8 +1554,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Michael_Jackson.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nirvana",
     "album":"In utero",
     "genero":"rock",
@@ -1397,8 +1565,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nirvana.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nirvana",
     "album":"In utero",
     "genero":"rock",
@@ -1407,8 +1576,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nirvana.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nirvana",
     "album":"In utero",
     "genero":"rock",
@@ -1417,8 +1587,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nirvana.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nirvana",
     "album":"In utero",
     "genero":"rock",
@@ -1427,8 +1598,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nirvana.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nirvana",
     "album":"In utero",
     "genero":"rock",
@@ -1437,8 +1609,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nirvana.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nonpalidece",
     "album":"Hagan correr la voz",
     "genero":"reggae",
@@ -1447,8 +1620,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nonpalidece.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nonpalidece",
     "album":"Hagan correr la voz",
     "genero":"reggae",
@@ -1457,8 +1631,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nonpalidece.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nonpalidece",
     "album":"Hagan correr la voz",
     "genero":"reggae",
@@ -1467,8 +1642,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nonpalidece.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nonpalidece",
     "album":"Hagan correr la voz",
     "genero":"reggae",
@@ -1477,8 +1653,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nonpalidece.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nonpalidece",
     "album":"Hagan correr la voz",
     "genero":"reggae",
@@ -1487,8 +1664,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nonpalidece.jpg",
     "tipo_audio":"musica",
-    "calificacion":2
-   },
+    "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nonpalidece",
     "album":"Hagan correr la voz",
     "genero":"reggae",
@@ -1497,8 +1675,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nonpalidece.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Nonpalidece",
     "album":"Hagan correr la voz",
     "genero":"reggae",
@@ -1507,8 +1686,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/nonpalidece.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Papo's blues",
     "album":"Volumen 1",
     "genero":"rock",
@@ -1517,8 +1697,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Pappos_Blues.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Papo's blues",
     "album":"Volumen 1",
     "genero":"rock",
@@ -1527,8 +1708,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Pappos_Blues.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Papo's blues",
     "album":"Volumen 1",
     "genero":"rock",
@@ -1537,8 +1719,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Pappos_Blues.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Papo's blues",
     "album":"Volumen 1",
     "genero":"rock",
@@ -1547,8 +1730,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/Pappos_Blues.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Pink Floyd",
     "album":"Dark side of the moon",
     "genero":"rock",
@@ -1557,8 +1741,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/pink floyd.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Pink Floyd",
     "album":"Dark side of the moon",
     "genero":"rock",
@@ -1567,8 +1752,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/pink floyd.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Pink Floyd",
     "album":"Dark side of the moon",
     "genero":"rock",
@@ -1577,8 +1763,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/pink floyd.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Pink Floyd",
     "album":"Dark side of the moon",
     "genero":"rock",
@@ -1587,8 +1774,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/pink floyd.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Pink Floyd",
     "album":"Dark side of the moon",
     "genero":"rock",
@@ -1597,8 +1785,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/pink floyd.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Pink Floyd",
     "album":"Dark side of the moon",
     "genero":"rock",
@@ -1607,8 +1796,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/pink floyd.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Pink Floyd",
     "album":"Dark side of the moon",
     "genero":"rock",
@@ -1617,8 +1807,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/pink floyd.jpg",
     "tipo_audio":"musica",
-    "calificacion":2
-   },
+    "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1627,8 +1818,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1637,8 +1829,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1647,8 +1840,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1657,8 +1851,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1667,8 +1862,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1677,8 +1873,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1687,8 +1884,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":2
-   },
+    "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1697,8 +1895,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Red Hot Chili Peppers",
     "album":"Californication",
     "genero":"rock",
@@ -1707,8 +1906,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/red_hot_chili_peppers.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Rodrigo",
     "album":"Lo mejor del amor",
     "genero":"cumbia",
@@ -1717,8 +1917,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/rodrigo.jpg",
     "tipo_audio":"musica",
-    "calificacion":2
-   },
+    "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Rodrigo",
     "album":"Lo mejor del amor",
     "genero":"cumbia",
@@ -1727,8 +1928,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/rodrigo.jpg",
     "tipo_audio":"musica",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Rodrigo",
     "album":"Lo mejor del amor",
     "genero":"cumbia",
@@ -1737,8 +1939,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/rodrigo.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Rodrigo",
     "album":"Lo mejor del amor",
     "genero":"cumbia",
@@ -1747,8 +1950,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/rodrigo.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Rodrigo",
     "album":"Lo mejor del amor",
     "genero":"cumbia",
@@ -1757,8 +1961,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/rodrigo.jpg",
     "tipo_audio":"musica",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Rodrigo",
     "album":"Lo mejor del amor",
     "genero":"cumbia",
@@ -1767,8 +1972,9 @@ let audios=[
     "duracion":489,
     "imagen":"../img/Card/Artistas_Song/rodrigo.jpg",
     "tipo_audio":"musica",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"La venganza será terrible",
     "album":"",
     "genero":"",
@@ -1777,8 +1983,9 @@ let audios=[
     "duracion":1500,
     "imagen":"../img/Card/Podcast/lavenganza.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"La venganza será terrible",
     "album":"",
     "genero":"",
@@ -1787,8 +1994,9 @@ let audios=[
     "duracion":1400,
     "imagen":"../img/Card/Podcast/lavenganza.jpg",
     "tipo_audio":"podcast",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"La venganza será terrible",
     "album":"",
     "genero":"",
@@ -1797,8 +2005,9 @@ let audios=[
     "duracion":1500,
     "imagen":"../img/Card/Podcast/lavenganza.jpg",
     "tipo_audio":"podcast",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"La venganza será terrible",
     "album":"",
     "genero":"",
@@ -1807,8 +2016,9 @@ let audios=[
     "duracion":1500,
     "imagen":"../img/Card/Podcast/lavenganza.jpg",
     "tipo_audio":"podcast",
-    "calificacion":2
-   },
+    "calificacion":2,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"coding train",
     "album":"",
     "genero":"",
@@ -1817,8 +2027,9 @@ let audios=[
     "duracion":1200,
     "imagen":"../img/Card/Podcast/codingtrain.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"coding train",
     "album":"",
     "genero":"",
@@ -1827,8 +2038,9 @@ let audios=[
     "duracion":1200,
     "imagen":"../img/Card/Podcast/codingtrain.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"coding train",
     "album":"",
     "genero":"",
@@ -1837,8 +2049,9 @@ let audios=[
     "duracion":1200,
     "imagen":"../img/Card/Podcast/codingtrain.jpg",
     "tipo_audio":"podcast",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Fútbol para todos",
     "album":"",
     "genero":"",
@@ -1847,8 +2060,9 @@ let audios=[
     "duracion":1300,
     "imagen":"../img/Card/Podcast/futbol.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Fútbol para todos",
     "album":"",
     "genero":"",
@@ -1857,8 +2071,9 @@ let audios=[
     "duracion":1300,
     "imagen":"../img/Card/Podcast/futbol.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Fútbol para todos",
     "album":"",
     "genero":"",
@@ -1867,8 +2082,9 @@ let audios=[
     "duracion":1300,
     "imagen":"../img/Card/Podcast/futbol.jpg",
     "tipo_audio":"podcast",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Hacking",
     "album":"",
     "genero":"",
@@ -1877,8 +2093,9 @@ let audios=[
     "duracion":1300,
     "imagen":"../img/Card/Podcast/hacking.jpg",
     "tipo_audio":"podcast",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Hacking",
     "album":"",
     "genero":"",
@@ -1887,8 +2104,9 @@ let audios=[
     "duracion":1300,
     "imagen":"../img/Card/Podcast/hacking.jpg",
     "tipo_audio":"podcast",
-    "calificacion":5
-   },
+    "calificacion":5,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Illuminati for dummies",
     "album":"",
     "genero":"",
@@ -1897,8 +2115,9 @@ let audios=[
     "duracion":1300,
     "imagen":"../img/Card/Podcast/illuminati.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Illuminati for dummies",
     "album":"",
     "genero":"",
@@ -1907,8 +2126,9 @@ let audios=[
     "duracion":1300,
     "imagen":"../img/Card/Podcast/illuminati.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   },
+    "calificacion":4,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Victor Hugo Morales",
     "album":"",
     "genero":"",
@@ -1917,8 +2137,9 @@ let audios=[
     "duracion":1200,
     "imagen":"../img/Card/Podcast/victor_hugo.jpg",
     "tipo_audio":"podcast",
-    "calificacion":3
-   },
+    "calificacion":3,
+     "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+    },
    {"artista":"Victor Hugo Morales",
     "album":"",
     "genero":"",
@@ -1927,8 +2148,7 @@ let audios=[
     "duracion":1450,
     "imagen":"../img/Card/Podcast/victor_hugo.jpg",
     "tipo_audio":"podcast",
-    "calificacion":4
-   }
+    "calificacion":4,
+    "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
+}
 ];
-
-
