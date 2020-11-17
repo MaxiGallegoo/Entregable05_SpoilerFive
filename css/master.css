@@ -50,6 +50,10 @@
   box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.4);
 }
 
+.ef-solid_underline {
+  border-bottom: solid 2px;
+}
+
 /* Fin clases para aplicar efectos */
 
 /*  */
@@ -82,6 +86,9 @@ body {
   color: var(--Main_Darker);
   background-color: var(--Main_Lightest);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 input {
@@ -168,7 +175,7 @@ img {
   nav div {
     position: relative;
     border-radius: 75px;
-    border-bottom: 2px var(--Main_Darker);
+    border-bottom: var(--Main_Darker);
     width: 65%;
     background-color: var(--Main_Light_2);
     display: flex;
@@ -283,8 +290,7 @@ img {
   /* Fin Controller Player */
   /*  */
   /* Inicio Canción Actual*/
-  
-  #cancion_actual{
+  #cancion_actual {
     z-index: 1;
     /* position: absolute; */
     bottom: 50px;
@@ -295,31 +301,31 @@ img {
     align-items: center;
     justify-content: space-between;
   }
-  #cancion_actual div{
+  #cancion_actual div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  #cancion_actual div p{
+  #cancion_actual div p {
     font-size: var(--Main_Regular);
     text-align: center;
     margin: 0;
     width: 58.3942vw;
   }
-  #cancion_actual div p:last-child{
+  #cancion_actual div p:last-child {
     font-size: var(--Main_Mobile_SongBar_Autor);
     margin-bottom: 2px;
   }
-  #cancion_actual button{
+  #cancion_actual button {
     width: 30px;
     margin: 6px 2px;
   }
-  #cancion_actual button:first-child{
+  #cancion_actual button:first-child {
     width: 30px;
     margin-left: 21px;
   }
-  #cancion_actual button:last-child{
+  #cancion_actual button:last-child {
     margin-right: 21px;
   }
   /* Fin Canción Actual*/
@@ -330,3 +336,58 @@ img {
 }
 
 /* Fin Modo Mobile */
+
+/* Modo Desktop */
+
+@media only screen and (min-width:701px) {
+  .only_mobile {
+    display: none;
+  }
+  nav {
+    position: relative;
+    min-height: 11.3281vh;
+    min-height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  nav button:first-child {
+    /* justify-self: flex-start; */
+    position: absolute;
+    /* top: 9px; */
+    left: 43px;
+    width: 69px;
+  }
+  nav button:last-child {
+    margin-left: 43px;
+    width: 55px;
+  }
+  nav div {
+    border-radius: 75px;
+    border: var(--Main_Darker);
+    background-color: var(--Main_Light_2);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 597px;
+    max-width: 62vw;
+    height: 65px;
+
+  }
+  nav div:focus-within {
+    background-color: var(--Main_Lightest);
+  }
+  nav div img {
+    max-width: 39px;
+    padding-right: 8px;
+  }
+  nav div input {
+    font-size: var(--Main_Input);
+    padding: 15px;
+    padding-right: 59px;
+    width: 543px;
+    height: 65px;
+  }
+}
+
+/* Fin Modo Desktop */
