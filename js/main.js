@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const BUTTON_TOGGLED_TEXT = "(js_toggled)";
     /* Fin Constantes */
 
-    
 
+    /* Envent Listeners para "togglear" botones */
     document.querySelectorAll(".js-togglable_button").forEach(button => {
         button.addEventListener("click", () => {
             let image = button.querySelector("img");
