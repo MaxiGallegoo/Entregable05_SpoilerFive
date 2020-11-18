@@ -11,6 +11,8 @@
 <body>
     <!-- Usar clases "only_mobile" y "only_desktop" cuando el elemento funciona SOLO para un modo.
         Estas clases se esconden con display:none en el formato opuesto -->
+
+    <!-- NavBar Mobile -->
     <nav class="only_mobile ef-drop_shadow_downwards">
         <!-- Button  back -->
         <button>
@@ -55,6 +57,7 @@
         </div>
     </nav>
 
+    <!-- NavBar Desktop -->
     <nav class="only_desktop ef-drop_shadow_downwards">
         <!-- Logo para ir a Home -->
         <button>
@@ -72,9 +75,10 @@
 
     </nav>
 
-    <div id="player" class="ef-drop_shadow_upwards">
+    <!-- Player Mobile -->
+    <div class="player only_mobile ef-drop_shadow_upwards">
 
-        <div id="cancion_actual">
+        <div class="cancion_actual">
             <button>
                 <img src="../img/Iconos/Base/botones_armados/Button_Rate.svg" alt="">
             </button>
@@ -89,7 +93,7 @@
             </button>
         </div>
 
-        <div id="botones_reproducir">
+        <div class="botones_reproducir">
             <button class="boton_lateral">
                 <img src="../img/Iconos/Base/botones_armados/Button_Shuffle.svg" alt="">
             </button>
@@ -109,7 +113,35 @@
 
     </div>
 
+    <!-- Player Desktop -->
+    <div class="player only_desktop ef-drop_shadow_upwards">
+        <div class="seccion_lateral cancion_actual">
+            <img class="imagen_cancion" src="../img/Card/Artistas_Song/abel_pintos.jpg" alt="">
+            <div class="rate_bar">
+                <img src="../img/Iconos/Base/Estrella.svg" alt="">
+                <img src="../img/Iconos/Base/Estrella.svg" alt="">
+                <img src="../img/Iconos/Base/Estrella.svg" alt="">
+                <img src="../img/Iconos/Base/Estrella.svg" alt="">
+                <img src="../img/Iconos/Base/Estrella.svg" alt="">
+            </div>
+            <button>
+                <img src="../img/Iconos/Base/botones_armados/Button_Add.svg" alt="">
+            </button>
+            <div class="text_current_song">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <p>[Autor]</p>
+            </div>
+        </div>
+        <div class="botones_reproducir">
+
+        </div>
+        <div class="seccion_lateral">
+
+        </div>
+    </div>
+
 </body>
 <!-- <script src="../js/musica_podcasts.js"></script>
 <script src="../js/playlists.js"></script> -->
+
 </html>
