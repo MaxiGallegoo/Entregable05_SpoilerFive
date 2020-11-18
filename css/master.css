@@ -315,10 +315,13 @@ img {
     justify-content: space-between;
   }
   .player.only_mobile .cancion_actual div {
+
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
   }
   .player .cancion_actual div p {
     font-size: var(--Main_Regular);
@@ -404,6 +407,8 @@ img {
   /* Fin NavBar */
   /*  */
   /* Inicio Player */
+  /*  */
+  /* Inicio Canción Actual */
   .player.only_desktop {
     background-color: var(--Main_Lighter);
     position: fixed;
@@ -414,12 +419,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-  }
-  .player .botones_reproducir {
-    min-width: 300px;
-    width: 49.5%;
-    height: 110px;
-    /* background-color: red; */
   }
   .player .seccion_lateral {
     position: relative;
@@ -463,6 +462,39 @@ img {
     font-size: var(--Main_Mobile_SongBar_Autor);
     margin: 0;
   }
+  /* Fin Canción Actual */
+  /*  */
+  /* Inicio Controller */
+  
+  .player .botones_reproducir {
+    min-width: 300px;
+    width: 49.5%;
+    height: 110px;
+    /* background-color: red; */
+  }
+  .player.only_desktop .botones_reproducir {
+    position: relative;
+    height: 110px;
+    /* min-height: 12.1655vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .player.only_desktop .botones_reproducir button.boton_central {
+    width: 60px;
+    margin: auto 2.77%;
+  }
+  .player.only_desktop .botones_reproducir button.boton_pasar_cancion {
+    width: 55px;
+    margin: auto 2.18%;
+  }
+  .player.only_desktop .botones_reproducir button.boton_lateral {
+    width: 53px;
+    margin: auto 11.37%;
+  }
+  /* Fin Controller */
+  /*  */
+  /* Fin Player */
 }
 
 /* Fin Modo Desktop */
