@@ -115,6 +115,10 @@ nav {
   left: 0;
 }
 
+progress {
+  background-color: inherit;
+}   
+
 #player {
   background-color: var(--Main_Lighter);
 }
@@ -474,19 +478,57 @@ img {
   /*  */
   /* Inicio Controller */
   
-  .player .botones_reproducir {
+  .player.only_desktop .panel_central {
     min-width: 250px;
     width: 47.5%;
     height: 82px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     /* background-color: red; */
+  }
+  /* Inicio progress bar canción */
+  .player.only_desktop .progress_bar_cancion{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .player.only_desktop .panel_central progress{
+    width: 82%;
+    margin: 6px 0;
+  }
+  .player .panel_central progress{
+    height: 12px;
+    border-radius: 5000px;
+  }
+  .player .panel_central progress::-webkit-progress-bar{
+    background-color: var(--Main_Lighter);
+    border:solid var(--Main_Darker) 1px;
+    border-radius: 5000px;
+  }
+  
+  .player.only_desktop .panel_central progress::-webkit-progress-value {
+    border-radius: 50px;
+    z-index: 1;
+    margin-top: -1px;
+    margin-left: -1px;
+    border: 1px solid var(--Main_Dark);
+    height: 12px;
+    background:var(--Main_Dark);
   }
   .player.only_desktop .botones_reproducir {
     position: relative;
-    height: 82px;
+    height: 66px;
     /* min-height: 12.1655vw; */
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  /* Fin progress bar canción */
+  /*  */
+  /* Inicio botones reproducir */
+  .player.only_desktop .botones_reproducir{
+    width: 100%;
   }
   .player.only_desktop .botones_reproducir button.boton_central {
     width: 45px;
@@ -505,7 +547,53 @@ img {
   .player.only_desktop .botones_reproducir button.boton_lateral:last-child{
     margin-left: 11.37%;
   }
+  /* Fin botones reproducir */
+  /*  */
   /* Fin Controller */
+  /*  */
+  /* Inicio opciones secundarias */
+  .player.only_desktop .opciones_secundarias{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .player.only_desktop .modo{
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 40%;
+    max-width: 35px;
+    padding: 10px 0;
+  }
+  .player.only_desktop .volumen{
+    display: flex;
+    align-items: center;
+  }
+  .player .volumen progress{
+    /* border: 1px solid var(--Main_Darker); */
+    height: 8px;
+    border-radius: 5000px;
+    /* overflow: hidden; */
+  }
+  .player.only_desktop .volumen progress::-webkit-progress-bar{
+    background-color: var(--Main_Lighter);
+    border:solid var(--Main_Darker) 1px;
+    border-radius: 5000px;
+  }
+  
+  .player.only_desktop .volumen progress::-webkit-progress-value {
+    border-radius: 50px;
+    z-index: 1;
+    margin-top: -1px;
+    margin-left: -1px;
+    border: 1px solid var(--Main_Dark);
+    height: 8px;
+    background:var(--Main_Dark);
+  }
+  .player.only_desktop .modo *{
+    margin: 1px;
+  }
+
+  /* Fin opciones secundarias */
   /*  */
   /* Fin Player */
 }

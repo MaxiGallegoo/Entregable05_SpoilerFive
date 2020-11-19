@@ -115,6 +115,7 @@
 
     <!-- Player Desktop -->
     <div class="player only_desktop ef-drop_shadow_upwards">
+        <!-- Info, opción de guardar y valoración de la canción actual -->
         <div class="seccion_lateral cancion_actual">
             <img class="imagen_cancion" src="../img/Card/Artistas_Song/abel_pintos.jpg" alt="">
             <div class="text_current_song">
@@ -135,25 +136,49 @@
                 <p>[autor_cancion]</p>
             </div>
         </div>
-        <div class="botones_reproducir">
-            <button class="boton_lateral js-togglable_button">
-                <img src="../img/Iconos/Base/botones_armados/Button_Shuffle.svg" alt="">
-            </button>
-            <button class="boton_pasar_cancion">
-                <img src="../img/Iconos/Base/botones_armados/Button_Prev.svg" alt="">
-            </button>
-            <button class="boton_central js-togglable_button">
-                <img src="../img/Iconos/Base/botones_armados/Button_Play.svg" alt="">
-            </button>
-            <button class="boton_pasar_cancion">
-                <img src="../img/Iconos/Base/botones_armados/Button_Next.svg" alt="">
-            </button>
-            <button class="boton_lateral js-togglable_button">
-                <img src="../img/Iconos/Base/botones_armados/Button_Repeat.svg" alt="">
-            </button>
-        </div>
-        <div class="seccion_lateral">
 
+        <div class="panel_central">
+            <!-- Barra de progreso de la canción -->
+            <div class="progress_bar_cancion">
+
+                <progress value="90" max="100"></progress>
+            </div>
+
+            <!-- Botones Básicos de control de reproducción -->
+            <div class="botones_reproducir">
+
+
+                <button class="boton_lateral js-togglable_button">
+                    <img src="../img/Iconos/Base/botones_armados/Button_Shuffle.svg" alt="">
+                </button>
+                <button class="boton_pasar_cancion">
+                    <img src="../img/Iconos/Base/botones_armados/Button_Prev.svg" alt="">
+                </button>
+                <button class="boton_central js-togglable_button">
+                    <img src="../img/Iconos/Base/botones_armados/Button_Play.svg" alt="">
+                </button>
+                <button class="boton_pasar_cancion">
+                    <img src="../img/Iconos/Base/botones_armados/Button_Next.svg" alt="">
+                </button>
+                <button class="boton_lateral js-togglable_button">
+                    <img src="../img/Iconos/Base/botones_armados/Button_Repeat.svg" alt="">
+                </button>
+            </div>
+        </div>
+        <div class="seccion_lateral opciones_secundarias">
+            <!-- Selección de Modo actual -->
+            <div class="modo">
+                <p>Modo</p>
+                <img src="../img/Iconos/Modo/escoba.svg" alt="">
+            </div>
+            <!-- Botón y barra de volumen -->
+            <div class="volumen">
+                <button class="js-togglable_button">
+                    <img src="../img/Iconos/Base/botones_armados/Button_Volume.svg" alt="">
+                </button>
+                <!-- Barra de Progreso controlada desde JS -->
+                <progress id="js-sound_bar" draggable="false" value="50" max="100"></progress>
+            </div>
         </div>
     </div>
 
