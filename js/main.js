@@ -22,5 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    loadPage("../html/lista_reproduccion.html",document.querySelector("#js-contenido"),cargarTabla);
     
+    function cargarTabla(){
+        let tabla=document.querySelector("#cuerpo_tabla");
+        listas[0].canciones.forEach(element => {
+            let cancion=audios[element];
+            let fila="<tr>"+"<td>"+cancion.nombre_cancion+"</td>"+"<td>"+cancion.artista+"</td>"+"<td>"+cancion.duracion+"</td>"+"<td>"+cancion.calificacion+"</td>"+"</tr>";
+            tabla.innerHTML+=fila
+        });
+    }
+
+    async function fetchHtmlAsText(url) {
+        return await (await fetch(url)).text();
+    }
+    
+    async function loadPage(url, container, callback=null) {
+        container.innerHTML = await fetchHtmlAsText(url);
+        if (callback)
+            callback();
+    }
+
 });

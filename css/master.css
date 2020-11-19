@@ -85,6 +85,10 @@
 
 /* Selectores generales (Ignorando si es Mobile o Desktop) */
 
+.seccion-central div{
+  overflow-y: scroll;
+}
+
 body {
   color: var(--Main_Darker);
   background-color: var(--Main_Lightest);
@@ -168,6 +172,17 @@ img {
 
 .rate_bar img {
   width: 12px;
+}
+
+.seccion-central{
+  background-color: var(--Main_Lightest);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width:100%;
+}
+.seccion-central, .seccion-central div{
+  height: calc(100vh - 157px);
 }
 
 /* Fin de selectores generales */
@@ -355,13 +370,20 @@ img {
   /* Fin Player */
   /*  */
   /* Fin Basic Layout */
+  .seccion-central{
+    margin: 0;
+    width: 100%;
+  }
+  
 }
+
 
 /* Fin Modo Mobile */
 
 /* Modo Desktop */
 
 @media only screen and (min-width:721px) and (min-height:481px) {
+
   .only_mobile {
     display: none;
   }
@@ -612,6 +634,16 @@ img {
   /* Fin opciones secundarias */
   /*  */
   /* Fin Player */
+.seccion-central #js-contenido{
+    width: 71.5%;
+    margin: 0;
+    float: left;
+  }
+  .fav_bar{
+    margin: 0;
+    width:26%;
+    float: left;
+  }
 }
 
 /* Fin Modo Desktop */
