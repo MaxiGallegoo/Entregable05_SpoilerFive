@@ -371,6 +371,7 @@ img {
   }
   /* Track (Barra de total de la página) */
   ::-webkit-scrollbar-track {
+    border-radius: 10px;
     background: var(--Scrollbar_background);
   }
   /* Handle (Barra de la parte de la página mostrada ahora) */
@@ -383,6 +384,7 @@ img {
     background: var(--Scrollbar_hover);
   }
   /* Fin Scrollbar */
+  /*  */
   /* Inicio NavBar */
   nav.only_desktop {
     position: relative;
@@ -607,11 +609,15 @@ img {
     background: var(--Main_Dark);
   }
   .player.only_desktop .modo * {
-    margin: 1px;
+    margin: 1px 6px;
   }
   /* Fin opciones secundarias */
   /*  */
   /* Fin Player */
+  /*  */
+  /* Inicio FavBar */
+  
+  /* Fin FavBar */
 }
 
 /* Fin Modo Desktop */
