@@ -144,9 +144,13 @@ input.slider::-webkit-slider-thumb{
   height: 12px;
   border: solid 2px var(--Main_Dark) ;
   border-radius: 10px;
-  background-color: var(--Main_Light_2);
+  background-color: var(--Main_Dark);
   box-shadow: -500006px 0 0 500000px  var(--Main_Dark);
-
+  transition: background-color .1s ease-out;
+}
+input.slider:hover::-webkit-slider-thumb{
+  background-color: var(--Main_Light_2);
+  transition: background-color .1s ease-in;
 }
 
 #player {
@@ -171,8 +175,6 @@ button {
   background-color: rgba(0, 0, 0, 0);
   transform: none;
   outline: none;
-  opacity: .9;
-  transition: transform .1s linear, opacity .2s ease-out;
 }
 
 button:active {
@@ -181,11 +183,6 @@ button:active {
   transform: scale(.95);
   transition: transform .1s linear, opacity .2s ease-in;
 }
-button:hover{
-  opacity: 1;
-  transition: transform .1s linear, opacity .2s ease-in;
-}
-
 img {
   width: 100%;
 }
@@ -455,6 +452,15 @@ img {
   .only_mobile {
     display: none;
   }
+  button{
+    opacity: .9;
+    transition: transform .1s linear, opacity .2s ease-out;
+  }
+  button:hover{
+    opacity: 1;
+    transition: transform .1s linear, opacity .2s ease-in;
+  }
+  
   /*  */
   /* Inicio NavBar */
   nav.only_desktop {
