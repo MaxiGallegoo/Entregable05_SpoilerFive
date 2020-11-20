@@ -85,10 +85,6 @@
 
 /* Selectores generales (Ignorando si es Mobile o Desktop) */
 
-.seccion-central div{
-  overflow-y: scroll;
-}
-
 body {
   color: var(--Main_Darker);
   background-color: var(--Main_Lightest);
@@ -113,6 +109,7 @@ input:focus {
 }
 
 nav {
+  z-index: 3;
   background-color: var(--Main_Lighter);
   margin: 0;
   padding: 5px 3.4%;
@@ -122,12 +119,39 @@ nav {
   left: 0;
 }
 
-progress {
-  background-color: inherit;
+input.slider {
+  -webkit-appearance: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: var(--Main_Lighter);
+  border-radius: 500px;
+  /* border: solid 1px var(--Main_Darker); */
+
+  box-shadow: inset 0 0 0 1px var(--Main_Darker);
+  width: 100%;
+  height: 12px;
+  opacity: .9;
+  transition: opacity .4s ease-out;
+}
+input.slider:hover{
+  opacity: 1;
+  transition: opacity .2s ease-in;
+
+}
+input.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border: solid 2px var(--Main_Dark) ;
+  border-radius: 10px;
+  background-color: var(--Main_Light_2);
+  box-shadow: -500006px 0 0 500000px  var(--Main_Dark);
+
 }
 
 #player {
   background-color: var(--Main_Lighter);
+  z-index: 2;
 }
 
 a {
@@ -147,14 +171,19 @@ button {
   background-color: rgba(0, 0, 0, 0);
   transform: none;
   outline: none;
-  transition: transform .1s linear;
+  opacity: .9;
+  transition: transform .1s linear, opacity .2s ease-out;
 }
 
 button:active {
   border: none;
   outline: none;
   transform: scale(.95);
-  transition: transform .1s linear;
+  transition: transform .1s linear, opacity .2s ease-in;
+}
+button:hover{
+  opacity: 1;
+  transition: transform .1s linear, opacity .2s ease-in;
 }
 
 img {
@@ -174,16 +203,54 @@ img {
   width: 12px;
 }
 
-.seccion-central{
+.seccion-central {
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
   background-color: var(--Main_Lightest);
+  /* background-color: red; */
   position: fixed;
-  top: 70px;
   left: 0;
-  width:100%;
+  width: calc(100% - 16px);
 }
-.seccion-central, .seccion-central div{
-  height: calc(100vh - 157px);
+
+.seccion-central div {
+  overflow-y: scroll;
+  z-index: 1;
+  /* background-color: blue; */
 }
+
+.seccion-central, .seccion-central div {
+  height: calc(100vh - 147px);
+}
+
+/* Inicio Scrollbar (en toda la versión desktop) */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track (Barra de total de la página) */
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: var(--Scrollbar_background);
+}
+
+/* Handle (Barra de la parte de la página mostrada ahora) */
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--Scrollbar_regular);
+}
+
+/* Handle en hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--Scrollbar_hover);
+}
+
+/* Fin Scrollbar */
 
 /* Fin de selectores generales */
 
@@ -198,7 +265,6 @@ img {
   /* Inicio Basic Layout */
   /* Inicio NavBar */
   nav.only_mobile {
-    z-index: 3;
     display: flex;
     /* grid-template-columns: 92.2% 7.8%; */
     justify-content: space-around;
@@ -370,41 +436,26 @@ img {
   /* Fin Player */
   /*  */
   /* Fin Basic Layout */
-  .seccion-central{
+  .seccion-central {
+    top: 55px;
     margin: 0;
     width: 100%;
   }
-  
+  .contenido_cargado_dinamicamente {
+    width: calc(100% - 16px);
+    margin: 0;
+  }
 }
-
 
 /* Fin Modo Mobile */
 
 /* Modo Desktop */
 
 @media only screen and (min-width:721px) and (min-height:481px) {
-
   .only_mobile {
     display: none;
   }
-  /* Inicio Scrollbar (en toda la versión desktop) */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  /* Track (Barra de total de la página) */
-  ::-webkit-scrollbar-track {
-    background: var(--Scrollbar_background);
-  }
-  /* Handle (Barra de la parte de la página mostrada ahora) */
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: var(--Scrollbar_regular);
-  }
-  /* Handle en hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--Scrollbar_hover);
-  }
-  /* Fin Scrollbar */
+  /*  */
   /* Inicio NavBar */
   nav.only_desktop {
     position: relative;
@@ -530,6 +581,7 @@ img {
   }
   /* Inicio progress bar canción */
   .player.only_desktop .progress_bar_cancion {
+    padding-top: 6px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -600,13 +652,15 @@ img {
   .player.only_desktop .modo {
     /* justify-content: center; */
     /* align-items: center; */
-    width: 40%;
+    width: 35%;
     max-width: 35px;
+    margin: 14px;
     padding: 10px 0;
   }
   .player.only_desktop .volumen {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .player .volumen progress {
     /* border: 1px solid var(--Main_Darker); */
@@ -629,21 +683,25 @@ img {
     background: var(--Main_Dark);
   }
   .player.only_desktop .modo * {
-    margin: 1px;
+    margin: 1px 6px;
   }
   /* Fin opciones secundarias */
   /*  */
   /* Fin Player */
-.seccion-central #js-contenido{
-    width: 71.5%;
-    margin: 0;
-    float: left;
+  /*  */
+  /* Inicio Sección central */
+  .seccion-central {
+    top: 65px;
   }
-  .fav_bar{
+  .contenido_cargado_dinamicamente {
+    width: 71%;
     margin: 0;
-    width:26%;
-    float: left;
   }
+  .fav_bar {
+    margin: 0;
+    width: 27.7%;
+  }
+  /* Fin Sección central */
 }
 
 /* Fin Modo Desktop */

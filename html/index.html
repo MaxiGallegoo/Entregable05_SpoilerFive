@@ -80,7 +80,7 @@
         <div class="only_desktop fav_bar">
 
         </div>
-        <div id="js-contenido">
+        <div class="contenido_cargado_dinamicamente" id="js-contenido">
             
         </div>
     </div>
@@ -150,8 +150,8 @@
         <div class="panel_central">
             <!-- Barra de progreso de la canción -->
             <div class="progress_bar_cancion">
-
-                <progress value="90" max="100"></progress>
+                
+                <input class="slider" type="range" min="1" max="100" value="50">
             </div>
 
             <!-- Botones Básicos de control de reproducción -->
@@ -186,8 +186,9 @@
                 <button class="js-togglable_button">
                     <img src="../img/Iconos/Base/botones_armados/Button_Volume.svg" alt="">
                 </button>
-                <!-- Barra de Progreso controlada desde JS -->
-                <progress id="js-sound_bar" draggable="false" value="50" max="100"></progress>
+                <!-- Slider para ajustar volumen (Sin funcionalidad) -->                
+                <input class="slider" type="range" min="1" max="100" value="50">
+
             </div>
         </div>
     </div>
