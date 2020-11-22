@@ -569,6 +569,11 @@ img {
     align-items: flex-start;
     white-space: nowrap;
   }
+
+  .progress_bar_cancion p{
+    font-size: var(--Main_Mobile_SongBar_Autor);
+  }
+
   .cancion_actual .text_current_song p {
     font-size: var(--Main_Mobile_SongBar_Autor);
     margin: 0;
