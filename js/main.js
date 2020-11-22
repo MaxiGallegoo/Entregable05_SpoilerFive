@@ -35,21 +35,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //LISTENERS
 
-
     player.reproducir(audios[cancionActual]);
-    //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play
-    loadPage("../html/lista_reproduccion.html",document.querySelector("#js-contenido"),function(){cargarTabla(listas[0])});
+    //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play(pausado para que no moleste)
+    
+    cargarFavBar();
+    function cargarFavBar(){
+        let divFavoritos=document.querySelector("#js-fav-Bar-contenido");
+        let i=0;
+        listas.forEach(element => {
+            let fila=document.createElement("p");
+            let nom=document.createElement("p");
+                nom.style.fontWeight="bold";
+                nom.innerHTML=element.nombre;
+            fila.appendChild(nom);
+            let valora=document.createElement("p");
+                valora.innerHTML="Valoracion: "+element.valoracion;
+            fila.appendChild(valora);
+            let cant_canciones=document.createElement("p");
+                cant_canciones.innerHTML="Cant. canciones: "+element.canciones.length;
+            fila.appendChild(cant_canciones);
+            fila.addEventListener("click", function(){let param1="../html/lista_reproduccion.html";
+                                                      let param2=document.querySelector("#js-contenido");
+                                                      let param3=function(){cargarTabla(element.canciones)};
+                                                      loadPage(param1,param2,param3)});
+            i++;
+            divFavoritos.appendChild(fila);
+        });
+    }
+
     
     function cargarTabla(lista){
         let tabla=document.querySelector("#cuerpo_tabla");
-        lista.canciones.forEach(element => {
+        lista.forEach(element => {
             let cancion=audios[element];
             let fila=document.createElement("tr");
             let nom_cancion=document.createElement("td");
                 let anchorCancion=document.createElement("a");
                     anchorCancion.innerHTML=cancion.nombre_cancion;
                     anchorCancion.href="#";
-                    anchorCancion.addEventListener("click", function(){player.reproducir(audios[element]);cancionActual=element;});
+                    anchorCancion.addEventListener("click", function(){player.reproducir(
+                            audios[element]);
+                            cancionActual=element;});
                 nom_cancion.appendChild(anchorCancion);
             fila.appendChild(nom_cancion);
             let autor=document.createElement("td");
