@@ -38,14 +38,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     player.reproducir(audios[cancionActual]);
     //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play
-    loadPage("../html/lista_reproduccion.html",document.querySelector("#js-contenido"),cargarTabla);
+    loadPage("../html/lista_reproduccion.html",document.querySelector("#js-contenido"),function(){cargarTabla(listas[0])});
     
-    function cargarTabla(){
+    function cargarTabla(lista){
         let tabla=document.querySelector("#cuerpo_tabla");
-        listas[0].canciones.forEach(element => {
+        lista.canciones.forEach(element => {
             let cancion=audios[element];
-            let fila="<tr>"+"<td>"+cancion.nombre_cancion+"</td>"+"<td>"+cancion.artista+"</td>"+"<td>"+cancion.duracion+"</td>"+"<td>"+cancion.calificacion+"</td>"+"</tr>";
-            tabla.innerHTML+=fila
+            let fila=document.createElement("tr");
+            let nom_cancion=document.createElement("td");
+                let anchorCancion=document.createElement("a");
+                    anchorCancion.innerHTML=cancion.nombre_cancion;
+                    anchorCancion.href="#";
+                    anchorCancion.addEventListener("click", function(){player.reproducir(audios[element]);cancionActual=element;});
+                nom_cancion.appendChild(anchorCancion);
+            fila.appendChild(nom_cancion);
+            let autor=document.createElement("td");
+                autor.innerHTML=cancion.artista;
+            fila.appendChild(autor);
+            let duracion=document.createElement("td");
+                let tiempo={
+                    min:Math.floor(cancion.duracion/60),
+                    seg:cancion.duracion%60
+                }
+                if (tiempo.seg<10)
+                    tiempo.seg="0"+tiempo.seg;
+                duracion.innerHTML=tiempo.min+":"+tiempo.seg;
+            fila.appendChild(duracion);
+            let calif=document.createElement("td");
+                calif.innerHTML=cancion.calificacion;
+            fila.appendChild(calif);
+            tabla.appendChild(fila);
         });
     }
 
