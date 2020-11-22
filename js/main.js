@@ -6,22 +6,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const BUTTON_TOGGLED_TEXT = "(js_toggled)";
     /* Fin Constantes */
 
+    /*globales*/
+    let player = new Player();
+    let cancionActual=Math.floor(Math.random()*audios.length);
+    /*Fin globales*/
 
-    /* Envent Listeners para "togglear" botones */
-    document.querySelectorAll(".js-togglable_button").forEach(button => {
-        button.addEventListener("click", () => {
-            let image = button.querySelector("img");
-            let source = image.src;
-            if (source && source.includes(BUTTON_TOGGLED_TEXT)) {
-                source = source.replace(BUTTON_TOGGLED_TEXT, "");
-            } else {
-                let added_toggled = BUTTON_TOGGLED_TEXT + ".svg";
-                source = source.replace(".svg", added_toggled);
-            }
-            image.src = source;
+    //LISTENERS
+        /* Envent Listeners para "togglear" botones */
+        document.querySelectorAll(".js-togglable_button").forEach(button => {
+            button.addEventListener("click", () => {
+                let image = button.querySelector("img");
+                let source = image.src;
+                if (source && source.includes(BUTTON_TOGGLED_TEXT)) {
+                    source = source.replace(BUTTON_TOGGLED_TEXT, "");
+                } else {
+                    let added_toggled = BUTTON_TOGGLED_TEXT + ".svg";
+                    source = source.replace(".svg", added_toggled);
+                }
+                image.src = source;
+            });
         });
-    });
+        document.querySelectorAll(".boton_pasar_cancion").forEach(button=>{
+            button.addEventListener("click", ()=> {
+                cancionActual=Math.floor(Math.random()*audios.length);
+                player.reproducir(audios[cancionActual]);
+            });
+        });
 
+    //LISTENERS
+
+
+    player.reproducir(audios[cancionActual]);
+    //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play
     loadPage("../html/lista_reproduccion.html",document.querySelector("#js-contenido"),cargarTabla);
     
     function cargarTabla(){
@@ -42,5 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (callback)
             callback();
     }
+
 
 });
