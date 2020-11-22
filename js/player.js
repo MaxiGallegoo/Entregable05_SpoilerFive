@@ -43,7 +43,7 @@ class Player{
         if (t2.min<10)
             t2.min="0"+t2.min;
         if (t2.seg<10)
-        t2.seg="0"+t2.seg;
+            t2.seg="0"+t2.seg;
         e.tiempo1.innerHTML=t2.min +":"+ t2.seg;
     }
 
