@@ -42,30 +42,69 @@ document.addEventListener("DOMContentLoaded", () => {
         let divFavoritos = document.querySelector("#js-fav-Bar-contenido");
         let i = 0;
         listas.forEach(element => {
-            let fila = document.createElement("p");
+
+            let fila = document.createElement("div");
             let nom = document.createElement("p");
-            nom.style.fontWeight = "bold";
+            // nom.style.fontWeight = "bold";
             nom.innerHTML = element.nombre;
             fila.appendChild(nom);
+            let image = document.createElement("img");
+            image.src = element.imageURL;
+            fila.appendChild(image);
             let valora = document.createElement("p");
             valora.innerHTML = "Valoracion: " + element.valoracion;
             fila.appendChild(valora);
             let cant_canciones = document.createElement("p");
             cant_canciones.innerHTML = "Cant. canciones: " + element.canciones.length;
             fila.appendChild(cant_canciones);
+            let reprod = document.createElement("p");
+            reprod.innerHTML = transformarReproduccionesATexto(element.cant_reproducciones);
+            fila.appendChild(reprod);
             fila.addEventListener("click", function () {
                 let param1 = "../html/lista_reproduccion.html";
                 let param2 = document.querySelector("#js-contenido");
-                let param3 = function () { cargarTabla(element.canciones) };
+                let param3 = function () { cargarDatosPaginaLista(element) };
                 loadPage(param1, param2, param3)
             });
             i++;
             divFavoritos.appendChild(fila);
         });
     }
+    function transformarReproduccionesATexto(cant_reproducciones) {
+        let final_texto = " reproducciones";
+        if (cant_reproducciones < 1000/* Mil */) {
+            return cant_reproducciones + final_texto;
+        } else if (cant_reproducciones < 1000000/* Millón */) {
+            return (Math.floor(cant_reproducciones / 100) / 10) + "K" + final_texto;
+        } else {
+            return (Math.floor(cant_reproducciones / 100000/* 0.1 Millón */) / 10) + "M" + final_texto;
+        }
+    }
+    function calcularTiempoTotalPlaylist(arreglo_canciones=[]) {
+        let segundos = 0;
+        arreglo_canciones.forEach(cancion=>{
+            segundos+=audios[cancion].duracion;
+        });
+        return segundosToString(segundos);
+    }
+    function segundosToString(segundos){//TESTING.
+        return segundos + " Segundos";
+    }
+    function cargarDatosPaginaLista(lista_reproduccion) {
+        if (!lista_reproduccion) return;
+        cargarTablaDeCancionesParaPaginaPlaylist(lista_reproduccion.canciones);
+        document.querySelector("#js-playlist_card").src = lista_reproduccion.imageURL;
+        let arr_parrafos = document.querySelectorAll(".js-playlist_data");
+        llenarInfoDePaginaPlaylist(arr_parrafos,lista_reproduccion);
+    }
+    function llenarInfoDePaginaPlaylist(parrafos = [], playlist) {
+        parrafos[0].innerHTML = playlist.nombre;
+        parrafos[1].innerHTML = playlist.canciones.length + " Canciones";
+        parrafos[2].innerHTML = transformarReproduccionesATexto(playlist.cant_reproducciones);
+        parrafos[3].innerHTML = calcularTiempoTotalPlaylist(playlist.canciones);
+    }
 
-
-    function cargarTabla(lista) {
+    function cargarTablaDeCancionesParaPaginaPlaylist(lista) {
         let tabla = document.querySelector("#cuerpo_tabla");
         lista.forEach(element => {
             let cancion = audios[element];
@@ -115,6 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // TESTING (Borrar al finalizar)
-    
+
 
 });
