@@ -1090,7 +1090,7 @@ let audios=[
      "album":"Despedazado por mil partes",
      "genero":"rock",
      "año":1996,
-     "nombre_cancion":"Desnudo apra siempre",
+     "nombre_cancion":"Despedazado por mil partes (Desnudo para siempre)",
      "duracion":489,
      "imagen":"../img/Card/Artistas_Song/La_renga.jpg",
      "tipo_audio":"musica",
