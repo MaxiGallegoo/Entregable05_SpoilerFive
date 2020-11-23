@@ -368,19 +368,21 @@ tr td:last-child {
   margin: 0;
   margin-bottom: 3px;
 }
-.playlist_songs tr{
+
+.playlist_songs tr {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.playlist_songs td{
-  padding:2px 0;
+
+.playlist_songs td {
+  padding: 2px 0;
   margin: 0;
   margin-bottom: 2px;
 }
 
 .playlist_songs tr td:nth-child(2) {
-  width: 22%;
+  width: 42%;
   /* background-color: blue; */
 }
 
@@ -398,6 +400,57 @@ tr td:last-child {
 
 /* Fin Playlist */
 
+/* Inicio FavBar */
+
+.fav_bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.fav_bar div {
+  position: relative;
+  /* padding-left: calc(20% + 4px); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0;
+  min-height: 90px;
+  /* height: 20vh; */
+  background-color: red;
+  outline:solid 2px blue;
+}
+.fav_bar div img{
+  position: absolute;
+  padding: 0;
+  margin:0;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  width: auto;
+  border-radius: 15px;
+}
+
+.fav_bar p {
+  margin: 0;
+  margin-left: 90px;
+  padding: 0;
+  font-size: var(--Main_Regular);
+}
+
+.fav_bar div:first-child p{
+  margin: 3px;
+  text-align: center ;
+  align-self: center;
+  font-size: var(--Main_Heading_2);
+
+}
+.fav_bar div p:first-child{
+  font-size: var(--Main_Heading_3);
+}
+
+/* Fin FavBar */
+
 /* Inicio Scrollbar (en toda la versión desktop) */
 
 ::-webkit-scrollbar {
@@ -409,6 +462,7 @@ tr td:last-child {
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background: var(--Scrollbar_background);
+  margin: 10px 0;
 }
 
 /* Handle (Barra de la parte de la página mostrada ahora) */
@@ -640,11 +694,11 @@ tr td:last-child {
   .playlist_page_data .rate_bar img {
     width: 14px;
   }
-  .playlist_card{
+  .playlist_card {
     height: 120px;
     width: 120px;
   }
-  .playlist_songs tr td{
+  .playlist_songs tr td {
     word-wrap: break-word;
   }
   .playlist_songs tr td:nth-child(2) {
@@ -652,12 +706,10 @@ tr td:last-child {
     /* max-width: 55px; */
     /* background-color: blue; */
   }
-  
   .playlist_songs tr td:nth-child(3), .playlist_songs tr td:last-child {
     width: 60px;
     /* background-color: red; */
   }
-  
   .playlist_songs tr td:first-child {
     width: 50%;
     /* max-width: 70px; */
