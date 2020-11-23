@@ -77,8 +77,8 @@
     </nav>
 
 
-    <div class="seccion_central">
-        <div class="only_desktop fav_bar">
+    <div class="seccion-central">
+        <div class="only_desktop fav_bar" id="js-fav-Bar-contenido">
 
         </div>
         <div class="contenido_cargado_dinamicamente" id="js-contenido">
@@ -95,8 +95,8 @@
             </button>
 
             <div>
-                <p>[titulo_cancion]</p>
-                <p>[autor_cancion]</p>
+                <p class="js-titulo-player"></p>
+                <p class="js-autor-player"></p>
             </div>
 
             <button>
@@ -128,7 +128,7 @@
     <div class="player only_desktop ef-drop_shadow_upwards">
         <!-- Info, opción de guardar y valoración de la canción actual -->
         <div class="seccion_lateral cancion_actual">
-            <img class="imagen_cancion" src="../img/Card/Artistas_Song/abel_pintos.jpg" alt="">
+            <img id="js-caratula" class="imagen_cancion" alt="">
             <div class="text_current_song">
                 <div class="song_option_bar">
                     <div class="rate_bar">
@@ -143,16 +143,17 @@
                         <img src="../img/Iconos/Base/botones_armados/Button_Add.svg" alt="">
                     </button>
                 </div>
-                <p>[titulo_cancion]</p>
-                <p>[autor_cancion]</p>
+                <p class="js-titulo-player"></p>
+                <p class="js-autor-player"></p>
             </div>
         </div>
 
         <div class="panel_central">
             <!-- Barra de progreso de la canción -->
             <div class="progress_bar_cancion">
-                
-                <input class="slider" type="range" min="1" max="100" value="50">
+                <p id="js-time1"></p>
+                <input id="js-slidertiempo" class="slider" type="range">
+                <p id="js-time2"></p>
             </div>
 
             <!-- Botones Básicos de control de reproducción -->
@@ -197,6 +198,7 @@
 </body>
 <script src="../js/musica_podcasts.js"></script>
 <script src="../js/playlists.js"></script>
+<script src="../js/player.js"></script>
 <script src="../js/main.js"></script>
 
 </html>
