@@ -87,7 +87,7 @@
 
 /* Selectores generales (Ignorando si es Mobile o Desktop) */
 
-.hidden{
+.hidden {
   visibility: hidden;
 }
 
@@ -282,20 +282,39 @@ tr td:last-child {
   height: calc(100vh - 147px - 16px);
 }
 
-/* Inicio Playlist */
+/* Inicio Cards */
 
-.playlist_card {
+.playlist_card, .individual_card {
   padding: 0;
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
-.playlist_card_image {
-  width: 200px;
+.card_image {
+  width: 100%;
 }
+
+.playlist_card button, .individual_card button {
+  width: 20%;
+  z-index: 0;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  /* opacity: .9; */
+}
+
+.playlist_card button:last-child, .individual_card button:last-child {
+  width: 25%;
+  left: 37.5%;
+  top: 37.5%;
+}
+
+/* Fin Cards */
+
+/* Inicio Playlist */
 
 .playlist_card div {
   position: absolute;
@@ -307,29 +326,16 @@ tr td:last-child {
   opacity: .7;
 }
 
-.playlist_card button {
-  width: 30px;
-  z-index: 0;
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  /* opacity: .9; */
-}
-
-.playlist_card button:last-child {
-  width: 25%;
-  left: 37.5%;
-  top: 37.5%;
-}
-.playlist_card p{
+.playlist_card p {
   width: 75%;
-  padding: 0 3px;
+  padding: 1px;
+  margin: 0;
   text-align: center;
   font-size: var(--Main_Heading_3);
   position: absolute;
-  max-height: 24px;
+  max-height: 50px;
   overflow: hidden;
-  bottom: -14px;
+  bottom: 0;
   right: 0;
 }
 
@@ -347,7 +353,13 @@ tr td:last-child {
   /* justify-content: space-between; */
 }
 
+.playlist_page_data .playlist_card p {
+  display: none;
+}
+
 .playlist_page_data .playlist_card {
+  width: 200px;
+  height: 200px;
   grid-area: 1/1/3/2;
   margin-right: 4px;
 }
@@ -416,11 +428,35 @@ tr td:last-child {
 
 /* Fin Playlist */
 
-/* Inicio Cards individuales */
+/* Inicio Card individual */
+.individual_card{
+  border: 2px solid var(--Main_Darker);
+}
 
+.individual_card div{
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: -moz-linear-gradient(180deg, var(--Transparente) 0%, var(--Main_Darker) 30%, var(--Main_Darker) 100%);
+  background: -webkit-linear-gradient(180deg, var(--Transparente) 0%, var(--Main_Darker) 30%, var(--Main_Darker) 100%);
+  background: linear-gradient(180deg, var(--Transparente) 0%, var(--Main_Darker) 30%, var(--Main_Darker) 100%);
+}
+.individual_card p{
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 3px;
+  text-align: center;
+  color: var(--Main_Lightest);
+}
 
-
-/* Fin Cards individuales */
+/* Fin Card individual */
 
 /* Inicio FavBar */
 
@@ -447,14 +483,16 @@ tr td:last-child {
   overflow-x: hidden;
   /* outline:solid 2px rgb(220, 220, 248); */
 }
-.fav_bar div:first-child{
+
+.fav_bar div:first-child {
   background-color: var(--Main_Light_2);
   border-top: none;
 }
-.fav_bar div img{
+
+.fav_bar div img {
   position: absolute;
   padding: 0;
-  margin:0;
+  margin: 0;
   top: 4px;
   left: 4px;
   height: calc(100% - 8px);
@@ -470,19 +508,22 @@ tr td:last-child {
   padding: 0;
   font-size: var(--Main_Regular);
 }
-.fav_bar p img{
+
+.fav_bar p img {
   width: 22px;
   position: relative;
   margin: 0;
   padding: 0;
 }
-.fav_bar div p:first-child{
+
+.fav_bar div p:first-child {
   font-size: var(--Main_Heading_3);
 }
-.fav_bar div:first-child p{
+
+.fav_bar div:first-child p {
   white-space: normal;
   margin: 3px 8px;
-  text-align: center ;
+  text-align: center;
   align-self: center;
   font-size: var(--Main_Heading_2);
 }
@@ -601,7 +642,7 @@ tr td:last-child {
     max-width: 11%;
     min-width: 15px;
   }
-  #burger_menu a:not(:first-child) {
+  #burger_menu a {
     line-height: 8.9vh;
     min-height: 8.9vh;
     /* min-height: 25px; */
@@ -612,12 +653,12 @@ tr td:last-child {
   #burger_menu a:last-child {
     border-bottom: solid var(--Burger_Menu_Item_Border) 1px;
   }
-  #burger_menu a:first-child {
+  #burger_menu button:first-child {
     margin-top: 7.1vh;
     margin-bottom: 8.8vh;
     border: none;
     max-width: 100%;
-    max-width: 150px;
+    width: 150px;
   }
   /* Fin Burger Menu */
   /*  */
@@ -732,11 +773,11 @@ tr td:last-child {
   .playlist_page_data .rate_bar img {
     width: 14px;
   }
-  .playlist_card {
+  .playlist_page_data .playlist_card {
     height: 120px;
     width: 120px;
   }
-  .playlist_card .playlist_card_image{
+  .playlist_page_data .playlist_card .card_image {
     width: 120px;
   }
   .playlist_songs tr td {

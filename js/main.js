@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
             fila.appendChild(image);
             let valora = document.createElement("p");
             let img_estrella = document.createElement("img");
-            img_estrella.src="../img/Iconos/Base/Estrella.svg";
-            valora.innerHTML = element.valoracion+"/5";
+            img_estrella.src = "../img/Iconos/Base/Estrella.svg";
+            valora.innerHTML = element.valoracion + "/5";
             valora.appendChild(img_estrella);
             // Esconde los no valorados.
-            if(element.valoracion<=0)valora.classList.add("hidden");
+            if (element.valoracion <= 0) valora.classList.add("hidden");
             fila.appendChild(valora);
             let cant_canciones = document.createElement("p");
-            cant_canciones.innerHTML = element.canciones.length+" elementos";
+            cant_canciones.innerHTML = element.canciones.length + " elementos";
             fila.appendChild(cant_canciones);
             let reprod = document.createElement("p");
             reprod.innerHTML = transformarReproduccionesATexto(element.cant_reproducciones);
@@ -85,22 +85,22 @@ document.addEventListener("DOMContentLoaded", () => {
             return (Math.floor(cant_reproducciones / 100000/* 0.1 Millón */) / 10) + "M" + final_texto;
         }
     }
-    function calcularTiempoTotalPlaylist(arreglo_canciones=[]) {
+    function calcularTiempoTotalPlaylist(arreglo_canciones = []) {
         let segundos = 0;
-        arreglo_canciones.forEach(cancion=>{
-            segundos+=audios[cancion].duracion;
+        arreglo_canciones.forEach(cancion => {
+            segundos += audios[cancion].duracion;
         });
         return segundosToString(segundos);
     }
-    function segundosToString(segundos){//TESTING.
-        return Math.floor(segundos/60)+" Minutos " + Math.floor(segundos%60)+ " Segundos";
+    function segundosToString(segundos) {//TESTING.
+        return Math.floor(segundos / 60) + " Minutos " + Math.floor(segundos % 60) + " Segundos";
     }
     function cargarDatosPaginaLista(lista_reproduccion) {
         if (!lista_reproduccion) return;
         cargarTablaDeCancionesParaPaginaPlaylist(lista_reproduccion.canciones);
         document.querySelector("#js-playlist_card").src = lista_reproduccion.imageURL;
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
-        llenarInfoDePaginaPlaylist(arr_parrafos,lista_reproduccion);
+        llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
     }
     function llenarInfoDePaginaPlaylist(parrafos = [], playlist) {
         parrafos[0].innerHTML = playlist.nombre;
@@ -111,9 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function cargarTablaDeCancionesParaPaginaPlaylist(lista) {
         let tabla = document.querySelector("#cuerpo_tabla");
-        document.querySelector("#js-sort_titulo").addEventListener("click", function(){sortTable(0)});
-        document.querySelector("#js-sort_autor").addEventListener("click", function(){sortTable(1)});
-        document.querySelector("#js-sort_valoracion").addEventListener("click", function(){sortTable(3)});
+        document.querySelector("#js-sort_titulo").addEventListener("click", function () { sortTable(0) });
+        document.querySelector("#js-sort_autor").addEventListener("click", function () { sortTable(1) });
+        document.querySelector("#js-sort_valoracion").addEventListener("click", function () { sortTable(3) });
         lista.forEach(element => {
             let cancion = audios[element];
             let fila = document.createElement("tr");
@@ -150,6 +150,18 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Llamado a funciones (al cargar index) */
     cargarFavBar();
 
+
+    document.querySelectorAll(".js-button_to_home").forEach(element => {
+        element.addEventListener("click", function () {
+            let param1 = "../html/recomendaciones.html";
+            let param2 = document.querySelector("#js-contenido");
+            // let param3 = function () {  };
+            let param3 = null;
+            loadPage(param1, param2, param3);
+        });
+    });
+    loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"), null);
+
     //HELPERS
 
     async function fetchHtmlAsText(url) {
@@ -171,54 +183,51 @@ document.addEventListener("DOMContentLoaded", () => {
         /* Make a loop that will continue until
         no switching has been done: */
         while (switching) {
-          // Start by saying: no switching is done:
-          switching = false;
-          rows = table.rows;
-          /* Loop through all table rows (except the
-          first, which contains table headers): */
-          for (i = 1; i < (rows.length - 1); i++) {
-            // Start by saying there should be no switching:
-            shouldSwitch = false;
-            /* Get the two elements you want to compare,
-            one from current row and one from the next: */
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
-            /* Check if the two rows should switch place,
-            based on the direction, asc or desc: */
-            if (dir == "asc") {
-              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-              }
-            } else if (dir == "desc") {
-              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-              }
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /* Check if the two rows should switch place,
+                based on the direction, asc or desc: */
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
             }
-          }
-          if (shouldSwitch) {
-            /* If a switch has been marked, make the switch
-            and mark that a switch has been done: */
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            // Each time a switch is done, increase this count by 1:
-            switchcount ++;
-          } else {
-            /* If no switching has been done AND the direction is "asc",
-            set the direction to "desc" and run the while loop again. */
-            if (switchcount == 0 && dir == "asc") {
-              dir = "desc";
-              switching = true;
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                // Each time a switch is done, increase this count by 1:
+                switchcount++;
+            } else {
+                /* If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again. */
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
             }
-          }
         }
-      }
-
-
-    // TESTING (Borrar al finalizar)
+    }
 
 
 
