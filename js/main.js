@@ -175,8 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function cargarBusqueda(clave){
         let listaSalida=listaBusqueda(clave);
         let divSalida=document.querySelector("#js-resultados");
-        if (divSalida!=null)
-            divSalida.innerHTML="";
+        divSalida.innerHTML="";
         if (listaSalida.length>0){
             listaSalida.forEach(element => {
                 let divCard=document.createElement("div");
@@ -201,6 +200,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 divSalida.append(divCard);
             });
+        }
+        else{
+            let pe=document.createElement("p");
+            pe.innerHTML="No se encontraron resultados";
+            divSalida.append(pe);
         }
     }
 
