@@ -86,7 +86,8 @@ class Player{
         this.calificacion.appendChild(estrella4);
         this.calificacion.appendChild(estrella5);
 
-        //DEJO COMENTADO PORQUE ROMPE PERO AGREGA LAS FUNCIONES DE HOVER PARA CALIFICAR
+       // DEJO COMENTADO PORQUE ROMPE PERO AGREGA LAS FUNCIONES DE HOVER PARA CALIFICAR
+
         // let f0=function(){
         //         for (let i=0;i<divEstrellas.children.length;i++){
         //             divEstrellas.children[i].src="../img/Iconos/Base/Estrella.svg";

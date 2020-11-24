@@ -212,6 +212,94 @@ document.addEventListener("DOMContentLoaded", () => {
         div.appendChild(estrella3);
         div.appendChild(estrella4);
         div.appendChild(estrella5);
+        
+        //COMENTAR HASTA EL FINAL SI ROMPE
+        let f0=function(){
+                for (let i=0;i<div.children.length;i++){
+                    div.children[i].src="../img/Iconos/Base/Estrella.svg";
+                }
+                div.children[0].src="../img/Iconos/Base/EstrellaLlena.svg";
+            }
+        let f01=function(){
+                lista.valorada=true;
+                lista.valoracion=1;
+            }
+        let f1=function(){
+                for (let i=0;i<div.children.length;i++){
+                    div.children[i].src="../img/Iconos/Base/Estrella.svg";
+                }
+                div.children[0].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[1].src="../img/Iconos/Base/EstrellaLlena.svg";
+            }
+        let f11=function(){
+                lista.valorada=true;
+                lista.valoracion=2;
+            }
+        let f2=function(){
+                for (let i=0;i<div.children.length;i++){
+                    div.children[i].src="../img/Iconos/Base/Estrella.svg";
+                }
+                div.children[0].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[1].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[2].src="../img/Iconos/Base/EstrellaLlena.svg";
+            }
+        let f21=function(){
+            lista.valorada=true;
+            lista.valoracion=3;
+        }
+        let f3=function(){
+                for (let i=0;i<div.children.length;i++){
+                    div.children[i].src="../img/Iconos/Base/Estrella.svg";
+                }
+                div.children[0].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[1].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[2].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[3].src="../img/Iconos/Base/EstrellaLlena.svg";
+            }
+        let f31=function(){
+                lista.valorada=true;
+                lista.valoracion=4;
+            }
+        let f4=function(){
+                for (let i=0;i<div.children.length;i++){
+                    div.children[i].src="../img/Iconos/Base/Estrella.svg";
+                }
+                div.children[0].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[1].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[2].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[3].src="../img/Iconos/Base/EstrellaLlena.svg";
+                div.children[4].src="../img/Iconos/Base/EstrellaLlena.svg";
+            }
+        let f41=function(){
+                lista.valorada=true;
+                lista.valoracion=5;
+            }
+        let x=function(){dibujarEstrellasPlaylist(div, lista)}
+        div.removeEventListener("mouseleave", x.bind(this));
+        div.children[0].removeEventListener("mouseover", f0);
+        div.children[0].removeEventListener("click", f01);
+        div.children[1].removeEventListener("mouseover", f1);
+        div.children[1].removeEventListener("click", f11);
+        div.children[2].removeEventListener("mouseover", f2);
+        div.children[2].removeEventListener("click", f21);
+        div.children[3].removeEventListener("mouseover", f3);
+        div.children[3].removeEventListener("click", f31);
+        div.children[4].removeEventListener("mouseover", f4);
+        div.children[4].removeEventListener("click", f41);
+        if (!lista.valorada){
+            div.children[0].addEventListener("mouseover", f0);
+            div.children[0].addEventListener("click", f01);
+            div.children[1].addEventListener("mouseover", f1);
+            div.children[1].addEventListener("click", f11);
+            div.children[2].addEventListener("mouseover", f2);
+            div.children[2].addEventListener("click", f21);
+            div.children[3].addEventListener("mouseover", f3);
+            div.children[3].addEventListener("click", f31);
+            div.children[4].addEventListener("mouseover", f4);
+            div.children[4].addEventListener("click", f41);
+            let x=function(){dibujarEstrellasPlaylist(div, lista)}
+            div.addEventListener("mouseleave", x.bind(this));
+        }
     }
 
 
