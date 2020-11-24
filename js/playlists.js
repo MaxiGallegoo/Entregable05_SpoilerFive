@@ -13,7 +13,7 @@ let listas=[
      "ultimas_valoraciones":[2,2,4,3,5],
      "cant_reproducciones":9,
      "canciones":[172,175,180,182,183,185,187],
-     "imageURL":"../img/Card/Playlist/Favoritos.svg"
+     "imageURL":"../img/Card/Playlist/podcasts.png"
     },
     {"nombre":"Coding",
      "valoracion":2,
@@ -22,7 +22,7 @@ let listas=[
      "ultimas_valoraciones":[2,1,3,1,5],
      "cant_reproducciones":15000,
      "canciones":[85,86,87,88,89,90],
-     "imageURL":"../img/Card/Playlist/Favoritos.svg"
+     "imageURL":"../img/Card/Playlist/coding.png"
     },
     {"nombre":"Nacional",
      "valoracion":4,
@@ -31,7 +31,7 @@ let listas=[
      "cant_valoraciones":10,
      "cant_reproducciones":75187000,//75M
      "canciones":[19,23,31,33,60,67,68,92,95],
-     "imageURL":"../img/Card/Playlist/Favoritos.svg"
+     "imageURL":"../img/Card/Playlist/nacional.png"
     },
     {"nombre":"Lo mejor del Rock",
     "valoracion":4,
