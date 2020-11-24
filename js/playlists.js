@@ -1,6 +1,6 @@
 let listas=[
     {"nombre":"Favoritos",
-     "valoracion":0,
+     "valoracion":-1,
      "cant_reproducciones":127,
      "valorada":true,
      "canciones":[1,2,3,4,5,6,7,8,10,20,30,40,50,60,71,80],

@@ -52,10 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
             image.src = element.imageURL;
             fila.appendChild(image);
             let valora = document.createElement("p");
-            valora.innerHTML = "Valoracion: " + element.valoracion;
+            let img_estrella = document.createElement("img");
+            img_estrella.src="../img/Iconos/Base/Estrella.svg";
+            valora.innerHTML = element.valoracion+"/5";
+            valora.appendChild(img_estrella);
+            // Esconde los no valorados.
+            if(element.valoracion<=0)valora.classList.add("hidden");
             fila.appendChild(valora);
             let cant_canciones = document.createElement("p");
-            cant_canciones.innerHTML = "Cant. canciones: " + element.canciones.length;
+            cant_canciones.innerHTML = element.canciones.length+" elementos";
             fila.appendChild(cant_canciones);
             let reprod = document.createElement("p");
             reprod.innerHTML = transformarReproduccionesATexto(element.cant_reproducciones);
@@ -106,9 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function cargarTablaDeCancionesParaPaginaPlaylist(lista) {
         let tabla = document.querySelector("#cuerpo_tabla");
-        document.querySelector("#js-sort-titulo").addEventListener("click", function(){sortTable(0)});
-        document.querySelector("#js-sort-autor").addEventListener("click", function(){sortTable(1)});
-        document.querySelector("#js-sort-valoracion").addEventListener("click", function(){sortTable(3)});
+        document.querySelector("#js-sort_titulo").addEventListener("click", function(){sortTable(0)});
+        document.querySelector("#js-sort_autor").addEventListener("click", function(){sortTable(1)});
+        document.querySelector("#js-sort_valoracion").addEventListener("click", function(){sortTable(3)});
         lista.forEach(element => {
             let cancion = audios[element];
             let fila = document.createElement("tr");
