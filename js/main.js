@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return segundosToString(segundos);
     }
     function segundosToString(segundos){//TESTING.
-        return segundos + " Segundos";
+        return Math.floor(segundos/60)+" Minutos " + Math.floor(segundos%60)+ " Segundos";
     }
     function cargarDatosPaginaLista(lista_reproduccion) {
         if (!lista_reproduccion) return;
