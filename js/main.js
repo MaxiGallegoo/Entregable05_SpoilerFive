@@ -38,9 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let param3 = function () {  let clave=document.querySelector("#js-input-search").value;
                                     cargarBusqueda(clave) };
         loadPage(param1, param2, param3);
-        document.querySelector("#js-input-search").addEventListener("change", function(){let clave=document.querySelector("#js-input-search").value;
-                                                                                        cargarBusqueda(clave)});
     });
+    document.querySelector("#js-input-search").addEventListener("input", function(){let param1 = "../html/busqueda.html";
+    let param2 = document.querySelector("#js-contenido");
+    let param3 = function () {  let clave=document.querySelector("#js-input-search").value;
+                                cargarBusqueda(clave) };
+                                loadPage(param1, param2, param3);});
     //FIN LISTENERS
 
     function cargarFavBar() {
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             valora.innerHTML = element.valoracion + "/5";
             valora.appendChild(img_estrella);
             // Esconde los no valorados.
-            if (element.valoracion <= 0) valora.classList.add("js-visibility_hidden");
+            if (element.valoracion <= 0) valora.classList.add("hidden");
             fila.appendChild(valora);
             let cant_canciones = document.createElement("p");
             cant_canciones.innerHTML = element.canciones.length + " elementos";
@@ -97,20 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         return segundosToString(segundos);
     }
-    function segundosToString(segundos_totales) {
-        let horas = segundos_totales / 3600;
-        let minutos = (segundos_totales % 3600) / 60;
-        let segundos = (segundos_totales % 3600) % 60;
-        let respuesta;
-        if (horas > 0) respuesta = horas + ":";
-        respuesta += minutos + ":" + segundos;
-        return respuesta;
-    }
-    function cargarDatosPaginaElementoIndividual(elem) {
-        if (!elem || !elem.nombre_cancion) return;
-        document.querySelector("#js-elem_card").src = elem.imagen;
-        let arr_parrafos = document.querySelectorAll(".js-element_data");
-        llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
+    function segundosToString(segundos) {//TESTING.
+        return Math.floor(segundos / 60) + " Minutos " + Math.floor(segundos % 60) + " Segundos";
     }
     function cargarDatosPaginaLista(lista_reproduccion) {
         if (!lista_reproduccion) return;
@@ -120,15 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#js-playlist_card").src = lista_reproduccion.imageURL;
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
         llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
-    }
-    function llenarInfoDePaginaElemIndividual(parrafos = [], elem) {
-        parrafos[0].innerHTML = elem.nombre_cancion;
-        parrafos[1].innerHTML = elem.artista;
-        parrafos[2].innerHTML = elem.album;
-        //Los podcast tienen sección "album" vacía
-        if (!elem.album || elem.album == "") parrafos[2].classList.add("js-display_none");
-        parrafos[3].innerHTML = elem.año;
-
     }
     function llenarInfoDePaginaPlaylist(parrafos = [], playlist) {
         parrafos[0].innerHTML = playlist.nombre;
@@ -148,34 +130,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let boton_play = document.createElement("button");
             let image_play = document.createElement("img");
-            image_play.src = "../img/Iconos/Base/botones_armados/Button_Play.svg";
+            image_play.src="../img/Iconos/Base/botones_armados/Button_Play.svg";
             boton_play.appendChild(image_play);
 
             let boton_add = document.createElement("button");
             let image_add = document.createElement("img");
-            image_add.src = "../img/Iconos/Base/botones_armados/Button_Add.svg";
+            image_add.src="../img/Iconos/Base/botones_armados/Button_Add.svg";
             boton_add.appendChild(image_add);
-
+            
             boton_play.addEventListener("click", function () {
                 player.reproducir(
                     audios[element]);
                 cancionActual = element;
             });
-            let nombre_cancion = document.createElement("a");
-            nombre_cancion.innerHTML = cancion.nombre_cancion;
-            nombre_cancion.href = "#";
-            nombre_cancion.addEventListener("click", () => {
-
-            });
 
             let fila = document.createElement("tr");
-            let primera_celda = document.createElement("td");
+            let nom_cancion = document.createElement("td");
+            
 
-            primera_celda.appendChild(boton_play);
-            primera_celda.appendChild(nombre_cancion);
-            primera_celda.appendChild(boton_add);
+            nom_cancion.appendChild(boton_add);
+            nom_cancion.innerHTML += cancion.nombre_cancion;
+            nom_cancion.appendChild(boton_play);
 
-            fila.appendChild(primera_celda);
+
+            fila.appendChild(nom_cancion);
             let autor = document.createElement("td");
             autor.innerHTML = cancion.artista;
             fila.appendChild(autor);
@@ -195,7 +173,35 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     function cargarBusqueda(clave){
-        
+        let listaSalida=listaBusqueda(clave);
+        let divSalida=document.querySelector("#js-resultados");
+        if (divSalida!=null)
+            divSalida.innerHTML="";
+        if (listaSalida.length>0){
+            listaSalida.forEach(element => {
+                let divCard=document.createElement("div");
+                    divCard.classList.add("individual_card");
+                let imgcard=document.createElement("img");
+                    imgcard.src=element.imagen;
+                divCard.append(imgcard);
+                divCard.append(document.createElement("div"));
+                let btn1=document.createElement("button");
+                    let img1=document.createElement("img");
+                    img1.src="../img/Iconos/Base/botones_armados/Button_Add.svg";
+                    btn1.append(img1);
+                divCard.append(btn1);
+                let titulo=document.createElement("p");
+                    titulo.innerHTML=element.nombre_cancion;
+                divCard.append(titulo);
+                let btn2=document.createElement("button");
+                    let img2=document.createElement("img");
+                        img2.src="../img/Iconos/Base/botones_armados/Button_Play.svg";
+                    btn2.append(img2);
+                divCard.append(btn2);
+
+                divSalida.append(divCard);
+            });
+        }
     }
 
     function dibujarEstrellasPlaylist(div, lista){
