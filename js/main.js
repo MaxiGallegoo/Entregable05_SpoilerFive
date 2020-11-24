@@ -306,7 +306,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Llamado a funciones (al cargar index) */
     cargarFavBar();
 
-
     document.querySelectorAll(".js-button_to_home").forEach(element => {
         element.addEventListener("click", function () {
             let param1 = "../html/recomendaciones.html";

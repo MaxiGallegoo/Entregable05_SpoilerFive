@@ -175,6 +175,7 @@ class Player{
         //     let x=function(){this.cargarEstrellas(cancion)}
         //     this.calificacion.addEventListener("mouseleave", x.bind(this));
         // }
+        //
     }
 
     avanzar1seg(e){
