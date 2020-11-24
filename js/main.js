@@ -32,11 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
             player.reproducir(audios[cancionActual]);
         });
     });
-
-    //LISTENERS
-
-    player.reproducir(audios[cancionActual]);
-    //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play(pausado para que no moleste)
+    document.querySelector("#js-search").addEventListener("click", function () {
+        let param1 = "../html/busqueda.html";
+        let param2 = document.querySelector("#js-contenido");
+        let param3 = function () {  let clave=document.querySelector("#js-input-search").value;
+                                    cargarBusqueda(clave) };
+        loadPage(param1, param2, param3);
+        document.querySelector("#js-input-search").addEventListener("change", function(){let clave=document.querySelector("#js-input-search").value;
+                                                                                        cargarBusqueda(clave)});
+    });
+    //FIN LISTENERS
 
     function cargarFavBar() {
         let divFavoritos = document.querySelector("#js-fav-Bar-contenido");
@@ -164,6 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
             tabla.appendChild(fila);
         });
     }
+    function cargarBusqueda(clave){
+        
+    }
+
     function dibujarEstrellasPlaylist(div, lista){
         let estrella1=document.createElement("IMG");
         if (lista.valoracion>=1){
@@ -315,6 +324,8 @@ document.addEventListener("DOMContentLoaded", () => {
             loadPage(param1, param2, param3);
         });
     });
+    player.reproducir(audios[cancionActual]);
+    //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play(pausado para que no moleste)
     loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"), null);
 
     //HELPERS
