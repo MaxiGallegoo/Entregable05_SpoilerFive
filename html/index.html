@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spoiler Five</title>
     <link rel="stylesheet" href="../css/master.css">
+    <link rel="icon" href="../img/Iconos/Base/botones_armados/Logo.svg" type="image/png">
 </head>
 
 <body>
@@ -25,9 +26,9 @@
         <!-- Burger Menu (Normalmente Hidden) -->
         <nav id="burger_menu" class="ef-drop_shadow_right">
             <!-- Logo para ir a Home -->
-            <a href="">
+            <button class="js-button_to_home">
                 <img src="../img/Iconos/Base/botones_armados/Logo.svg" alt="">
-            </a>
+            </button>
             <!-- Botón cerrar -->
             <button id="burger_menu_cerrar">
                 <img src="../img/Iconos/Base/close.svg" alt="">
@@ -60,13 +61,13 @@
     <!-- NavBar Desktop -->
     <nav class="only_desktop ef-drop_shadow_downwards">
         <!-- Logo para ir a Home -->
-        <button>
+        <button class="js-button_to_home">
             <img src="../img/Iconos/Base/botones_armados/Logo.svg" alt="">
         </button>
         <!-- Input search -->
         <div class="tra-focus ef-solid_underline">
-            <input type="text">
-            <img src="../img/Iconos/Base/Icono_Buscar.svg" alt="">
+            <input type="text" id="js-input-search">
+            <img src="../img/Iconos/Base/Icono_Buscar.svg" alt="" id="js-search">
         </div>
         <!-- Button User -->
         <button>
@@ -74,6 +75,18 @@
         </button>
 
     </nav>
+
+
+    <div class="seccion_central">
+        <div class="only_desktop fav_bar" id="js-fav-Bar-contenido">
+            <div>
+                <p>Mis listas de Reproducci&oacuten</p>
+            </div>
+        </div>
+        <div class="contenido_cargado_dinamicamente" id="js-contenido">
+            
+        </div>
+    </div>
 
     <!-- Player Mobile -->
     <div class="player only_mobile ef-drop_shadow_upwards">
@@ -84,8 +97,8 @@
             </button>
 
             <div>
-                <p>[titulo_cancion]</p>
-                <p>[autor_cancion]</p>
+                <p class="js-titulo-player"></p>
+                <p class="js-autor-player"></p>
             </div>
 
             <button>
@@ -113,35 +126,32 @@
 
     </div>
 
-    <!-- Player Desktop -->
+    <!-- Player Desktop  -->
     <div class="player only_desktop ef-drop_shadow_upwards">
         <!-- Info, opción de guardar y valoración de la canción actual -->
         <div class="seccion_lateral cancion_actual">
-            <img class="imagen_cancion" src="../img/Card/Artistas_Song/abel_pintos.jpg" alt="">
+            <img id="js-caratula" class="imagen_cancion" alt="">
             <div class="text_current_song">
                 <div class="song_option_bar">
-                    <div class="rate_bar">
-                        <img src="../img/Iconos/Base/Estrella.svg" alt="">
-                        <img src="../img/Iconos/Base/Estrella.svg" alt="">
-                        <img src="../img/Iconos/Base/Estrella.svg" alt="">
-                        <img src="../img/Iconos/Base/Estrella.svg" alt="">
-                        <img src="../img/Iconos/Base/Estrella.svg" alt="">
+                    <div class="rate_bar" id="js-player-rate-bar">
+
                     </div>
 
                     <button>
                         <img src="../img/Iconos/Base/botones_armados/Button_Add.svg" alt="">
                     </button>
                 </div>
-                <p>[titulo_cancion]</p>
-                <p>[autor_cancion]</p>
+                <p class="js-titulo-player"></p>
+                <p class="js-autor-player"></p>
             </div>
         </div>
 
         <div class="panel_central">
             <!-- Barra de progreso de la canción -->
             <div class="progress_bar_cancion">
-
-                <progress value="90" max="100"></progress>
+                <p id="js-time1"></p>
+                <input id="js-slidertiempo" class="slider" type="range">
+                <p id="js-time2"></p>
             </div>
 
             <!-- Botones Básicos de control de reproducción -->
@@ -176,15 +186,17 @@
                 <button class="js-togglable_button">
                     <img src="../img/Iconos/Base/botones_armados/Button_Volume.svg" alt="">
                 </button>
-                <!-- Barra de Progreso controlada desde JS -->
-                <progress id="js-sound_bar" draggable="false" value="50" max="100"></progress>
+                <!-- Slider para ajustar volumen (Sin funcionalidad) -->                
+                <input class="slider" type="range" min="1" max="100" value="50">
+
             </div>
         </div>
     </div>
 
 </body>
+<script src="../js/musica_podcasts.js"></script>
+<script src="../js/playlists.js"></script>
+<script src="../js/player.js"></script>
 <script src="../js/main.js"></script>
-<!-- <script src="../js/musica_podcasts.js"></script>
-<script src="../js/playlists.js"></script> -->
 
 </html>
