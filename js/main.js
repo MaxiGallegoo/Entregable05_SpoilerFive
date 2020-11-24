@@ -93,6 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function cargarDatosPaginaLista(lista_reproduccion) {
         if (!lista_reproduccion) return;
         cargarTablaDeCancionesParaPaginaPlaylist(lista_reproduccion.canciones);
+        let divValoracion=document.querySelector("#js-valoracion-playlist");
+        dibujarEstrellasPlaylist(divValoracion, lista_reproduccion);
         document.querySelector("#js-playlist_card").src = lista_reproduccion.imageURL;
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
         llenarInfoDePaginaPlaylist(arr_parrafos,lista_reproduccion);
@@ -141,6 +143,56 @@ document.addEventListener("DOMContentLoaded", () => {
             tabla.appendChild(fila);
         });
     }
+    function dibujarEstrellasPlaylist(div, lista){
+        let estrella1=document.createElement("IMG");
+        if (lista.valoracion>=1){
+            estrella1.src="../img/Iconos/Base/EstrellaLlena.svg";
+            if(lista.valorada)
+                estrella1.src="../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+        else
+            estrella1.src="../img/Iconos/Base/Estrella.svg";
+        let estrella2=document.createElement("IMG");
+        if (lista.valoracion>=2){
+            estrella2.src="../img/Iconos/Base/EstrellaLlena.svg";
+            if(lista.valorada)
+                estrella2.src="../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+            else
+                estrella2.src="../img/Iconos/Base/Estrella.svg";
+        let estrella3=document.createElement("IMG");
+        if (lista.valoracion>=3){
+            estrella3.src="../img/Iconos/Base/EstrellaLlena.svg";
+            if(lista.valorada)
+                estrella3.src="../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+            else
+                estrella3.src="../img/Iconos/Base/Estrella.svg";
+        let estrella4=document.createElement("IMG");
+        if (lista.valoracion>=4){
+            estrella4.src="../img/Iconos/Base/EstrellaLlena.svg";
+            if(lista.valorada)
+                estrella4.src="../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+            else
+                estrella4.src="../img/Iconos/Base/Estrella.svg";
+        let estrella5=document.createElement("IMG");
+        if (lista.valoracion==5){
+            estrella5.src="../img/Iconos/Base/EstrellaLlena.svg";
+            if(lista.valorada)
+                estrella5.src="../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+            else
+                estrella5.src="../img/Iconos/Base/Estrella.svg";
+        if (div!=null)
+            div.innerHTML="";
+        div.appendChild(estrella1);
+        div.appendChild(estrella2);
+        div.appendChild(estrella3);
+        div.appendChild(estrella4);
+        div.appendChild(estrella5);
+    }
+
 
     /* Llamado a funciones (al cargar index) */
     cargarFavBar();
