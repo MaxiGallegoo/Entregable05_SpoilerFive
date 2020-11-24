@@ -115,7 +115,7 @@ let audios=[
      "imagen":"../img/Card/Artistas_Song/ac_dc.jpg",
      "tipo_audio":"musica",
      "calificacion":3,
-     "valorada":false,
+     "valorada":true,
      "cant_valoraciones":10,
      "ultimas_valoraciones":[2,2,4,3,5],
      "comentarios":[{"user":"user1","comment":"Este es el comentario del usuario","premium":true,"fecha":"01/01/2020"}]
