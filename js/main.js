@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             valora.innerHTML = element.valoracion + "/5";
             valora.appendChild(img_estrella);
             // Esconde los no valorados.
-            if (element.valoracion <= 0) valora.classList.add("hidden");
+            if (element.valoracion <= 0) valora.classList.add("js-visibility_hidden");
             fila.appendChild(valora);
             let cant_canciones = document.createElement("p");
             cant_canciones.innerHTML = element.canciones.length + " elementos";
@@ -92,8 +92,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         return segundosToString(segundos);
     }
-    function segundosToString(segundos) {//TESTING.
-        return Math.floor(segundos / 60) + " Minutos " + Math.floor(segundos % 60) + " Segundos";
+    function segundosToString(segundos_totales) {
+        let horas = segundos_totales / 3600;
+        let minutos = (segundos_totales % 3600) / 60;
+        let segundos = (segundos_totales % 3600) % 60;
+        let respuesta;
+        if (horas > 0) respuesta = horas + ":";
+        respuesta += minutos + ":" + segundos;
+        return respuesta;
+    }
+    function cargarDatosPaginaElementoIndividual(elem) {
+        if (!elem || !elem.nombre_cancion) return;
+        document.querySelector("#js-elem_card").src = elem.imagen;
+        let arr_parrafos = document.querySelectorAll(".js-element_data");
+        llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
     }
     function cargarDatosPaginaLista(lista_reproduccion) {
         if (!lista_reproduccion) return;
@@ -103,6 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#js-playlist_card").src = lista_reproduccion.imageURL;
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
         llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
+    }
+    function llenarInfoDePaginaElemIndividual(parrafos = [], elem) {
+        parrafos[0].innerHTML = elem.nombre_cancion;
+        parrafos[1].innerHTML = elem.artista;
+        parrafos[2].innerHTML = elem.album;
+        //Los podcast tienen sección "album" vacía
+        if (!elem.album || elem.album == "") parrafos[2].classList.add("js-display_none");
+        parrafos[3].innerHTML = elem.año;
+
     }
     function llenarInfoDePaginaPlaylist(parrafos = [], playlist) {
         parrafos[0].innerHTML = playlist.nombre;
@@ -122,30 +143,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let boton_play = document.createElement("button");
             let image_play = document.createElement("img");
-            image_play.src="../img/Iconos/Base/botones_armados/Button_Play.svg";
+            image_play.src = "../img/Iconos/Base/botones_armados/Button_Play.svg";
             boton_play.appendChild(image_play);
 
             let boton_add = document.createElement("button");
             let image_add = document.createElement("img");
-            image_add.src="../img/Iconos/Base/botones_armados/Button_Add.svg";
+            image_add.src = "../img/Iconos/Base/botones_armados/Button_Add.svg";
             boton_add.appendChild(image_add);
-            
+
             boton_play.addEventListener("click", function () {
                 player.reproducir(
                     audios[element]);
                 cancionActual = element;
             });
+            let nombre_cancion = document.createElement("a");
+            nombre_cancion.innerHTML = cancion.nombre_cancion;
+            nombre_cancion.href = "#";
+            nombre_cancion.addEventListener("click", () => {
+
+            });
 
             let fila = document.createElement("tr");
-            let nom_cancion = document.createElement("td");
-            
+            let primera_celda = document.createElement("td");
 
-            nom_cancion.appendChild(boton_add);
-            nom_cancion.innerHTML += cancion.nombre_cancion;
-            nom_cancion.appendChild(boton_play);
+            primera_celda.appendChild(boton_play);
+            primera_celda.appendChild(nombre_cancion);
+            primera_celda.appendChild(boton_add);
 
-
-            fila.appendChild(nom_cancion);
+            fila.appendChild(primera_celda);
             let autor = document.createElement("td");
             autor.innerHTML = cancion.artista;
             fila.appendChild(autor);
