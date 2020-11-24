@@ -404,9 +404,29 @@ tr td:last-child {
 }
 
 .playlist_songs td {
-  padding: 2px 0;
+  padding: 0 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 30px;
+  height: auto;
   margin: 0;
   margin-bottom: 2px;
+}
+
+.playlist_songs td button {
+  min-width: 25px;
+  width: 25px;
+  z-index: 1;
+  /* position: absolute; */
+  /* top: 2.5px; */
+  /* left: 2.5px; */
+}
+
+.playlist_songs td button:last-child {
+  /* left: auto; */
+  /* right: 2.5px; */
 }
 
 .playlist_songs tr td:nth-child(2) {
@@ -421,7 +441,12 @@ tr td:last-child {
 
 .playlist_songs tr td:first-child {
   width: 50%;
-  /* background-color: green; */
+  padding: 0 5px;
+  flex-direction: row-reverse;
+}
+
+.playlist_songs tbody tr td:first-child {
+  justify-content: space-between;
 }
 
 /* Fin pantalla Playlist */
@@ -429,11 +454,12 @@ tr td:last-child {
 /* Fin Playlist */
 
 /* Inicio Card individual */
-.individual_card{
+
+.individual_card {
   border: 2px solid var(--Main_Darker);
 }
 
-.individual_card div{
+.individual_card div {
   z-index: 1;
   position: absolute;
   bottom: 0;
@@ -444,7 +470,8 @@ tr td:last-child {
   background: -webkit-linear-gradient(180deg, var(--Transparente) 0%, var(--Main_Darker) 30%, var(--Main_Darker) 100%);
   background: linear-gradient(180deg, var(--Transparente) 0%, var(--Main_Darker) 30%, var(--Main_Darker) 100%);
 }
-.individual_card p{
+
+.individual_card p {
   width: 100%;
   z-index: 2;
   position: absolute;
@@ -1077,6 +1104,21 @@ tr td:last-child {
   /*  */
   /* Inicio páginas cargadas dinámicamente */
   /*  */
+  /* Inicio página Playlist */
+  .playlist_songs tbody tr {
+    opacity: .85;
+    transition: opacity .2s ease-out;
+  }
+  .playlist_songs tbody tr td button {
+    opacity: 0;
+  }
+  .playlist_songs tbody tr:hover {
+    opacity: 1;
+    transition: opacity .2s ease-in;
+  }
+  .playlist_songs tbody tr:hover td button {
+    opacity: 1;
+  }
 }
 
 /* Fin Modo Desktop */

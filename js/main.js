@@ -116,17 +116,33 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#js-sort_valoracion").addEventListener("click", function () { sortTable(3) });
         lista.forEach(element => {
             let cancion = audios[element];
-            let fila = document.createElement("tr");
-            let nom_cancion = document.createElement("td");
-            let anchorCancion = document.createElement("a");
-            anchorCancion.innerHTML = cancion.nombre_cancion;
-            anchorCancion.href = "#";
-            anchorCancion.addEventListener("click", function () {
+            // Crea los botones "Play" y "Add" para cada fila.
+
+            let boton_play = document.createElement("button");
+            let image_play = document.createElement("img");
+            image_play.src="../img/Iconos/Base/botones_armados/Button_Play.svg";
+            boton_play.appendChild(image_play);
+
+            let boton_add = document.createElement("button");
+            let image_add = document.createElement("img");
+            image_add.src="../img/Iconos/Base/botones_armados/Button_Add.svg";
+            boton_add.appendChild(image_add);
+            
+            boton_play.addEventListener("click", function () {
                 player.reproducir(
                     audios[element]);
                 cancionActual = element;
             });
-            nom_cancion.appendChild(anchorCancion);
+
+            let fila = document.createElement("tr");
+            let nom_cancion = document.createElement("td");
+            
+
+            nom_cancion.appendChild(boton_add);
+            nom_cancion.innerHTML += cancion.nombre_cancion;
+            nom_cancion.appendChild(boton_play);
+
+
             fila.appendChild(nom_cancion);
             let autor = document.createElement("td");
             autor.innerHTML = cancion.artista;
