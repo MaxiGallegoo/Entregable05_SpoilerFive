@@ -61,7 +61,7 @@ function getGenero(genero){
 function listaBusqueda(string){
     let salida=new Array();
     for (let i=0;i<audios.length;i++){
-        if (audios[i].album.includes(string)||audios[i].artista.includes(string)||audios[i].nombre_cancion.includes(string))
+        if (audios[i].album.toLowerCase().includes(string.toLowerCase())||audios[i].artista.toLowerCase().includes(string.toLowerCase())||audios[i].nombre_cancion.toLowerCase().includes(string.toLowerCase()))
                 salida.push(audios[i]);
     }
     return salida;

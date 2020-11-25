@@ -35,11 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#js-search").addEventListener("click", function () {
         let param1 = "../html/busqueda.html";
         let param2 = document.querySelector("#js-contenido");
-        let param3 = function () {  let clave=document.querySelector("#js-input-search").value;
-                                    cargarBusqueda(clave) };
+        let param3 = function () {
+            let clave = document.querySelector("#js-input-search").value;
+            cargarBusqueda(clave)
+        };
         loadPage(param1, param2, param3);
-        document.querySelector("#js-input-search").addEventListener("change", function(){let clave=document.querySelector("#js-input-search").value;
-                                                                                        cargarBusqueda(clave)});
+        document.querySelector("#js-input-search").addEventListener("change", function () {
+            let clave = document.querySelector("#js-input-search").value;
+            cargarBusqueda(clave)
+        });
     });
     //FIN LISTENERS
 
@@ -110,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!elem || !elem.nombre_cancion) return;
         document.querySelector("#js-elem_card").src = elem.imagen;
         let arr_parrafos = document.querySelectorAll(".js-element_data");
-
         llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
     }
     function cargarDatosPaginaLista(lista_reproduccion) {
@@ -166,10 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre_cancion.innerHTML = cancion.nombre_cancion;
             nombre_cancion.href = "#";
             nombre_cancion.addEventListener("click", () => {
-                let param1 = "../html/elemento_individual.html";
-                let param2 = document.querySelector("#js-contenido");
-                let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
-                loadPage(param1, param2, param3);
+
             });
 
             let fila = document.createElement("tr");
@@ -198,16 +198,16 @@ document.addEventListener("DOMContentLoaded", () => {
             tabla.appendChild(fila);
         });
     }
-    function cargarBusqueda(clave){
-        
+    function cargarBusqueda(clave) {
+
     }
 
-    function dibujarEstrellasPlaylist(div, lista){
-        let estrella1=document.createElement("IMG");
-        if (lista.valoracion>=1){
-            estrella1.src="../img/Iconos/Base/EstrellaLlena.svg";
-            if(lista.valorada)
-                estrella1.src="../img/Iconos/Base/EstrellaLlenaDorada.svg";
+    function dibujarEstrellasPlaylist(div, lista) {
+        let estrella1 = document.createElement("IMG");
+        if (lista.valoracion >= 1) {
+            estrella1.src = "../img/Iconos/Base/EstrellaLlena.svg";
+            if (lista.valorada)
+                estrella1.src = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
         }
         else
             estrella1.src = "../img/Iconos/Base/Estrella.svg";
