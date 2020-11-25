@@ -245,7 +245,9 @@ thead tr {
 thead tr td {
   border-color: var(--Lightest_Transparente);
 }
-
+thead>tr>td>img{
+  width: var(--Main_Regular);
+}
 tr td:last-child {
   border: none;
 }
@@ -383,6 +385,7 @@ tr td:last-child {
 
 .playlist_page_data .rate_bar img, .song_page_data .rate_bar img {
   width: 24px;
+  /* perspective: 60px; */
   /* animation: rotar3d 3s linear infinite; */
 }
 
@@ -536,6 +539,7 @@ tr td:last-child {
 .fav_bar div:first-child {
   background-color: var(--Main_Light_2);
   border-top: none;
+  min-height: 50px;
 }
 
 .fav_bar div img {
@@ -596,7 +600,7 @@ tr td:last-child {
 }
 
 .TopBusqueda>label{
-  background-color:var(--Main_Slightly_Dark);
+  background-color:var(--Main_Light_2);
 }
 
 .resultados_busqueda .playlist_card,.resultados_busqueda .individual_card{
@@ -613,7 +617,7 @@ tr td:last-child {
 
 .categoria_recomendada {
   width: 100%;
-  height: 250px;
+  height: 222px;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -621,10 +625,11 @@ tr td:last-child {
   flex-wrap: nowrap;
   padding-top: 25px;
   overflow-x: scroll;
+  margin-bottom: 2%;
 }
 .categoria_recomendada .individual_card, .categoria_recomendada .playlist_card{
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   flex-shrink:0;
   margin:4px;
   margin-right: 12px;
@@ -895,6 +900,7 @@ tr td:last-child {
   .playlist_songs tr td {
     word-wrap: break-word;
   }
+
   .playlist_songs tr td:nth-child(2) {
     width: 42%;
     /* max-width: 55px; */

@@ -8,13 +8,18 @@ class Player{
        this.titulo=document.querySelectorAll(".js-titulo-player");
        this.autor=document.querySelectorAll(".js-autor-player");
        this.calificacion=document.querySelector("#js-player-rate-bar");
+       this.estado="play";
     }
 
     reproducir(cancion){
         this.slider.value=0;
+        this.cancion=cancion;
         this.slider.min=0;
         this.slider.max=cancion.duracion;
         this.tiempoactual=0;
+        this.tiempo1.classList.remove("js-visibility_hidden");
+        this.tiempo2.classList.remove("js-visibility_hidden");
+        this.estado="play";
         this.tiempo1.innerHTML="00:00";
         let t2={
             min:Math.floor(cancion.duracion/60),
@@ -179,17 +184,46 @@ class Player{
     }
 
     avanzar1seg(e){
-        e.tiempoactual++;
-        e.slider.value++;
-        let t2={
-            min:Math.floor(e.tiempoactual/60),
-            seg:e.tiempoactual%60
+        if (e.estado!="pausa"){
+            e.tiempo1.classList.remove("js-visibility_hidden");
+            e.tiempo2.classList.remove("js-visibility_hidden");
+            e.tiempoactual++;
+            e.slider.value++;
+            if (e.tiempoactual>e.cancion.duracion){
+                e.tiempoactual=0;
+                e.slider.value=0;
+            }
+            let t2={
+                min:Math.floor(e.tiempoactual/60),
+                seg:e.tiempoactual%60
+            }
+            if (t2.min<10)
+                t2.min="0"+t2.min;
+            if (t2.seg<10)
+                t2.seg="0"+t2.seg;
+            e.tiempo1.innerHTML=t2.min +":"+ t2.seg;
         }
-        if (t2.min<10)
-            t2.min="0"+t2.min;
-        if (t2.seg<10)
-            t2.seg="0"+t2.seg;
-        e.tiempo1.innerHTML=t2.min +":"+ t2.seg;
+        else{
+            e.tiempo1.classList.toggle("js-visibility_hidden");
+            e.tiempo2.classList.toggle("js-visibility_hidden");
+        }
     }
-
+    avanzarA(tiempo){
+        this.tiempoactual=tiempo;
+        let t1={
+            min:Math.floor(this.tiempoactual/60),
+            seg:this.tiempoactual%60
+        }
+        if (t1.min<10)
+            t1.min="0"+t1.min;
+        if (t1.seg<10)
+            t1.seg="0"+t1.seg;
+        this.tiempo1.innerHTML=t1.min +":"+ t1.seg;
+    }
+    togglePausa(){
+        if (this.estado=="pausa")
+            this.estado="play";
+        else
+            this.estado="pausa";
+    }
 }
