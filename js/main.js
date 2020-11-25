@@ -51,6 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         loadPage(param1, param2, param3);
     });
+    document.querySelector("#js-input-search-mobile").addEventListener("input", function () {
+        let param1 = "../html/busqueda.html";
+        let param2 = document.querySelector("#js-contenido");
+        let param3 = function () {
+            let clave = document.querySelector("#js-input-search-mobile").value;
+            cargarBusqueda(clave)
+        };
+        loadPage(param1, param2, param3);
+    });
 
     document.querySelectorAll(".js-button_to_home").forEach(element => {
         element.addEventListener("click", function () {
@@ -72,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let fila = document.createElement("div");
             let nom = document.createElement("p");
-            // nom.style.fontWeight = "bold";
             nom.innerHTML = element.nombre;
             fila.appendChild(nom);
             let image = document.createElement("img");

@@ -84,7 +84,12 @@
 /* Fin clases para transiciones básicas */
 
 /*  */
-
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
 /* Selectores generales (Ignorando si es Mobile o Desktop) */
 
 .js-visibility_hidden {
@@ -583,6 +588,18 @@ tr td:last-child {
 }
 
 .resultados_busqueda .playlist_card, .resultados_busqueda .individual_card {
+  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));  
+}
+
+.TopBusqueda>input{
+  display:none;
+}
+
+.TopBusqueda>label{
+  background-color:var(--Main_Slightly_Dark);
+}
+
+.resultados_busqueda .playlist_card,.resultados_busqueda .individual_card{
   margin: 10px;
   width: auto;
   max-width: 200px;
