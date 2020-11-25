@@ -579,10 +579,10 @@ tr td:last-child {
 .resultados_busqueda {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
-  
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 }
-.resultados_busqueda .playlist_card,.resultados_busqueda .individual_card{
+
+.resultados_busqueda .playlist_card, .resultados_busqueda .individual_card {
   margin: 10px;
   width: auto;
   max-width: 200px;
@@ -592,10 +592,43 @@ tr td:last-child {
 
 /* Fin pantalla Busqueda */
 
+/* Inicio Recomendaciones */
+
+.categoria_recomendada {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding-top: 25px;
+  overflow-x: scroll;
+}
+.categoria_recomendada .individual_card, .categoria_recomendada .playlist_card{
+  width: 200px;
+  height: 200px;
+  flex-shrink:0;
+  margin:4px;
+  margin-right: 12px;
+}
+.categoria_recomendada :last-child{
+  margin-right: 4px;
+}
+
+.categoria_recomendada p:first-child {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+/* Fin Recomendaciones */
+
 /* Inicio Scrollbar (en toda la versión desktop) */
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 /* Track (Barra de total de la página) */
