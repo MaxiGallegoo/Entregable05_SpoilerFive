@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Constantes */
     const BUTTON_TOGGLED_TEXT = "(js_toggled)";
-    const CANTIDAD_CATEGORIAS_RECOMENDADAS = 4;
+    // const CANTIDAD_CATEGORIAS_RECOMENDADAS = 4;
     /* Fin Constantes */
 
     /*globales*/
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         element.addEventListener("click", function () {
             let param1 = "../html/recomendaciones.html";
             let param2 = document.querySelector("#js-contenido");
-            // let param3 = function () {  };
+            // let param3 = null;
             let param3 = () => {
                 cargarPaginaRecomendados(document.querySelector("#js-container_recomendaciones"));
             }
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom.innerHTML = element.nombre;
             fila.appendChild(nom);
             let image = document.createElement("img");
-            image.src = element.imageURL;
+            image.src = element.imagen;
             fila.appendChild(image);
             let valora = document.createElement("p");
             let img_estrella = document.createElement("img");
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cargarTablaDeCancionesParaPaginaPlaylist(lista_reproduccion.canciones);
         let divValoracion = document.querySelector("#js-valoracion-playlist");
         dibujarEstrellasPlaylist(divValoracion, lista_reproduccion);
-        document.querySelector("#js-playlist_card").src = lista_reproduccion.imageURL;
+        document.querySelector("#js-playlist_card").src = lista_reproduccion.imagen;
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
         llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
     }
@@ -389,20 +389,98 @@ document.addEventListener("DOMContentLoaded", () => {
     //La idea sería que también reciba como parámetro el modo, y cree las recomendaciones en base a eso.
     //No se si llegaremos a implementarlo. 
     function cargarPaginaRecomendados(container) {
+        if(!container)return;
 
+        let child = createElementoCategoria("Recomendado_para_ti", recomendaciones["Recomendado_para_ti"]);
+        container.appendChild(child);
 
+        child = createElementoCategoria("Rock_en_Español", recomendaciones["Rock_en_Español"]);
+        container.appendChild(child);
 
+        child=createElementoCategoria("Lo_mejor_de_La_Renga", getArtist("La renga"));
+        container.appendChild(child);
+
+        child=createElementoCategoria("Podcasts_exclusivos", recomendaciones["Podcasts_exclusivos"]);
+        container.appendChild(child);
+
+        child=createElementoCategoria("Tarde_de_Mates", recomendaciones["Tarde_de_Mates"]);
+        container.appendChild(child);
+
+        child=createElementoCategoria("Lo_mejor_de_Ac/Dc", getArtist("Ac/Dc"));
+        container.appendChild(child);
     }
 
+    function createElementoCategoria(titulo, cards = []) {
+        let div = document.createElement("div");
+        div.classList.add("categoria_recomendada");
+        let title = document.createElement("p");
+        titulo = titulo.replaceAll('_', ' ');
+        title.innerHTML = titulo;
+        div.appendChild(title);
+        cards.forEach(c => {
+            div.appendChild(createCard(c));
+        });
+        return div;
+    }
+    function createCard(c) {
+
+        let nombreAtributo = "nombre_cancion";
+        let className = "individual_card";
+        if (c.canciones) {
+            className = "playlist_card";
+            nombreAtributo = "nombre";
+        }
+
+        let cardDiv = document.createElement("div");
+        cardDiv.classList.add(className);
+
+        let cardImg = document.createElement("img");
+        cardImg.classList.add("card_image");
+        cardImg.src = c.imagen;
+
+        cardDiv.appendChild(cardImg);
+
+        let effectDiv = document.createElement("div");
+
+        cardDiv.appendChild(effectDiv);
+
+        let buttonAdd = document.createElement("button");
+        let imagenAdd = document.createElement("img");
+        imagenAdd.src = "../img/Iconos/Base/botones_armados/Button_Add.svg";
+        buttonAdd.appendChild(imagenAdd);
+
+        cardDiv.appendChild(buttonAdd);
+
+        let titleP = document.createElement("p");
+        titleP.innerHTML = c[nombreAtributo];
+
+        cardDiv.appendChild(titleP);
+
+        let buttonPlay = document.createElement("button");
+        let imagenPlay = document.createElement("img");
+        imagenPlay.src = "../img/Iconos/Base/botones_armados/Button_Play.svg";
+        buttonPlay.appendChild(imagenPlay);
+        if (!c.canciones) {
+            buttonPlay.addEventListener("click", () => {
+                player.reproducir(c);
+                // cancionActual = element;
+            });
+        }
+
+        cardDiv.appendChild(buttonPlay);
+        return cardDiv;
+    }
 
     /* Llamado a funciones (al cargar index) */
     cargarFavBar();
 
     player.reproducir(audios[cancionActual]);
     //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play(pausado para que no moleste)
-    loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"), () => {
+    loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"),
+     () => {
         cargarPaginaRecomendados(document.querySelector("#js-container_recomendaciones"));
-    });
+    }
+    );
 
     //HELPERS
 
