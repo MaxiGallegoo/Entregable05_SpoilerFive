@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".boton_pasar_cancion").forEach(button => {
         button.addEventListener("click", () => {
             cancionActual = Math.floor(Math.random() * audios.length);
-            player.reproducir(audios[cancionActual]);
+            reproducirGlobal(audios[cancionActual]);
         });
     });
     document.querySelector("#js-search").addEventListener("click", function () {
@@ -72,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             loadPage(param1, param2, param3);
         });
     });
+    document.querySelector("#js-slidertiempo").addEventListener("input", function(){player.avanzarA(document.querySelector("#js-slidertiempo").value)});
+    document.querySelector("#js-play-pause").addEventListener("click", function(){player.togglePausa()});
     //FIN LISTENERS
 
     function cargarFavBar() {
@@ -136,6 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let divValoracion = document.querySelector("#js-valoracion-playlist");
         dibujarEstrellasPlaylist(divValoracion, lista_reproduccion);
         document.querySelector("#js-playlist_card").src = lista_reproduccion.imagen;
+        if(lista_reproduccion.nombre=="Favoritos")
+            document.querySelector("#js-add-en-pagina-verlista").src="";
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
         llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
     }
@@ -181,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
             boton_add.appendChild(image_add);
 
             boton_play.addEventListener("click", function () {
-                player.reproducir(
+                reproducirGlobal(
                     audios[element]);
                 cancionActual = element;
             });
@@ -244,6 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let btn2 = document.createElement("button");
                 let img2 = document.createElement("img");
                 img2.src = "../img/Iconos/Base/botones_armados/Button_Play.svg";
+                img2.addEventListener("click", function(){reproducirGlobal(element)});
                 btn2.append(img2);
                 divCard.append(btn2);
 
@@ -470,7 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
         buttonPlay.appendChild(imagenPlay);
         if (!c.canciones) {
             buttonPlay.addEventListener("click", () => {
-                player.reproducir(c);
+                reproducirGlobal(c);
                 // cancionActual = element;
             });
         }
@@ -481,9 +486,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Llamado a funciones (al cargar index) */
     cargarFavBar();
-
-    player.reproducir(audios[cancionActual]);
-    //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play(pausado para que no moleste)
+    reproducirGlobal(audios[cancionActual]);
+    setInterval(function(){player.avanzar1seg(player)}, 1000);
     loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"),
      () => {
         cargarPaginaRecomendados(document.querySelector("#js-container_recomendaciones"));
@@ -491,6 +495,28 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     //HELPERS
+
+function reproducirGlobal(cancion){
+    player.reproducir(cancion);
+    let titulos=document.querySelectorAll(".js-titulo-player");
+    titulos.forEach(element => {
+        element.addEventListener("click", () => {
+            let param1 = "../html/elemento_individual.html";
+            let param2 = document.querySelector("#js-contenido");
+            let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
+            loadPage(param1, param2, param3);
+        })
+    });
+    let autores=document.querySelectorAll(".js-autor-player");
+    autores.forEach(element => {
+        element.addEventListener("click", () => {
+            let param1 = "../html/elemento_individual.html";
+            let param2 = document.querySelector("#js-contenido");
+            let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
+            loadPage(param1, param2, param3);
+        })
+    });
+}
 
     async function fetchHtmlAsText(url) {
         return await (await fetch(url)).text();
