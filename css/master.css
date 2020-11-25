@@ -90,7 +90,8 @@
 .js-visibility_hidden {
   visibility: hidden;
 }
-.js-display_none{
+
+.js-display_none {
   display: none;
 }
 
@@ -365,6 +366,7 @@ tr td:last-child {
   height: 200px;
   grid-area: 1/1/3/2;
   margin-right: 4px;
+  border: none;
 }
 
 .playlist_page_data .rate_bar, .song_page_data .rate_bar {
@@ -379,12 +381,17 @@ tr td:last-child {
   /* animation: rotar3d 3s linear infinite; */
 }
 
-@keyframes rotar3d{
-  0%{transform: scale(1.1) rotate3d(0,1,0,0deg);}
-  50%{transform: scale(1.3) rotate3d(0,1,0,180deg);}
-  100%{transform: scale(1.1) rotate3d(0,1,0,360deg);}
+@keyframes rotar3d {
+  0% {
+    transform: scale(1.1) rotate3d(0, 1, 0, 0deg);
+  }
+  50% {
+    transform: scale(1.3) rotate3d(0, 1, 0, 180deg);
+  }
+  100% {
+    transform: scale(1.1) rotate3d(0, 1, 0, 360deg);
+  }
 }
-
 
 .playlist_page_data .rate_bar+p, .song_page_data .rate_bar+p {
   grid-area: 1/3/2/4;
@@ -406,6 +413,10 @@ tr td:last-child {
   padding: 0;
   margin: 0;
   margin-bottom: 3px;
+}
+
+.playlist_songs a:hover {
+  text-decoration: underline;
 }
 
 .playlist_songs tr {
@@ -562,6 +573,24 @@ tr td:last-child {
 }
 
 /* Fin FavBar */
+
+/* Inicio pantalla Busqueda */
+
+.resultados_busqueda {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
+  
+}
+.resultados_busqueda .playlist_card,.resultados_busqueda .individual_card{
+  margin: 10px;
+  width: auto;
+  max-width: 200px;
+  height: auto;
+  max-height: 200px;
+}
+
+/* Fin pantalla Busqueda */
 
 /* Inicio Scrollbar (en toda la versión desktop) */
 
