@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Constantes */
     const BUTTON_TOGGLED_TEXT = "(js_toggled)";
+    const CANTIDAD_CATEGORIAS_RECOMENDADAS = 4;
     /* Fin Constantes */
 
     /*globales*/
@@ -49,6 +50,18 @@ document.addEventListener("DOMContentLoaded", () => {
             cargarBusqueda(clave)
         };
         loadPage(param1, param2, param3);
+    });
+
+    document.querySelectorAll(".js-button_to_home").forEach(element => {
+        element.addEventListener("click", function () {
+            let param1 = "../html/recomendaciones.html";
+            let param2 = document.querySelector("#js-contenido");
+            // let param3 = function () {  };
+            let param3 = () => {
+                cargarPaginaRecomendados(document.querySelector("#js-container_recomendaciones"));
+            }
+            loadPage(param1, param2, param3);
+        });
     });
     //FIN LISTENERS
 
@@ -124,7 +137,22 @@ document.addEventListener("DOMContentLoaded", () => {
         parrafos[2].innerHTML = transformarReproduccionesATexto(playlist.cant_reproducciones);
         parrafos[3].innerHTML = calcularTiempoTotalPlaylist(playlist.canciones);
     }
+    function cargarDatosPaginaElementoIndividual(elem) {
+        if (!elem || !elem.nombre_cancion) return;
+        document.querySelector("#js-elem_card").src = elem.imagen;
+        let arr_parrafos = document.querySelectorAll(".js-element_data");
 
+        llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
+    }
+    function llenarInfoDePaginaElemIndividual(parrafos = [], elem) {
+        parrafos[0].innerHTML = elem.nombre_cancion;
+        parrafos[1].innerHTML = elem.artista;
+        parrafos[2].innerHTML = elem.album;
+        //Los podcast tienen sección "album" vacía
+        if (!elem.album || elem.album == "") parrafos[2].classList.add("js-display_none");
+        parrafos[3].innerHTML = elem.año;
+
+    }
     function cargarTablaDeCancionesParaPaginaPlaylist(lista) {
         let tabla = document.querySelector("#cuerpo_tabla");
         document.querySelector("#js-sort_titulo").addEventListener("click", function () { sortTable(0) });
@@ -149,17 +177,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     audios[element]);
                 cancionActual = element;
             });
+            let nombre_cancion = document.createElement("a");
+            nombre_cancion.innerHTML = cancion.nombre_cancion;
+            nombre_cancion.href = "#";
+            nombre_cancion.addEventListener("click", () => {
+                let param1 = "../html/elemento_individual.html";
+                let param2 = document.querySelector("#js-contenido");
+                let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
+                loadPage(param1, param2, param3);
+            });
 
             let fila = document.createElement("tr");
-            let nom_cancion = document.createElement("td");
+            let primera_celda = document.createElement("td");
 
+            primera_celda.appendChild(boton_play);
+            primera_celda.appendChild(nombre_cancion);
+            primera_celda.appendChild(boton_add);
 
-            nom_cancion.appendChild(boton_add);
-            nom_cancion.innerHTML += cancion.nombre_cancion;
-            nom_cancion.appendChild(boton_play);
-
-
-            fila.appendChild(nom_cancion);
+            fila.appendChild(primera_celda);
             let autor = document.createElement("td");
             autor.innerHTML = cancion.artista;
             fila.appendChild(autor);
@@ -351,23 +386,23 @@ document.addEventListener("DOMContentLoaded", () => {
             div.addEventListener("mouseleave", x.bind(this));
         }
     }
+    //La idea sería que también reciba como parámetro el modo, y cree las recomendaciones en base a eso.
+    //No se si llegaremos a implementarlo. 
+    function cargarPaginaRecomendados(container) {
+
+
+
+    }
 
 
     /* Llamado a funciones (al cargar index) */
     cargarFavBar();
 
-    document.querySelectorAll(".js-button_to_home").forEach(element => {
-        element.addEventListener("click", function () {
-            let param1 = "../html/recomendaciones.html";
-            let param2 = document.querySelector("#js-contenido");
-            // let param3 = function () {  };
-            let param3 = null;
-            loadPage(param1, param2, param3);
-        });
-    });
     player.reproducir(audios[cancionActual]);
     //setInterval(function(){player.avanzar1seg(player)}, 1000); //Reproduccion en play(pausado para que no moleste)
-    loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"), null);
+    loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"), () => {
+        cargarPaginaRecomendados(document.querySelector("#js-container_recomendaciones"));
+    });
 
     //HELPERS
 
