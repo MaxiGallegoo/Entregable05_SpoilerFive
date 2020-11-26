@@ -620,6 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let param1 = "../html/elemento_individual.html";
         let param2 = document.querySelector("#js-contenido");
         let param3 = () => { cargarDatosPaginaElementoIndividual(c) };
+        let add_src =  "../img/Iconos/Base/botones_armados/Button_Add.svg";
 
         let nombreAtributo = "nombre_cancion";
         let className = "individual_card";
@@ -628,6 +629,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombreAtributo = "nombre";
             param1 = "../html/lista_reproduccion.html";
             param3 = () => { cargarDatosPaginaLista(c) };
+            add_src =  "../img/Iconos/Base/botones_armados/Button_heart.svg"
 
         }
 
@@ -653,7 +655,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let buttonAdd = document.createElement("button");
         let imagenAdd = document.createElement("img");
-        imagenAdd.src = "../img/Iconos/Base/botones_armados/Button_Add.svg";
+        imagenAdd.src = add_src;
         buttonAdd.appendChild(imagenAdd);
 
         cardDiv.appendChild(buttonAdd);
