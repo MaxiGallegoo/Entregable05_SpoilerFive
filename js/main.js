@@ -201,11 +201,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function llenarInfoDePaginaElemIndividual(parrafos = [], elem) {
         parrafos[0].innerHTML = elem.nombre_cancion;
-        parrafos[1].innerHTML = elem.artista;
-        parrafos[2].innerHTML = elem.album;
+        parrafos[1].innerHTML = "Artista: "+elem.artista;
+        parrafos[2].innerHTML = "Album: "+elem.album;
         //Los podcast tienen sección "album" vacía
         if (!elem.album || elem.album == "") parrafos[2].classList.add("js-display_none");
-        parrafos[3].innerHTML = elem.año;
+        parrafos[3].innerHTML = "Año: "+elem.año;
 
     }
     function dibujarEstrellasIndividual(div, cancion) {
@@ -409,6 +409,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let listaSalida = listaBusqueda(clave);
         let divSalida = document.querySelector("#js-resultados");
         divSalida.innerHTML = "";
+        let labels=document.querySelector(".TopBusqueda");
+        checkIfChecked(labels.children);
+        for (let i=0;i<labels.children.length;i+=2){
+            labels.children[i].addEventListener("change", function(){checkIfChecked(labels.children)});
+        }
         if (listaSalida.length > 0) {
             listaSalida.forEach(element => {
                 let divCard = document.createElement("div");
@@ -441,6 +446,19 @@ document.addEventListener("DOMContentLoaded", () => {
             divSalida.append(pe);
         }
     }
+    function checkIfChecked(labels){
+        let salida=0;
+        for (let i=0; i<labels.length;i+=2){
+            if (labels[i].checked){
+                labels[i+1].style.backgroundColor="var(--Main_Dark)";
+                salida=i;
+            }
+            else
+                labels[i+1].style.backgroundColor="var(--Main_Light_2)";
+        }
+        return salida;
+    }
+
 
     function dibujarEstrellasPlaylist(div, lista) {
         let estrella1 = document.createElement("IMG");
