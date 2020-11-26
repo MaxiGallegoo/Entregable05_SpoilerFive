@@ -77,6 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelector("#js-slidertiempo").addEventListener("input", function () { player.avanzarA(document.querySelector("#js-slidertiempo").value) });
     document.querySelector("#js-play-pause").addEventListener("click", function () { player.togglePausa() });
+    document.querySelector("#js-add-to-playlist-mobile").addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
+    document.querySelector("#js-add-to-playlist-desktop").addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
+    document.querySelector(".popUpMenu").addEventListener("click", function () {document.querySelector(".popUpMenu").classList.add("oculto");});
+    
     //FIN LISTENERS
 
     function cargarFavBar() {
@@ -414,6 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i=0;i<labels.children.length;i+=2){
             labels.children[i].addEventListener("change", function(){checkIfChecked(labels.children)});
         }
+        labels.children[5].addEventListener("click", function(){mostrarPopup("../img/popups/popupFiltroOtros.png")});
         if (listaSalida.length > 0) {
             listaSalida.forEach(element => {
                 let divCard = document.createElement("div");
@@ -458,7 +463,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return salida;
     }
-
+    function mostrarPopup(url){
+        console.log("entró");
+        let divpop=document.querySelector(".popUpMenu");
+        divpop.children[0].style.backgroundImage="url("+url+")";
+        divpop.classList.remove("oculto");
+    }
 
     function dibujarEstrellasPlaylist(div, lista) {
         let estrella1 = document.createElement("IMG");
