@@ -114,7 +114,9 @@
 thead td img.js-upside_down {
   margin-top: 0;
 }
-
+.Titulo-seccion{
+  font-size: var(--Main_Heading_2);
+}
 body {
   color: var(--Main_Darker);
   background-color: var(--Main_Lightest);
@@ -624,6 +626,12 @@ tr td:last-child {
 
 .TopBusqueda>label {
   background-color: var(--Main_Light_2);
+  display: table-cell;
+  font-size: var(--Main_Heading_2);
+  width: 1%;
+  text-align: center;
+  border-color: var(--Main_Dark);
+  border: 1px solid;
 }
 
 .resultados_busqueda .playlist_card, .resultados_busqueda .individual_card {
