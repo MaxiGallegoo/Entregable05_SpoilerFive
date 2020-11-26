@@ -364,11 +364,11 @@ tr td:last-child {
 /* Inicio pantalla Playlist / Canción */
 
 .playlist_page_data, .song_page_data {
-  height: 200px;
+  height: 260px;
   width: 100%;
   display: grid;
   overflow: hidden;
-  grid-template: 44px, 156px/200px 40px 1fr;
+  grid-template: 44px 156px 10px 40px/200px 40px 1fr;
   margin-bottom: 25px;
   /* grid-template: 100px, 100px/200px 40px 1fr 28fr; */
   /* align-items: flex-start; */
@@ -388,9 +388,10 @@ tr td:last-child {
 }
 
 .playlist_page_data .rate_bar, .song_page_data .rate_bar {
-  width: 40px;
+  height: 40px;
+  width: 200px;
   margin-right: 4px;
-  grid-area: 1/2/3/3;
+  grid-area: 4/1/5/2;
   /* width: 40px; */
 }
 
@@ -421,7 +422,7 @@ tr td:last-child {
 .detalles_pagina {
   width: 1000000px;
   padding: 0;
-  grid-area: 2/3/3/4;
+  grid-area: 2/3/5/4;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
