@@ -694,6 +694,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //HELPERS
 
     function reproducirGlobal(cancion) {
+        let image_play = document.querySelector("#js-play-pause").querySelector("img");
+        if(!image_play.src.includes(BUTTON_TOGGLED_TEXT)){
+            let added_toggled = BUTTON_TOGGLED_TEXT + ".svg";
+            image_play.src = image_play.src.replace(".svg", added_toggled);
+        }
         player.reproducir(cancion);
         let titulos = document.querySelectorAll(".js-titulo-player");
         titulos.forEach(element => {
