@@ -329,6 +329,9 @@ tr td:last-child {
 .oculto{
   display:none;
 }
+.blur{
+  filter: blur(4px);
+}
 .popUpMenu>.imagenPopup{
   position:absolute;
   left: 30%;
