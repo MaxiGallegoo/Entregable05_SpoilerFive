@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Constantes */
     const BUTTON_TOGGLED_TEXT = "(js_toggled)";
     const ESTRELLA_VACIA = "../img/Iconos/Base/Estrella.svg";
-    const ESTRELLA_LLENA_GENERAL = "../img/Iconos/Base/EstrellaLlena.svg";
-    const ESTRELLA_LLENA_PERSONAL = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
+    const ESTRELLA_LLENA_COMUN = "../img/Iconos/Base/EstrellaLlena.svg";
+    const ESTRELLA_LLENA_DORADA = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
     // const CANTIDAD_CATEGORIAS_RECOMENDADAS = 4;
     /* Fin Constantes */
 
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         for (let i = 0; i < divs.length; i++) {
             divs[i].querySelector("p").innerHTML = elem.ultimas_valoraciones[i].user;
-            cargarRateBar(divs[i].querySelector(".rate_bar"), elem.ultimas_valoraciones[i].val, false);
+            cargarRateBar(divs[i].querySelector(".rate_bar"), elem.ultimas_valoraciones[i].val, true);
         }
     }
     function cargarRateBar(rate_bar, estrellas = 4, esDorada = false) {
@@ -180,9 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (i >= estrellas) {
                 imgs[i].src = ESTRELLA_VACIA;
             } else if (esDorada) {
-                imgs[i].src = ESTRELLA_LLENA_PERSONAL;
+                imgs[i].src = ESTRELLA_LLENA_DORADA;
             } else {
-                imgs[i].src = ESTRELLA_LLENA_GENERAL;
+                imgs[i].src = ESTRELLA_LLENA_COMUN;
             }
         }
     }
