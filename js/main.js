@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             loadPage(param1, param2, param3);
         });
     });
-    document.querySelector("#js-slidertiempo").addEventListener("input", function(){player.avanzarA(document.querySelector("#js-slidertiempo").value)});
-    document.querySelector("#js-play-pause").addEventListener("click", function(){player.togglePausa()});
+    document.querySelector("#js-slidertiempo").addEventListener("input", function () { player.avanzarA(document.querySelector("#js-slidertiempo").value) });
+    document.querySelector("#js-play-pause").addEventListener("click", function () { player.togglePausa() });
     //FIN LISTENERS
 
     function cargarFavBar() {
@@ -138,8 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let divValoracion = document.querySelector("#js-valoracion-playlist");
         dibujarEstrellasPlaylist(divValoracion, lista_reproduccion);
         document.querySelector("#js-playlist_card").src = lista_reproduccion.imagen;
-        if(lista_reproduccion.nombre=="Favoritos")
-            document.querySelector("#js-add-en-pagina-verlista").src="";
+        if (lista_reproduccion.nombre == "Favoritos")
+            document.querySelector("#js-add-en-pagina-verlista").src = "";
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
         llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
     }
@@ -385,7 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let btn2 = document.createElement("button");
                 let img2 = document.createElement("img");
                 img2.src = "../img/Iconos/Base/botones_armados/Button_Play.svg";
-                img2.addEventListener("click", function(){reproducirGlobal(element)});
+                img2.addEventListener("click", function () { reproducirGlobal(element) });
                 btn2.append(img2);
                 divCard.append(btn2);
 
@@ -539,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //La idea sería que también reciba como parámetro el modo, y cree las recomendaciones en base a eso.
     //No se si llegaremos a implementarlo. 
     function cargarPaginaRecomendados(container) {
-        if(!container)return;
+        if (!container) return;
 
         let child = createElementoCategoria("Recomendado_para_ti", recomendaciones["Recomendado_para_ti"]);
         container.appendChild(child);
@@ -547,16 +547,16 @@ document.addEventListener("DOMContentLoaded", () => {
         child = createElementoCategoria("Rock_en_Español", recomendaciones["Rock_en_Español"]);
         container.appendChild(child);
 
-        child=createElementoCategoria("Lo_mejor_de_La_Renga", getArtist("La renga"));
+        child = createElementoCategoria("Lo_mejor_de_La_Renga", getArtist("La renga"));
         container.appendChild(child);
 
-        child=createElementoCategoria("Podcasts_exclusivos", recomendaciones["Podcasts_exclusivos"]);
+        child = createElementoCategoria("Podcasts_exclusivos", recomendaciones["Podcasts_exclusivos"]);
         container.appendChild(child);
 
-        child=createElementoCategoria("Tarde_de_Mates", recomendaciones["Tarde_de_Mates"]);
+        child = createElementoCategoria("Tarde_de_Mates", recomendaciones["Tarde_de_Mates"]);
         container.appendChild(child);
 
-        child=createElementoCategoria("Lo_mejor_de_Ac/Dc", getArtist("Ac/Dc"));
+        child = createElementoCategoria("Lo_mejor_de_Ac/Dc", getArtist("Ac/Dc"));
         container.appendChild(child);
     }
 
@@ -624,36 +624,36 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Llamado a funciones (al cargar index) */
     cargarFavBar();
     reproducirGlobal(audios[cancionActual]);
-    setInterval(function(){player.avanzar1seg(player)}, 1000);
+    setInterval(function () { player.avanzar1seg(player) }, 1000);
     loadPage("../html/recomendaciones.html", document.querySelector("#js-contenido"),
-     () => {
-        cargarPaginaRecomendados(document.querySelector("#js-container_recomendaciones"));
-    }
+        () => {
+            cargarPaginaRecomendados(document.querySelector("#js-container_recomendaciones"));
+        }
     );
 
     //HELPERS
 
-function reproducirGlobal(cancion){
-    player.reproducir(cancion);
-    let titulos=document.querySelectorAll(".js-titulo-player");
-    titulos.forEach(element => {
-        element.addEventListener("click", () => {
-            let param1 = "../html/elemento_individual.html";
-            let param2 = document.querySelector("#js-contenido");
-            let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
-            loadPage(param1, param2, param3);
-        })
-    });
-    let autores=document.querySelectorAll(".js-autor-player");
-    autores.forEach(element => {
-        element.addEventListener("click", () => {
-            let param1 = "../html/elemento_individual.html";
-            let param2 = document.querySelector("#js-contenido");
-            let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
-            loadPage(param1, param2, param3);
-        })
-    });
-}
+    function reproducirGlobal(cancion) {
+        player.reproducir(cancion);
+        let titulos = document.querySelectorAll(".js-titulo-player");
+        titulos.forEach(element => {
+            element.addEventListener("click", () => {
+                let param1 = "../html/elemento_individual.html";
+                let param2 = document.querySelector("#js-contenido");
+                let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
+                loadPage(param1, param2, param3);
+            })
+        });
+        let autores = document.querySelectorAll(".js-autor-player");
+        autores.forEach(element => {
+            element.addEventListener("click", () => {
+                let param1 = "../html/elemento_individual.html";
+                let param2 = document.querySelector("#js-contenido");
+                let param3 = function () { cargarDatosPaginaElementoIndividual(cancion) };
+                loadPage(param1, param2, param3);
+            })
+        });
+    }
 
     async function fetchHtmlAsText(url) {
         return await (await fetch(url)).text();
@@ -718,8 +718,23 @@ function reproducirGlobal(cancion){
                 }
             }
         }
+        cambiarVisibilidadFlechasOrden(n, dir);
     }
+    function cambiarVisibilidadFlechasOrden(clickeado, nuevo_orden) {
+        let tds = document.querySelector("#js-tablaPlaylist").querySelector("thead").querySelectorAll("td");
+        // console.log(tds);
+        tds.forEach(td => {
+            let image = td.querySelector("img");
+            if (image) {
+                image.classList.remove("js-upside_down");
+                image.classList.add("js-display_none");
+            }
+        });
+        let currentImageSort = tds[clickeado].querySelector("img");
+        currentImageSort.classList.remove("js-display_none");
+        if (nuevo_orden == "asc") currentImageSort.classList.add("js-upside_down");
 
+    }
 
 
 
