@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function llenarInfoDePaginaPlaylist(parrafos = [], playlist) {
         parrafos[0].innerHTML = playlist.nombre;
-        parrafos[1].innerHTML = playlist.canciones.length + " Canciones";
+        parrafos[1].innerHTML = playlist.canciones.length + " Elementos";
         parrafos[2].innerHTML = transformarReproduccionesATexto(playlist.cant_reproducciones);
         parrafos[3].innerHTML = calcularTiempoTotalPlaylist(playlist.canciones);
     }

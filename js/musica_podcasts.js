@@ -105,7 +105,28 @@ function getDuracion(arreglo) {
 //     "calificacion":4, //rango de 1 a 5
 //     "valorada":false,
 //     "cant_valoraciones":10,
-//     "ultimas_valoraciones":[2,2,4,3,5],
+//     "ultimas_valoraciones": [
+    //     {
+    //         "user":"Andrea",
+    //         "val":2
+    //     },
+    //     {
+    //         "user":"Jorge",
+    //         "val":4
+    //     },
+    //     {
+    //         "user":"Gabriela",
+    //         "val":4
+    //     },
+    //     {
+    //         "user":"Alberto",
+    //         "val":3
+    //     },
+    //     {
+    //         "user":"Mariano",
+    //         "val":5
+    //     }
+//     ],
 //     "comentarios":[]//array de comentarios en formato json
 //    }
 
@@ -123,7 +144,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }, { "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }, { "user": "user1", "comment": "Este es el comentario del usuario", "premium": false, "fecha": "01/01/2020" }, { "user": "user1", "comment": "Este es el comentario del usuario", "premium": false, "fecha": "01/01/2020" }]
     },
     {
@@ -139,7 +181,28 @@ let audios = [
         "calificacion": 3,
         "valorada": true,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -155,7 +218,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -171,7 +255,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -187,7 +292,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -203,7 +329,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -219,7 +366,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -235,7 +403,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -251,7 +440,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -267,7 +477,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -283,7 +514,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -299,7 +551,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -315,7 +588,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -331,7 +625,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -347,7 +662,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -363,7 +699,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -379,7 +736,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -395,7 +773,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -411,7 +810,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -427,7 +847,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -443,7 +884,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -459,7 +921,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -475,7 +958,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -491,7 +995,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -507,7 +1032,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -523,7 +1069,28 @@ let audios = [
         "calificacion": 1,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -539,7 +1106,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -555,7 +1143,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -571,7 +1180,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -587,7 +1217,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -603,7 +1254,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -619,7 +1291,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -635,7 +1328,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -651,7 +1365,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -667,7 +1402,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -683,7 +1439,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -699,7 +1476,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -715,7 +1513,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -731,7 +1550,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -747,7 +1587,28 @@ let audios = [
         "calificacion": 1,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -763,7 +1624,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -779,7 +1661,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -795,7 +1698,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -811,7 +1735,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -827,7 +1772,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -843,7 +1809,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -859,7 +1846,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -875,7 +1883,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -891,7 +1920,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -907,7 +1957,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -923,7 +1994,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -939,7 +2031,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -955,7 +2068,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -971,7 +2105,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -987,7 +2142,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1003,7 +2179,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1019,7 +2216,28 @@ let audios = [
         "calificacion": 1,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1035,7 +2253,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1051,7 +2290,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1067,7 +2327,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1083,7 +2364,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1099,7 +2401,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1115,7 +2438,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1131,7 +2475,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1147,7 +2512,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1163,7 +2549,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1179,7 +2586,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1195,7 +2623,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1211,7 +2660,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1227,7 +2697,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1243,7 +2734,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1259,7 +2771,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1275,7 +2808,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1291,7 +2845,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1307,7 +2882,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1323,7 +2919,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1339,7 +2956,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1355,7 +2993,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1371,7 +3030,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1387,7 +3067,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1403,7 +3104,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1419,7 +3141,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1435,7 +3178,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1451,7 +3215,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1467,7 +3252,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1483,7 +3289,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1499,7 +3326,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1515,7 +3363,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1531,7 +3400,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1547,7 +3437,28 @@ let audios = [
         "calificacion": 1,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1563,7 +3474,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1579,7 +3511,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1595,7 +3548,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1611,7 +3585,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1627,7 +3622,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1643,7 +3659,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1659,7 +3696,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1675,7 +3733,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1691,7 +3770,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1707,7 +3807,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1723,7 +3844,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1739,7 +3881,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1755,7 +3918,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1771,7 +3955,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1787,7 +3992,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1803,7 +4029,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1819,7 +4066,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1835,7 +4103,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1851,7 +4140,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1867,7 +4177,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1883,7 +4214,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1899,7 +4251,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1915,7 +4288,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1931,7 +4325,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1947,7 +4362,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1963,7 +4399,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1979,7 +4436,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -1995,7 +4473,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2011,7 +4510,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2027,7 +4547,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2043,7 +4584,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2059,7 +4621,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2075,7 +4658,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2091,7 +4695,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2107,7 +4732,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2123,7 +4769,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2139,7 +4806,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2155,7 +4843,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2171,7 +4880,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2187,7 +4917,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2203,7 +4954,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2219,7 +4991,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2235,7 +5028,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2251,7 +5065,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2267,7 +5102,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2283,7 +5139,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2299,7 +5176,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2315,7 +5213,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2331,7 +5250,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2347,7 +5287,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2363,7 +5324,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2379,7 +5361,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2395,7 +5398,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2411,7 +5435,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2427,7 +5472,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2443,7 +5509,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2459,7 +5546,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2475,7 +5583,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2491,7 +5620,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2507,7 +5657,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2523,7 +5694,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2539,7 +5731,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2555,7 +5768,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2571,7 +5805,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2587,7 +5842,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2603,7 +5879,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2619,7 +5916,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2635,7 +5953,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2651,7 +5990,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2667,7 +6027,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2683,7 +6064,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2699,7 +6101,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2715,7 +6138,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2731,7 +6175,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2747,7 +6212,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2763,7 +6249,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2779,7 +6286,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2795,7 +6323,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2811,7 +6360,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2827,7 +6397,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2843,7 +6434,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2859,7 +6471,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2875,7 +6508,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2891,7 +6545,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2907,7 +6582,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2923,7 +6619,28 @@ let audios = [
         "calificacion": 2,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2939,7 +6656,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2955,7 +6693,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2971,7 +6730,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -2987,7 +6767,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3003,7 +6804,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3019,7 +6841,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3035,7 +6878,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3051,7 +6915,28 @@ let audios = [
         "calificacion": 5,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3067,7 +6952,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3083,7 +6989,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3099,7 +7026,28 @@ let audios = [
         "calificacion": 3,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     },
     {
@@ -3115,7 +7063,28 @@ let audios = [
         "calificacion": 4,
         "valorada": false,
         "cant_valoraciones": 10,
-        "ultimas_valoraciones": [2, 2, 4, 3, 5],
+        "ultimas_valoraciones": [
+            {
+                "user": "Andrea",
+                "val": 2
+            },
+            {
+                "user": "Jorge",
+                "val": 4
+            },
+            {
+                "user": "Gabriela",
+                "val": 4
+            },
+            {
+                "user": "Alberto",
+                "val": 3
+            },
+            {
+                "user": "Mariano",
+                "val": 5
+            }
+        ],
         "comentarios": [{ "user": "user1", "comment": "Este es el comentario del usuario", "premium": true, "fecha": "01/01/2020" }]
     }
 ];
