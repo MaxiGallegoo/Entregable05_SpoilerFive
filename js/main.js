@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!elem || !elem.nombre_cancion) return;
         document.querySelector("#js-elem_card").src = elem.imagen;
         let arr_parrafos = document.querySelectorAll(".js-element_data");
-
         llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
+        dibujarEstrellasIndividual(document.querySelector("#js-valoracion-individual"), elem)
     }
     function llenarInfoDePaginaElemIndividual(parrafos = [], elem) {
         parrafos[0].innerHTML = elem.nombre_cancion;
@@ -164,6 +164,143 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!elem.album || elem.album == "") parrafos[2].classList.add("js-display_none");
         parrafos[3].innerHTML = elem.año;
 
+    }
+    function dibujarEstrellasIndividual(div, cancion) {
+        let estrella1 = document.createElement("IMG");
+        if (cancion.calificacion >= 1) {
+            estrella1.src = "../img/Iconos/Base/EstrellaLlena.svg";
+            if (cancion.valorada)
+                estrella1.src = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+        else
+            estrella1.src = "../img/Iconos/Base/Estrella.svg";
+        let estrella2 = document.createElement("IMG");
+        if (cancion.calificacion >= 2) {
+            estrella2.src = "../img/Iconos/Base/EstrellaLlena.svg";
+            if (cancion.valorada)
+                estrella2.src = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+        else
+            estrella2.src = "../img/Iconos/Base/Estrella.svg";
+        let estrella3 = document.createElement("IMG");
+        if (cancion.calificacion >= 3) {
+            estrella3.src = "../img/Iconos/Base/EstrellaLlena.svg";
+            if (cancion.valorada)
+                estrella3.src = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+        else
+            estrella3.src = "../img/Iconos/Base/Estrella.svg";
+        let estrella4 = document.createElement("IMG");
+        if (cancion.calificacion >= 4) {
+            estrella4.src = "../img/Iconos/Base/EstrellaLlena.svg";
+            if (cancion.valorada)
+                estrella4.src = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+        else
+            estrella4.src = "../img/Iconos/Base/Estrella.svg";
+        let estrella5 = document.createElement("IMG");
+        if (cancion.calificacion == 5) {
+            estrella5.src = "../img/Iconos/Base/EstrellaLlena.svg";
+            if (cancion.valorada)
+                estrella5.src = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
+        }
+        else
+            estrella5.src = "../img/Iconos/Base/Estrella.svg";
+        if (div != null)
+            div.innerHTML = "";
+        div.appendChild(estrella1);
+        div.appendChild(estrella2);
+        div.appendChild(estrella3);
+        div.appendChild(estrella4);
+        div.appendChild(estrella5);
+
+        //COMENTAR HASTA EL FINAL SI ROMPE
+        let f0 = function () {
+            for (let i = 0; i < div.children.length; i++) {
+                div.children[i].src = "../img/Iconos/Base/Estrella.svg";
+            }
+            div.children[0].src = "../img/Iconos/Base/EstrellaLlena.svg";
+        }
+        let f01 = function () {
+            cancion.valorada = true;
+            cancion.calificacion = 1;
+        }
+        let f1 = function () {
+            for (let i = 0; i < div.children.length; i++) {
+                div.children[i].src = "../img/Iconos/Base/Estrella.svg";
+            }
+            div.children[0].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[1].src = "../img/Iconos/Base/EstrellaLlena.svg";
+        }
+        let f11 = function () {
+            cancion.valorada = true;
+            cancion.calificacion = 2;
+        }
+        let f2 = function () {
+            for (let i = 0; i < div.children.length; i++) {
+                div.children[i].src = "../img/Iconos/Base/Estrella.svg";
+            }
+            div.children[0].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[1].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[2].src = "../img/Iconos/Base/EstrellaLlena.svg";
+        }
+        let f21 = function () {
+            cancion.valorada = true;
+            cancion.calificacion = 3;
+        }
+        let f3 = function () {
+            for (let i = 0; i < div.children.length; i++) {
+                div.children[i].src = "../img/Iconos/Base/Estrella.svg";
+            }
+            div.children[0].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[1].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[2].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[3].src = "../img/Iconos/Base/EstrellaLlena.svg";
+        }
+        let f31 = function () {
+            cancion.valorada = true;
+            cancion.calificacion = 4;
+        }
+        let f4 = function () {
+            for (let i = 0; i < div.children.length; i++) {
+                div.children[i].src = "../img/Iconos/Base/Estrella.svg";
+            }
+            div.children[0].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[1].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[2].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[3].src = "../img/Iconos/Base/EstrellaLlena.svg";
+            div.children[4].src = "../img/Iconos/Base/EstrellaLlena.svg";
+        }
+        let f41 = function () {
+            cancion.valorada = true;
+            cancion.calificacion = 5;
+        }
+        let x = function () { dibujarEstrellasIndividual(div, cancion) }
+        div.removeEventListener("mouseleave", x.bind(this));
+        div.children[0].removeEventListener("mouseover", f0);
+        div.children[0].removeEventListener("click", f01);
+        div.children[1].removeEventListener("mouseover", f1);
+        div.children[1].removeEventListener("click", f11);
+        div.children[2].removeEventListener("mouseover", f2);
+        div.children[2].removeEventListener("click", f21);
+        div.children[3].removeEventListener("mouseover", f3);
+        div.children[3].removeEventListener("click", f31);
+        div.children[4].removeEventListener("mouseover", f4);
+        div.children[4].removeEventListener("click", f41);
+        if (!cancion.valorada) {
+            div.children[0].addEventListener("mouseover", f0);
+            div.children[0].addEventListener("click", f01);
+            div.children[1].addEventListener("mouseover", f1);
+            div.children[1].addEventListener("click", f11);
+            div.children[2].addEventListener("mouseover", f2);
+            div.children[2].addEventListener("click", f21);
+            div.children[3].addEventListener("mouseover", f3);
+            div.children[3].addEventListener("click", f31);
+            div.children[4].addEventListener("mouseover", f4);
+            div.children[4].addEventListener("click", f41);
+            let x = function () { dibujarEstrellasIndividual(div, cancion) }
+            div.addEventListener("mouseleave", x.bind(this));
+        }
     }
     function cargarTablaDeCancionesParaPaginaPlaylist(lista) {
         let tabla = document.querySelector("#cuerpo_tabla");
