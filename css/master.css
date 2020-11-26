@@ -100,15 +100,15 @@
 /* Selectores generales (Ignorando si es Mobile o Desktop) */
 
 .js-visibility_hidden {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .js-display_none {
-  display: none;
+  display: none !important;
 }
 
 .js-upside_down {
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
 }
 
 thead td img.js-upside_down {

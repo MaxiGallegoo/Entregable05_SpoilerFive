@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Constantes */
     const BUTTON_TOGGLED_TEXT = "(js_toggled)";
+    const ESTRELLA_VACIA = "../img/Iconos/Base/Estrella.svg";
+    const ESTRELLA_LLENA_GENERAL = "../img/Iconos/Base/EstrellaLlena.svg";
+    const ESTRELLA_LLENA_PERSONAL = "../img/Iconos/Base/EstrellaLlenaDorada.svg";
     // const CANTIDAD_CATEGORIAS_RECOMENDADAS = 4;
     /* Fin Constantes */
 
@@ -147,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 reproducirGlobal(audios[lista_reproduccion.canciones[0]]);
             });
         }
+        cargarUltimasVotaciones(lista_reproduccion);
         llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
     }
     function llenarInfoDePaginaPlaylist(parrafos = [], playlist) {
@@ -154,6 +158,33 @@ document.addEventListener("DOMContentLoaded", () => {
         parrafos[1].innerHTML = playlist.canciones.length + " Elementos";
         parrafos[2].innerHTML = transformarReproduccionesATexto(playlist.cant_reproducciones);
         parrafos[3].innerHTML = calcularTiempoTotalPlaylist(playlist.canciones);
+    }
+    function cargarUltimasVotaciones(elem) {
+        let divs = document.querySelectorAll(".valoracion");
+        if (!elem) return;
+        else if(!elem.ultimas_valoraciones){
+            divs.forEach(d=>{
+                d.classList.add("js-display_none");
+            });
+            return;
+        }
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].querySelector("p").innerHTML = elem.ultimas_valoraciones[i].user;
+            cargarRateBar(divs[i].querySelector(".rate_bar"), elem.ultimas_valoraciones[i].val, false);
+        }
+    }
+    function cargarRateBar(rate_bar, estrellas = 4, esDorada = false) {
+        if (!rate_bar) return;
+        let imgs = rate_bar.querySelectorAll("img");
+        for (let i = 0; i < 5; i++) {
+            if (i >= estrellas) {
+                imgs[i].src = ESTRELLA_VACIA;
+            } else if (esDorada) {
+                imgs[i].src = ESTRELLA_LLENA_PERSONAL;
+            } else {
+                imgs[i].src = ESTRELLA_LLENA_GENERAL;
+            }
+        }
     }
     function cargarDatosPaginaElementoIndividual(elem) {
         if (!elem || !elem.nombre_cancion) return;
@@ -165,7 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
-        dibujarEstrellasIndividual(document.querySelector("#js-valoracion-individual"), elem)
+        cargarUltimasVotaciones(elem);
+        dibujarEstrellasIndividual(document.querySelector("#js-valoracion-individual"), elem);
     }
     function llenarInfoDePaginaElemIndividual(parrafos = [], elem) {
         parrafos[0].innerHTML = elem.nombre_cancion;
