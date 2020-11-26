@@ -100,6 +100,13 @@
   display: none;
 }
 
+.js-upside_down{
+  transform: rotate(180deg);
+}
+thead td img.js-upside_down{
+  margin-top: 0;
+}
+
 body {
   color: var(--Main_Darker);
   background-color: var(--Main_Lightest);
@@ -226,6 +233,10 @@ td {
   padding: 6px;
   /* padding-left: 0; */
   margin: 0;
+}
+thead td img{
+  margin-top: 10px;
+  height: 10px;
 }
 
 tr {
