@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cancion.calificacion = 5;
         }
         let x = function () { dibujarEstrellasIndividual(div, cancion) }
-        div.removeEventListener("mouseleave", x.bind(this));
+        div.removeEventListener("mouseleave", x);
         div.children[0].removeEventListener("mouseover", f0);
         div.children[0].removeEventListener("click", f01);
         div.children[1].removeEventListener("mouseover", f1);
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div.children[4].addEventListener("mouseover", f4);
             div.children[4].addEventListener("click", f41);
             let x = function () { dibujarEstrellasIndividual(div, cancion) }
-            div.addEventListener("mouseleave", x.bind(this));
+            div.addEventListener("mouseleave", x);
         }
     }
     function cargarTablaDeCancionesParaPaginaPlaylist(lista) {
@@ -704,6 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
         player.reproducir(cancion);
         let titulos = document.querySelectorAll(".js-titulo-player");
         titulos.forEach(element => {
+            element.style.cursor="pointer";
             element.addEventListener("click", () => {
                 let param1 = "../html/elemento_individual.html";
                 let param2 = document.querySelector("#js-contenido");
@@ -713,6 +714,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         let autores = document.querySelectorAll(".js-autor-player");
         autores.forEach(element => {
+            element.style.cursor="pointer";
             element.addEventListener("click", () => {
                 let param1 = "../html/elemento_individual.html";
                 let param2 = document.querySelector("#js-contenido");
