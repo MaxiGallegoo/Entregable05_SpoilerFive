@@ -141,6 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (lista_reproduccion.nombre == "Favoritos")
             document.querySelector("#js-add-en-pagina-verlista").src = "";
         let arr_parrafos = document.querySelectorAll(".js-playlist_data");
+
+        if (lista_reproduccion.canciones.length > 0) {
+            document.querySelector("#js-main_contente_play").addEventListener("click", () => {
+                reproducirGlobal(audios[lista_reproduccion.canciones[0]]);
+            });
+        }
         llenarInfoDePaginaPlaylist(arr_parrafos, lista_reproduccion);
     }
     function llenarInfoDePaginaPlaylist(parrafos = [], playlist) {
@@ -153,6 +159,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!elem || !elem.nombre_cancion) return;
         document.querySelector("#js-elem_card").src = elem.imagen;
         let arr_parrafos = document.querySelectorAll(".js-element_data");
+
+        document.querySelector("#js-main_contente_play").addEventListener("click", () => {
+            reproducirGlobal(elem);
+        });
+
         llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
         dibujarEstrellasIndividual(document.querySelector("#js-valoracion-individual"), elem)
     }
@@ -574,11 +585,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function createCard(c) {
 
+        let param1 = "../html/elemento_individual.html";
+        let param2 = document.querySelector("#js-contenido");
+        let param3 = () => { cargarDatosPaginaElementoIndividual(c) };
+
         let nombreAtributo = "nombre_cancion";
         let className = "individual_card";
         if (c.canciones) {
             className = "playlist_card";
             nombreAtributo = "nombre";
+            param1 = "../html/lista_reproduccion.html";
+            param3 = () => { cargarDatosPaginaLista(c) };
+
         }
 
         let cardDiv = document.createElement("div");
@@ -587,10 +605,17 @@ document.addEventListener("DOMContentLoaded", () => {
         let cardImg = document.createElement("img");
         cardImg.classList.add("card_image");
         cardImg.src = c.imagen;
+        cardImg.addEventListener("click", () => {
+            loadPage(param1, param2, param3)
+        });
 
         cardDiv.appendChild(cardImg);
 
         let effectDiv = document.createElement("div");
+        effectDiv.addEventListener("click", () => {
+            loadPage(param1, param2, param3)
+        });
+
 
         cardDiv.appendChild(effectDiv);
 
@@ -603,6 +628,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let titleP = document.createElement("p");
         titleP.innerHTML = c[nombreAtributo];
+        titleP.addEventListener("click", () => {
+            loadPage(param1, param2, param3)
+        });
 
         cardDiv.appendChild(titleP);
 
