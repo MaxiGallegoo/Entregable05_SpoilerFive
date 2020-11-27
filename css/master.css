@@ -319,6 +319,28 @@ tr td:last-child {
   height: calc(100vh - 147px - 16px);
 }
 
+.popUpMenu{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  background-color: var(--Darker_Transparente);
+}
+.oculto{
+  display:none;
+}
+.blur{
+  filter: blur(4px);
+}
+.popUpMenu>.imagenPopup{
+  position:absolute;
+  left: 40%;
+  top:30%;
+  width: 380px;
+  height: 410px;
+  /* background-image: url("../img/popups/popupFiltroOtros.png"); */
+  background-repeat: no-repeat;
+}
 /* Inicio Cards */
 
 .playlist_card, .individual_card {
@@ -838,6 +860,9 @@ tr td:last-child {
   nav * {
     padding: 0;
     margin: 0;
+  }
+  .popUpMenu>.imagenPopup{
+    left:20%;
   }
   nav.only_mobile div {
     position: relative;

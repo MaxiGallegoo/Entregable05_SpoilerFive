@@ -12,7 +12,11 @@
 <body>
     <!-- Usar clases "only_mobile" y "only_desktop" cuando el elemento funciona SOLO para un modo.
         Estas clases se esconden con display:none en el formato opuesto -->
+    <div class="popUpMenu oculto">
+        <div class="imagenPopup">
 
+        </div>
+    </div>
     <!-- NavBar Mobile -->
     <nav class="only_mobile ef-drop_shadow_downwards">
         <!-- Button  Home -->
@@ -34,7 +38,7 @@
                 <img src="../img/Iconos/Base/close.svg" alt="">
             </button>
             <!-- Otros links -->
-            <a href="#">
+            <a id="js-mobile-micuenta">
                 Mi cuenta
             </a>
             <a id="js-link_to_favbar_mobile" href="#">
@@ -70,7 +74,7 @@
             <img src="../img/Iconos/Base/Icono_Buscar.svg" alt="" id="js-search">
         </div>
         <!-- Button User -->
-        <button>
+        <button id="js-menu-cuenta">
             <img src="../img/Iconos/Base/botones_armados/Button_User.svg" alt="">
         </button>
 
@@ -101,7 +105,7 @@
                 <p class="js-autor-player"></p>
             </div>
 
-            <button>
+            <button id="js-add-to-playlist-mobile">
                 <img src="../img/Iconos/Base/botones_armados/Button_Add.svg" alt="">
             </button>
         </div>
@@ -137,7 +141,7 @@
 
                     </div>
 
-                    <button>
+                    <button id="js-add-to-playlist-desktop">
                         <img src="../img/Iconos/Base/botones_armados/Button_Add.svg" alt="">
                     </button>
                 </div>
@@ -177,7 +181,7 @@
         </div>
         <div class="seccion_lateral opciones_secundarias">
             <!-- Selección de Modo actual -->
-            <div class="modo">
+            <div class="modo" id="js-select-modo">
                 <p>Modo</p>
                 <img src="../img/Iconos/Modo/escoba.svg" alt="">
             </div>

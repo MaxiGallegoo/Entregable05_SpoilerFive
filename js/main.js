@@ -77,7 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelector("#js-slidertiempo").addEventListener("input", function () { player.avanzarA(document.querySelector("#js-slidertiempo").value) });
     document.querySelector("#js-play-pause").addEventListener("click", function () { player.togglePausa() });
-
+    document.querySelector("#js-add-to-playlist-mobile").addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
+    document.querySelector("#js-add-to-playlist-desktop").addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
+    document.querySelector(".popUpMenu").addEventListener("click", function () {
+        document.querySelector(".seccion_central").classList.remove("blur");
+        document.querySelectorAll(".player").forEach(element => {
+                element.classList.remove("blur");
+                });
+        document.querySelector(".popUpMenu").classList.add("oculto");});
+    document.querySelector("#js-menu-cuenta").addEventListener("click", function(){mostrarPopup("../img/popups/popupUser.png")});    
+    document.querySelector("#js-mobile-micuenta").addEventListener("click", function(){mostrarPopup("../img/popups/popupUser.png")});    
+    document.querySelector("#js-select-modo").addEventListener("click", function(){mostrarPopup("../img/popups/popupModo.png")});    
     document.querySelector("#js-link_to_favbar_mobile").addEventListener("click",()=>{
         let param1 = "../html/favbar_mobile.html";
         let param2 = document.querySelector("#js-contenido");
@@ -201,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!elem || !elem.nombre_cancion) return;
         document.querySelector("#js-elem_card").src = elem.imagen;
         let arr_parrafos = document.querySelectorAll(".js-element_data");
-
+        document.querySelector("#js-add-individual").addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
         document.querySelector("#js-main_contente_play").addEventListener("click", () => {
             reproducirGlobal(elem);
         });
@@ -209,6 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
         llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
         cargarUltimasVotaciones(elem);
         dibujarEstrellasIndividual(document.querySelector("#js-valoracion-individual"), elem);
+        loadComments(document.querySelector(".container_comentarios"));
     }
     function llenarInfoDePaginaElemIndividual(parrafos = [], elem) {
         parrafos[0].innerHTML = elem.nombre_cancion;
@@ -356,6 +367,28 @@ document.addEventListener("DOMContentLoaded", () => {
             div.addEventListener("mouseleave", x);
         }
     }
+    function loadComments(div){
+        let cantComents=Math.floor(Math.random()*10);
+        for (let i=0;i<=cantComents;i++){
+            let divComent=document.createElement("div");
+                divComent.classList.add("comentario");
+            let comentario=generarComment();
+            let puser=document.createElement("p");
+                puser.classList.add("comentario_user");
+                puser.innerHTML=comentario.usuario;
+            let pcoment=document.createElement("p");
+                pcoment.classList.add("comentario_text");
+                pcoment.innerHTML=comentario.texto
+            divComent.appendChild(puser);
+            divComent.appendChild(pcoment);
+            div.appendChild(divComent);
+        }
+    }
+    function generarComment(){
+        let arrUsers=["Carla", "Fernando", "Marcelo", "Torito", "Laura", "Martina", "Claudio", "Robocop", "Linterna", "Marcelandia", "Cabeza", "Soñandodespierto", "MartilloHammer", "ElMasCapo", "Ricotero", "LaCrewDelFondo"];
+        let arrComments=["Buenísimo me encanta esta banda", "No me gustó como termina", "Lo mejor que me pasó en la vida esta banda", "Los vi en vivo suenan tremendos!", "Escucho esto cada vez que voy a limpiar", "Para un día lluvioso", "Tengo este tema de alarma", "Al principio odiaba esta banda, ahora no puedo dejar de escucharla", "Son mis ídolos!", "Lo peor que le pasó a la música", "Son más cursis que Ricardo Arjona", "¡Qué buena banda por Dios!", "Se lo dedico a mi novio!"]
+        return {usuario:arrUsers[Math.floor(Math.random()*(arrUsers.length-1))]+Math.floor(Math.random()*1000), texto:arrComments[Math.floor(Math.random()*(arrComments.length-1))]}
+    }
     function cargarTablaDeCancionesParaPaginaPlaylist(lista) {
         let tabla = document.querySelector("#cuerpo_tabla");
         document.querySelector("#js-sort_titulo").addEventListener("click", function () { sortTable(0) });
@@ -373,6 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let boton_add = document.createElement("button");
             let image_add = document.createElement("img");
             image_add.src = "../img/Iconos/Base/botones_armados/Button_Add.svg";
+            image_add.addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
             boton_add.appendChild(image_add);
 
             boton_play.addEventListener("click", function () {
@@ -425,17 +459,25 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i=0;i<labels.children.length;i+=2){
             labels.children[i].addEventListener("change", function(){checkIfChecked(labels.children)});
         }
+        labels.children[5].addEventListener("click", function(){mostrarPopup("../img/popups/popupFiltroOtros.png")});
         if (listaSalida.length > 0) {
             listaSalida.forEach(element => {
                 let divCard = document.createElement("div");
                 divCard.classList.add("individual_card");
                 let imgcard = document.createElement("img");
                 imgcard.src = element.imagen;
+                imgcard.addEventListener("click", () => {
+                    let param1 = "../html/elemento_individual.html";
+                    let param2 = document.querySelector("#js-contenido");
+                    let param3 = function () { cargarDatosPaginaElementoIndividual(element) };
+                    loadPage(param1, param2, param3);
+                });
                 divCard.append(imgcard);
                 divCard.append(document.createElement("div"));
                 let btn1 = document.createElement("button");
                 let img1 = document.createElement("img");
                 img1.src = "../img/Iconos/Base/botones_armados/Button_Add.svg";
+                img1.addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
                 btn1.append(img1);
                 divCard.append(btn1);
                 let titulo = document.createElement("p");
@@ -469,7 +511,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return salida;
     }
-
+    function mostrarPopup(url){
+        document.querySelector(".seccion_central").classList.add("blur");
+        document.querySelectorAll(".player").forEach(element => {
+            element.classList.add("blur");
+        });
+        let divpop=document.querySelector(".popUpMenu");
+        divpop.children[0].style.backgroundImage="url("+url+")";
+        divpop.classList.remove("oculto");
+    }
 
     function dibujarEstrellasPlaylist(div, lista) {
         let estrella1 = document.createElement("IMG");
@@ -685,6 +735,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let buttonAdd = document.createElement("button");
         let imagenAdd = document.createElement("img");
         imagenAdd.src = add_src;
+        imagenAdd.addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
         buttonAdd.appendChild(imagenAdd);
 
         cardDiv.appendChild(buttonAdd);
@@ -759,8 +810,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadPage(url, container, callback = null) {
         container.innerHTML = await fetchHtmlAsText(url);
-        if (callback)
+        if (callback){
             callback();
+            container.scrollTop=0;
+        }
     }
 
     function sortTable(n) {
@@ -820,7 +873,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function cambiarVisibilidadFlechasOrden(clickeado, nuevo_orden) {
         let tds = document.querySelector("#js-tablaPlaylist").querySelector("thead").querySelectorAll("td");
-        // console.log(tds);
+
         tds.forEach(td => {
             let image = td.querySelector("img");
             if (image) {
