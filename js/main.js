@@ -799,8 +799,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadPage(url, container, callback = null) {
         container.innerHTML = await fetchHtmlAsText(url);
-        if (callback)
+        if (callback){
             callback();
+            container.scrollTop=0;
+        }
     }
 
     function sortTable(n) {
