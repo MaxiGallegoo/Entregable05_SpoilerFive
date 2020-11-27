@@ -1038,19 +1038,18 @@ tr td:last-child {
   .seccion_central .contenido_cargado_dinamicamente {
     width: 100%;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     height: calc(100vh - 147px);
   }
   /* Inicio FavBar */
 
   .only_mobile.fav_bar{
-    width: 100%;
+    width: calc(100%-16px);
+    height: 100%;
     overflow: hidden;
     padding: 0;
     height: auto;
-  }
-  .only_mobile.fav_bar a{
-    margin-left: 150px;
+    padding-bottom: 10px;
   }
 
   /* Fin FavBar */
