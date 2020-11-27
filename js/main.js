@@ -77,10 +77,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelector("#js-slidertiempo").addEventListener("input", function () { player.avanzarA(document.querySelector("#js-slidertiempo").value) });
     document.querySelector("#js-play-pause").addEventListener("click", function () { player.togglePausa() });
-    //FIN LISTENERS
 
-    function cargarFavBar() {
-        let divFavoritos = document.querySelector("#js-fav-Bar-contenido");
+    document.querySelector("#js-link_to_favbar_mobile").addEventListener("click",()=>{
+        let param1 = "../html/favbar_mobile.html";
+        let param2 = document.querySelector("#js-contenido");
+        // let param3 = null;
+        let param3 = cargarFavBarScreenMobile;
+        loadPage(param1, param2, param3);
+    });
+    //FIN LISTENERS
+    function cargarFavBarScreenMobile(){
+        cargarFavBar(document.querySelector("#js-fav-Bar-contenido_mobile"));
+    }
+
+    function cargarFavBar(divFavoritos=null) {
+        if(!divFavoritos) divFavoritos = document.querySelector("#js-fav-Bar-contenido");
         let i = 0;
         listas.forEach(element => {
 
