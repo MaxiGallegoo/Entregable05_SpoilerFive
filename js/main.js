@@ -82,9 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".popUpMenu").addEventListener("click", function () {
         document.querySelector(".seccion_central").classList.remove("blur");
         document.querySelectorAll(".player").forEach(element => {
-            element.classList.remove("blur");
-        });
+                element.classList.remove("blur");
+                });
         document.querySelector(".popUpMenu").classList.add("oculto");});
+    document.querySelector("#js-menu-cuenta").addEventListener("click", function(){mostrarPopup("../img/popups/popupUser.png")});    
+    document.querySelector("#js-mobile-micuenta").addEventListener("click", function(){mostrarPopup("../img/popups/popupUser.png")});    
+    document.querySelector("#js-select-modo").addEventListener("click", function(){mostrarPopup("../img/popups/popupModo.png")});    
     
     //FIN LISTENERS
 
@@ -453,6 +456,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 divCard.classList.add("individual_card");
                 let imgcard = document.createElement("img");
                 imgcard.src = element.imagen;
+                imgcard.addEventListener("click", () => {
+                    let param1 = "../html/elemento_individual.html";
+                    let param2 = document.querySelector("#js-contenido");
+                    let param3 = function () { cargarDatosPaginaElementoIndividual(element) };
+                    loadPage(param1, param2, param3);
+                });
                 divCard.append(imgcard);
                 divCard.append(document.createElement("div"));
                 let btn1 = document.createElement("button");
@@ -470,7 +479,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 img2.addEventListener("click", function () { reproducirGlobal(element) });
                 btn2.append(img2);
                 divCard.append(btn2);
-
                 divSalida.append(divCard);
             });
         }
@@ -497,7 +505,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".player").forEach(element => {
             element.classList.add("blur");
         });
-        console.log("entró");
         let divpop=document.querySelector(".popUpMenu");
         divpop.children[0].style.backgroundImage="url("+url+")";
         divpop.classList.remove("oculto");
@@ -853,7 +860,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function cambiarVisibilidadFlechasOrden(clickeado, nuevo_orden) {
         let tds = document.querySelector("#js-tablaPlaylist").querySelector("thead").querySelectorAll("td");
-        // console.log(tds);
         tds.forEach(td => {
             let image = td.querySelector("img");
             if (image) {
