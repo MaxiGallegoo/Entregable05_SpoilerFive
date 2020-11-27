@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelector("#js-slidertiempo").addEventListener("input", function () { player.avanzarA(document.querySelector("#js-slidertiempo").value) });
     document.querySelector("#js-play-pause").addEventListener("click", function () { player.togglePausa() });
+
     document.querySelector("#js-add-to-playlist-mobile").addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
     document.querySelector("#js-add-to-playlist-desktop").addEventListener("click", function(){mostrarPopup("../img/popups/popupPlaylists.png")});
     document.querySelector(".popUpMenu").addEventListener("click", function () {
@@ -215,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#js-main_contente_play").addEventListener("click", () => {
             reproducirGlobal(elem);
         });
-
         llenarInfoDePaginaElemIndividual(arr_parrafos, elem);
         cargarUltimasVotaciones(elem);
         dibujarEstrellasIndividual(document.querySelector("#js-valoracion-individual"), elem);
@@ -489,7 +489,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 img2.addEventListener("click", function () { reproducirGlobal(element) });
                 btn2.append(img2);
                 divCard.append(btn2);
-
                 divSalida.append(divCard);
             });
         }
@@ -873,7 +872,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function cambiarVisibilidadFlechasOrden(clickeado, nuevo_orden) {
         let tds = document.querySelector("#js-tablaPlaylist").querySelector("thead").querySelectorAll("td");
-
         tds.forEach(td => {
             let image = td.querySelector("img");
             if (image) {
