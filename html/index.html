@@ -12,7 +12,11 @@
 <body>
     <!-- Usar clases "only_mobile" y "only_desktop" cuando el elemento funciona SOLO para un modo.
         Estas clases se esconden con display:none en el formato opuesto -->
+    <div class="popUpMenu oculto">
+        <div class="imagenPopup">
 
+        </div>
+    </div>
     <!-- NavBar Mobile -->
     <nav class="only_mobile ef-drop_shadow_downwards">
         <!-- Button  back -->
@@ -53,7 +57,7 @@
 
         <!-- Input search -->
         <div class="tra-focus ef-solid_underline">
-            <input type="text">
+            <input type="text" id="js-input-search-mobile">
             <img src="../img/Iconos/Base/Icono_Buscar.svg" alt="">
         </div>
     </nav>
@@ -101,7 +105,7 @@
                 <p class="js-autor-player"></p>
             </div>
 
-            <button>
+            <button id="js-add-to-playlist-mobile">
                 <img src="../img/Iconos/Base/botones_armados/Button_Add.svg" alt="">
             </button>
         </div>
@@ -137,7 +141,7 @@
 
                     </div>
 
-                    <button>
+                    <button id="js-add-to-playlist-desktop">
                         <img src="../img/Iconos/Base/botones_armados/Button_Add.svg" alt="">
                     </button>
                 </div>
@@ -164,8 +168,8 @@
                 <button class="boton_pasar_cancion">
                     <img src="../img/Iconos/Base/botones_armados/Button_Prev.svg" alt="">
                 </button>
-                <button class="boton_central js-togglable_button">
-                    <img src="../img/Iconos/Base/botones_armados/Button_Play.svg" alt="">
+                <button class="boton_central js-togglable_button" id="js-play-pause">
+                    <img src="../img/Iconos/Base/botones_armados/Button_Play(js_toggled).svg" alt="">
                 </button>
                 <button class="boton_pasar_cancion">
                     <img src="../img/Iconos/Base/botones_armados/Button_Next.svg" alt="">
