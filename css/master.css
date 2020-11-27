@@ -334,10 +334,10 @@ tr td:last-child {
 }
 .popUpMenu>.imagenPopup{
   position:absolute;
-  left: 30%;
+  left: 40%;
   top:30%;
-  width: 300px;
-  height: 320px;
+  width: 380px;
+  height: 410px;
   /* background-image: url("../img/popups/popupFiltroOtros.png"); */
   background-repeat: no-repeat;
 }
@@ -859,6 +859,9 @@ tr td:last-child {
   nav * {
     padding: 0;
     margin: 0;
+  }
+  .popUpMenu>.imagenPopup{
+    left:20%;
   }
   nav.only_mobile div {
     position: relative;
